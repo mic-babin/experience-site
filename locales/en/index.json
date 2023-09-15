@@ -1,0 +1,16 @@
+{
+  "seo": "Home",
+  "title": "Thank you for reaching out!",
+  "message": "Oups! It seems this page does not exist...",
+  "messageEmail": "We will respond as soon as possible.",
+  "close": "Back to home",
+  "closeEmail": "Close",
+  "sendEmail": "Send",
+  "fieldRequired": "This field is required.",
+  "validEmail": "Enter a valid email.",
+  "knowMore": "Know More",
+  "minimize": "Minimize",
+  "readMore": "Read More",
+  "readBio": "Read Bio",
+  "address": "address"
+}

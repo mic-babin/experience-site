@@ -1,0 +1,119 @@
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1250px,
+  xxl: 1600px,
+);
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1190px,
+  xxl: 1550px,
+);
+
+@import "~bootstrap/scss/bootstrap";
+// @import "react-multi-carousel/lib/styles.css";
+
+@font-face {
+  font-family: "Nimbus";
+  src: local("Nimbus"), url(../../../static/fonts/Nimbus.otf) format("truetype");
+  font-display: auto;
+}
+@font-face {
+  font-family: "NimbusBlack";
+  src: local("NimbusBlack"),
+    url(../../../static/fonts/NimbusBlack.ttf) format("truetype");
+  font-display: auto;
+}
+@font-face {
+  font-family: "NimbusBold";
+  src: local("NimbusBold"),
+    url(../../../static/fonts/NimbusBold.otf) format("truetype");
+  font-display: auto;
+}
+
+html::-webkit-scrollbar {
+  display: none;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+// body {
+//   font-family: "SF-Display-Regular";
+//   font-size: 14px;
+//   background-color: #e7e3da;
+//   color: #2b2929;
+//   overflow: auto;
+//   background: linear-gradient(
+//     0deg,
+//     rgba(231, 227, 218, 1) 45%,
+//     rgba(237, 234, 227, 1) 50%,
+//     rgba(231, 227, 218, 1) 55%
+//   );
+//   animation: gradient 7s ease;
+//   animation-delay: 0.2s;
+//   background-size: 100% 300%;
+//   background-attachment: fixed;
+//   position: relative;
+//   cursor: default !important;
+// }
+
+// @keyframes gradient {
+//   0%,
+//   45% {
+//     background-position: 0% 0%;
+//   }
+//   100% {
+//     background-position: 0% 100%;
+//   }
+// }
+// a,
+// select,
+// button,
+// .link {
+//   cursor: pointer !important
+//   ;
+// }
+
+// input,
+// textarea {
+//   cursor: text !important;
+// }
+
+@media (min-width: 576px) {
+  .container.no-left {
+    max-width: calc(100% - (100% - 540px) / 2) !important;
+    margin-right: 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .container.no-left {
+    max-width: calc(100% - (100% - 720px) / 2) !important;
+    margin-right: 0;
+  }
+}
+
+@media (min-width: 992px) {
+  .container.no-left {
+    max-width: calc(100% - (100% - 960px) / 2) !important;
+    margin-right: 0;
+  }
+}
+
+@media (min-width: 1250px) {
+  .container.no-left {
+    max-width: calc(100% - (100% - 1190px) / 2) !important;
+    margin-right: 0;
+  }
+}
+@media (min-width: 1600px) {
+  .container.no-left {
+    max-width: calc(100% - (100% - 1550px) / 2) !important;
+    margin-right: 0;
+  }
+}
