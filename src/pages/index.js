@@ -64,6 +64,7 @@ export const query = graphql`
           raw
         }
         Images {
+          id
           gatsbyImageData
         }
         video {

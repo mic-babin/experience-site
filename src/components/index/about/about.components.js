@@ -1,16 +1,21 @@
 import React from "react";
 import { Section } from "./about.styles";
+import { renderRichText } from "gatsby-source-contentful/rich-text";
+import { Trans } from "gatsby-plugin-react-i18next";
 
 const About = ({ data }) => {
-  console.log("about", data);
+  const { title, features, participants, exhibitors } = data;
   const s = { background: "#000000", color: "#e8e8e6" };
 
   return (
     <Section s={s}>
-      About: Section (Title, Required, Unique) : Used to classify the database
-      Title (Localize, Required, Max 50 Chars) Participants (Required)
-      Exhibitors (Required) Features (List(4), Localize, Required, Max 200
-      Chars)
+      {title && <div>{renderRichText(title)}</div>}
+      <Trans>participants</Trans>
+      {participants && <div>{participants}</div>}
+      <Trans>exhibitors</Trans>
+      {exhibitors && <div>{exhibitors}</div>}
+      {features &&
+        features.map((feauture, index) => <div key={index}>{feauture}</div>)}
     </Section>
   );
 };

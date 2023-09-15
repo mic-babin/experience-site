@@ -24,5 +24,10 @@
   "September": "Septembre",
   "October": "Octobre",
   "November": "Novembre",
-  "December": "Décembre"
+  "December": "Décembre",
+  "participants": "participants",
+  "exhibitors": "exposants",
+  "goldPartners": "Partenaire Or",
+  "silverPartners": "Partenaire Argent",
+  "bronzePartners": "Partenaire Bronze"
 }

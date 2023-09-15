@@ -12,5 +12,10 @@
   "minimize": "Minimize",
   "readMore": "Read More",
   "readBio": "Read Bio",
-  "address": "address"
+  "address": "address",
+  "participants": "participants",
+  "exhibitors": "exhibitors",
+  "goldPartners": "Gold Partners",
+  "silverPartners": "Silver Partners",
+  "bronzePartners": "Bronze Partners"
 }

@@ -1,15 +1,20 @@
 import React from "react";
 import { Section } from "./programming.styles";
+import { renderRichText } from "gatsby-source-contentful/rich-text";
+import ConferenceCard from "./conference-card/conference-card.component";
 
 const Programming = ({ data }) => {
-  console.log("programming", data);
+  const { tile, kicker, conferences } = data;
   const s = { background: "#e8e8e6", color: "#000000" };
 
   return (
     <Section s={s}>
-      Programming Section (Title, Required, Unique) : Used to classify the
-      database Title (Localize, Required, Max 50 Chars) Kicker (Localize,
-      Required) Conferences (Many References (see Conference), Required)
+      {tile && <div>{renderRichText(tile)}</div>}
+      {kicker && <div>{renderRichText(kicker)}</div>}
+      {conferences &&
+        conferences.map((conference) => (
+          <ConferenceCard key={conference.id} conference={conference} />
+        ))}
     </Section>
   );
 };

@@ -1,15 +1,16 @@
 import React from "react";
 import { Section } from "./call-to-action.styles";
+import { renderRichText } from "gatsby-source-contentful/rich-text";
 
 const CallToAction = ({ data }) => {
-  console.log("CTA", data);
+  const { title, kicker, button } = data;
   const s = { background: "#e8e8e6", color: "#000000" };
 
   return (
     <Section s={s}>
-      Section (Title, Required, Unique) : Used to classify the database Title
-      (Localize, Required, Max 50 Chars) Kicker (Localize, Required) Button
-      (Localize, Required, Max 20 Chars)
+      {title && <div>{renderRichText(title)}</div>}
+      {kicker && <div>{renderRichText(kicker)}</div>}
+      {button && <div>{renderRichText(button)}</div>}
     </Section>
   );
 };
