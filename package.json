@@ -29,6 +29,7 @@
     "gatsby-transformer-sharp": "^5.11.0",
     "i18next": "^22.5.1",
     "moment": "^2.29.4",
+    "nodemailer": "^6.9.5",
     "react": "^18.2.0",
     "react-animated-cursor": "^2.7.0",
     "react-bootstrap": "^2.8.0",
