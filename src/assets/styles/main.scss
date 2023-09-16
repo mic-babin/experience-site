@@ -19,20 +19,27 @@ $container-max-widths: (
 // @import "react-multi-carousel/lib/styles.css";
 
 @font-face {
-  font-family: "Nimbus";
-  src: local("Nimbus"), url(../../../static/fonts/Nimbus.otf) format("truetype");
+  font-family: "Grotesk";
+  src: local("Grotesk"),
+    url(../../../static/fonts/Grotesk.ttf) format("truetype");
   font-display: auto;
 }
 @font-face {
-  font-family: "NimbusBlack";
-  src: local("NimbusBlack"),
-    url(../../../static/fonts/NimbusBlack.ttf) format("truetype");
+  font-family: "Grotesk55";
+  src: local("Grotesk55"),
+    url(../../../static/fonts/Grotesk55.ttf) format("truetype");
   font-display: auto;
 }
 @font-face {
-  font-family: "NimbusBold";
-  src: local("NimbusBold"),
-    url(../../../static/fonts/NimbusBold.otf) format("truetype");
+  font-family: "Grotesk65";
+  src: local("Grotesk65"),
+    url(../../../static/fonts/Grotesk65.ttf) format("truetype");
+  font-display: auto;
+}
+@font-face {
+  font-family: "GroteskBold";
+  src: local("GroteskBold"),
+    url(../../../static/fonts/GroteskBold.ttf) format("truetype");
   font-display: auto;
 }
 
@@ -42,25 +49,10 @@ html::-webkit-scrollbar {
   scrollbar-width: none; /* Firefox */
 }
 
-// body {
-//   font-family: "SF-Display-Regular";
-//   font-size: 14px;
-//   background-color: #e7e3da;
-//   color: #2b2929;
-//   overflow: auto;
-//   background: linear-gradient(
-//     0deg,
-//     rgba(231, 227, 218, 1) 45%,
-//     rgba(237, 234, 227, 1) 50%,
-//     rgba(231, 227, 218, 1) 55%
-//   );
-//   animation: gradient 7s ease;
-//   animation-delay: 0.2s;
-//   background-size: 100% 300%;
-//   background-attachment: fixed;
-//   position: relative;
-//   cursor: default !important;
-// }
+body {
+  font-family: "Grotesk55";
+  font-size: 24px;
+}
 
 // @keyframes gradient {
 //   0%,

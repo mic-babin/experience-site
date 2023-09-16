@@ -1,8 +1,15 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { Wrapper, Logo } from "./header.styles";
+import LogoSrc from "../../../assets/img/logo-experience.png";
+import Languages from "../languages/languages.component";
 
 const Header = () => {
-  return <>Header: Logo + Language</>;
+  return (
+    <Wrapper>
+      <Logo src={LogoSrc} alt="Salon Expérience" />
+      <Languages />
+    </Wrapper>
+  );
 };
 
 export default Header;
