@@ -39,13 +39,9 @@ const SectionLayout = ({ children, s }) => {
   }, [isBrowser, handleResize]);
 
   const sectionStyles = {
-    background: s.background,
-    color: s.color,
     top: s.maxHeight ? "82px" : windowHeight - sectionHeight + 82,
     position: shouldStick ? "sticky" : "relative",
-    minHeight: s.height || "100vh",
-    height: s.maxHeight,
-    border: s.border,
+    ...s,
   };
 
   return (
