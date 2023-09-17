@@ -1,54 +1,55 @@
 import React from "react";
-import { Section } from "./partners.styles";
+import { Section, Title, Number, LogoWrapper, Empty } from "./partners.styles";
 import { Trans } from "react-i18next";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 const Partners = ({ data }) => {
   const { goldPartners, silverPartners, bronzePartners } = data;
-  const s = { background: "#e8e8e6", color: "#000000" };
+  const s = { background: "white", color: "#000000" };
 
   return (
     <Section s={s}>
-      <div>
-        <Trans>goldPartners</Trans>
-        {goldPartners && <div>{goldPartners.length}</div>}
-        {goldPartners &&
-          goldPartners.map((image) => (
-            <GatsbyImage
-              key={image.id}
-              image={getImage(image)}
-              alt="TODO"
-              style={{ height: "100px", width: "100px" }}
-            />
-          ))}
+      <div className="container">
+        <Title>
+          <Trans>goldPartners</Trans>
+          {goldPartners && <Number>{goldPartners.length}</Number>}
+        </Title>
+
+        <LogoWrapper>
+          {goldPartners &&
+            goldPartners.map((image) => (
+              <GatsbyImage key={image.id} image={getImage(image)} alt="TODO" />
+            ))}
+        </LogoWrapper>
       </div>
-      <div>
-        <Trans>silverPartners</Trans>
-        {silverPartners && <div>{silverPartners.length}</div>}
-        {silverPartners &&
-          silverPartners.map((image) => (
-            <GatsbyImage
-              key={image.id}
-              image={getImage(image)}
-              alt="TODO"
-              style={{ height: "100px", width: "100px" }}
-            />
-          ))}
+      <div className="container">
+        <Title>
+          <Trans>silverPartners</Trans>
+          {silverPartners && <Number>{silverPartners.length}</Number>}
+        </Title>
+
+        <LogoWrapper>
+          {silverPartners &&
+            silverPartners.map((image) => (
+              <GatsbyImage key={image.id} image={getImage(image)} alt="TODO" />
+            ))}
+        </LogoWrapper>
       </div>
 
-      <div>
-        <Trans>bronzePartners</Trans>
-        {bronzePartners && <div>{bronzePartners.length}</div>}
-        {bronzePartners &&
-          bronzePartners.map((image) => (
-            <GatsbyImage
-              key={image.id}
-              image={getImage(image)}
-              alt="TODO"
-              style={{ height: "100px", width: "100px" }}
-            />
-          ))}
+      <div className="container">
+        <Title>
+          <Trans>bronzePartners</Trans>
+          {bronzePartners && <Number>{bronzePartners.length}</Number>}
+        </Title>
+
+        <LogoWrapper>
+          {bronzePartners &&
+            bronzePartners.map((image) => (
+              <GatsbyImage key={image.id} image={getImage(image)} alt="TODO" />
+            ))}
+        </LogoWrapper>
       </div>
+      <Empty>&nbsp;</Empty>
     </Section>
   );
 };
