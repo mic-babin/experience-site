@@ -25,4 +25,10 @@ export const Text = styled.div`
       text-align: end;
     }
   }
+
+  &.become-partner {
+    p:nth-of-type(2) {
+      display: inline;
+    }
+  }
 `;

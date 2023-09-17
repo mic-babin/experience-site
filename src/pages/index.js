@@ -156,6 +156,14 @@ export const query = graphql`
       nodes {
         title {
           raw
+          references {
+            ... on ContentfulAsset {
+              contentful_id
+              title
+              gatsbyImageData
+              __typename
+            }
+          }
         }
         kicker {
           raw
