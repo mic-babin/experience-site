@@ -39,7 +39,7 @@ const SectionLayout = ({ children, s }) => {
   }, [isBrowser, handleResize]);
 
   const sectionStyles = {
-    top: s.maxHeight ? "82px" : windowHeight - sectionHeight + 82,
+    top: s.maxHeight ? "0" : windowHeight - sectionHeight + 82,
     position: shouldStick ? "sticky" : "relative",
     ...s,
   };

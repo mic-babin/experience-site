@@ -8,19 +8,23 @@ const Title = ({ title, width, y, textClass }) => {
   const options = {
     renderNode: {
       [BLOCKS.EMBEDDED_ASSET]: (node) => {
-        console.log(node);
+        console.log(textClass, node);
         const { gatsbyImageData, description } = node.data.target;
         return (
-          <LineWrapper style={{ transform: `translateY(-${y}px)` }}>
-            <GatsbyImage
-              image={getImage(gatsbyImageData)}
-              alt={description}
-              style={{
-                display: "inline-block",
-                width: width,
-              }}
-            />
-          </LineWrapper>
+          <>
+            {gatsbyImageData && (
+              <LineWrapper style={{ transform: `translateY(-${y}px)` }}>
+                <GatsbyImage
+                  image={getImage(gatsbyImageData)}
+                  alt={description}
+                  style={{
+                    display: "inline-block",
+                    width: width,
+                  }}
+                />
+              </LineWrapper>
+            )}
+          </>
         );
       },
     },

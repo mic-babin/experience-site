@@ -1,32 +1,40 @@
 import React from "react";
-import { Section } from "./participate.styles";
+import { Circle, Section, Title } from "./participate.styles";
 import { renderRichText } from "gatsby-source-contentful/rich-text";
-import { GatsbyImage, getImage } from "gatsby-plugin-image";
-import ReactPlayer from "react-player";
+import FeaturedPlayer from "./featured-player/featured-player.component";
 
 const Participate = ({ data }) => {
   const { Images, description, video } = data;
-  const s = { background: "#000000", color: "#e8e8e6" };
+  const s = { background: "#000000", color: "white" };
+
+  // Generate an array of random positions for the circles
+  const circles = Array.from({ length: 11 }).map((_, index) => ({
+    key: index,
+    top: `${Math.random() * 60}%`,
+    left: `${Math.random() * 100}%`,
+    depth: Math.random(),
+  }));
 
   return (
     <Section s={s}>
-      {description && <div>{renderRichText(description)}</div>}
-      {Images &&
-        Images.map((image) => (
-          <GatsbyImage key={image.id} image={getImage(image)} alt="TODO" />
+      <div className="container">
+        {description && <Title>{renderRichText(description)}</Title>}
+      </div>
+
+      <div>
+        {circles.map((circle) => (
+          <Circle
+            key={circle.key}
+            style={{
+              top: circle.top,
+              left: circle.left,
+              zIndex: circle.depth > 0.5 ? 1 : -1,
+            }}
+          ></Circle>
         ))}
-      {video && (
-        <ReactPlayer
-          priority
-          autoPlay
-          loop
-          muted
-          url={"https:" + video.file.url}
-          playing={true}
-          height="100%"
-          width="100%"
-        />
-      )}
+      </div>
+
+      <FeaturedPlayer video={video} />
     </Section>
   );
 };

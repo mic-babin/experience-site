@@ -21,7 +21,6 @@ const Hero = ({ data }) => {
   const shape4Size = useElementSize(shape4);
   const shape5 = useRef();
   const shape5Size = useElementSize(shape4);
-  console.log(sectionSize);
   return (
     <Section s={s}>
       <div ref={section}>
