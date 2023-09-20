@@ -9,7 +9,7 @@ const Circle = ({ height, index, width }) => {
   const maxValue = 26.71;
   const minValue = 4.45;
   const loopDuration = 11.23; // 10 milliseconds per loop
-  console.log(index, startingValue, count);
+
   useEffect(() => {
     let isForward = true;
 

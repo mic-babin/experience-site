@@ -3,7 +3,9 @@ import { motion } from "framer-motion";
 import SectionLayout from "../../layout/section-layout.component";
 import { GatsbyImage } from "gatsby-plugin-image";
 
-export const Section = styled(SectionLayout)``;
+export const Section = styled(SectionLayout)`
+  position: relative;
+`;
 
 export const BecomePartnerTitle = styled(motion.h2)`
   font-size: 100px;
@@ -19,11 +21,6 @@ export const Kicker = styled.div`
   margin-left: 150px;
   margin-top: 40px;
   max-width: 555px;
-`;
-
-export const Shape = styled(motion.img)`
-  position: absolute;
-  top: 0;
 `;
 
 export const ContactWrapper = styled.div`
@@ -71,4 +68,9 @@ export const Email = styled.a`
 
 export const Empty = styled.div`
   height: 150px;
+`;
+
+export const Shape = styled(motion.img)`
+  position: absolute;
+  top: 0;
 `;
