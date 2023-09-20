@@ -101,6 +101,14 @@ export const query = graphql`
       nodes {
         tile {
           raw
+          references {
+            ... on ContentfulAsset {
+              contentful_id
+              title
+              gatsbyImageData
+              __typename
+            }
+          }
         }
         kicker {
           raw
@@ -114,6 +122,10 @@ export const query = graphql`
           speakerCompany
           date
           link
+          logo {
+            description
+            gatsbyImageData
+          }
         }
       }
     }

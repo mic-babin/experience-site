@@ -2,6 +2,11 @@ import { styled } from "styled-components";
 
 export const LineWrapper = styled.div`
   display: inline-flex;
+
+  &.programming {
+    width: calc(100% - 260px);
+    justify-content: end;
+  }
 `;
 
 export const Text = styled.div`
@@ -29,6 +34,17 @@ export const Text = styled.div`
   &.become-partner {
     p:nth-of-type(2) {
       display: inline;
+    }
+  }
+
+  &.programming {
+    width: 100%;
+    img {
+      text-align: end;
+    }
+    p:nth-of-type(2) {
+      display: inline-block;
+      text-align: end;
     }
   }
 `;

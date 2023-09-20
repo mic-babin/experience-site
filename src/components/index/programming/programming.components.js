@@ -1,20 +1,28 @@
 import React from "react";
-import { Section } from "./programming.styles";
+import { Section, ProgrammingTitle, Kicker, Empty } from "./programming.styles";
 import { renderRichText } from "gatsby-source-contentful/rich-text";
 import ConferenceCard from "./conference-card/conference-card.component";
+import Title from "../../common/title/title.component";
 
 const Programming = ({ data }) => {
   const { tile, kicker, conferences } = data;
-  const s = { background: "#e8e8e6", color: "#000000" };
+  const s = { background: "#E3FE96", color: "#000000" };
 
   return (
     <Section s={s}>
-      {tile && <div>{renderRichText(tile)}</div>}
-      {kicker && <div>{renderRichText(kicker)}</div>}
+      <div className="container">
+        <ProgrammingTitle>
+          {tile && (
+            <Title title={tile} width={204} y={35} textClass="programming" />
+          )}
+        </ProgrammingTitle>
+        {kicker && <Kicker>{renderRichText(kicker)}</Kicker>}
+      </div>
       {conferences &&
         conferences.map((conference) => (
           <ConferenceCard key={conference.id} conference={conference} />
         ))}
+      <Empty>&nbsp;</Empty>
     </Section>
   );
 };

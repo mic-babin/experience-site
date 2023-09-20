@@ -8,12 +8,14 @@ const Title = ({ title, width, y, textClass }) => {
   const options = {
     renderNode: {
       [BLOCKS.EMBEDDED_ASSET]: (node) => {
-        console.log(textClass, node);
         const { gatsbyImageData, description } = node.data.target;
         return (
           <>
             {gatsbyImageData && (
-              <LineWrapper style={{ transform: `translateY(-${y}px)` }}>
+              <LineWrapper
+                style={{ transform: `translateY(-${y}px)` }}
+                className={textClass}
+              >
                 <GatsbyImage
                   image={getImage(gatsbyImageData)}
                   alt={description}
