@@ -30,7 +30,7 @@ export const Title = styled.h3`
 
 export const Name = styled.div`
   font-family: "Grotesk55";
-  font-size: 24x;
+  font-size: 24px;
   line-height: 28px;
   text-transform: uppercase;
 `;

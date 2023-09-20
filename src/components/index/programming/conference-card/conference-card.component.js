@@ -24,7 +24,7 @@ const ConferenceCard = ({ conference }) => {
     link,
     logo,
   } = conference;
-  console.log(logo);
+
   const time = useFormatDate(date).time;
   return (
     <CardWrapper>

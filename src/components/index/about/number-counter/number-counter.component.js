@@ -5,11 +5,8 @@ import { Number } from "./number-counter.styles";
 const NumberCounter = ({ max, inView, color }) => {
   const [count, setCount] = useState(0);
 
-  console.log(inView);
-
   useEffect(() => {
     if (inView) {
-      console.log("started");
       let startTime = 0;
       const duration = 2000; // 2 seconds
       const increment = max / (duration / 1000); // Increment per second
