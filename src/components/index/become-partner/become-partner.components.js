@@ -33,12 +33,7 @@ const BecomePartner = ({ data }) => {
   const s = { background: "#EBE50D", color: "#000000" };
   const section = useRef();
   const sectionSize = useElementSize(section);
-  const shape1 = useRef();
-  const shape1Size = useElementSize(shape1);
-  const shape2 = useRef();
-  const shape2Size = useElementSize(shape2);
-  const shape3 = useRef();
-  const shape3Size = useElementSize(shape3);
+
   const [containerRef, containerInView] = useInView({
     triggerOnce: true,
   });
@@ -71,12 +66,11 @@ const BecomePartner = ({ data }) => {
         <>
           <Shape
             src={Shape1Src}
-            ref={shape1}
-            alt="2e edition"
+            alt="Forme"
             style={{ width: "9.5w" }}
             initial={{ y: -300, x: "-1.8vw" }}
             animate={{
-              y: sectionSize.height - shape3Size.height / 1.15,
+              y: sectionSize.height - sectionSize.width * 0.173,
               x: "-1.8vw",
             }}
             transition={{
@@ -89,12 +83,11 @@ const BecomePartner = ({ data }) => {
           ></Shape>
           <Shape
             src={Shape2Src}
-            ref={shape2}
-            alt="Salon Experience"
+            alt="Forme"
             style={{ width: "39.2vw" }}
             initial={{ y: -850, x: "-1.8vw" }}
             animate={{
-              y: sectionSize.height - shape2Size.height / 1.13,
+              y: sectionSize.height - sectionSize.width * 0.468,
               x: "-1.8vw",
             }}
             transition={{
@@ -107,12 +100,11 @@ const BecomePartner = ({ data }) => {
           ></Shape>
           <Shape
             src={Shape3Src}
-            ref={shape3}
-            alt="Grand Quai du Port de Montréal"
+            alt="Forme"
             style={{ width: "20.1vw" }}
             initial={{ y: -500, x: 0 }}
             animate={{
-              y: sectionSize.height - shape3Size.height + 75,
+              y: sectionSize.height - sectionSize.width * 0.17,
               x: 0,
             }}
             transition={{

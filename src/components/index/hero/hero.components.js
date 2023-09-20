@@ -17,10 +17,7 @@ const Hero = ({ data }) => {
   const shape2Size = useElementSize(shape2);
   const shape3 = useRef();
   const shape3Size = useElementSize(shape3);
-  const shape4 = useRef();
-  const shape4Size = useElementSize(shape4);
-  const shape5 = useRef();
-  const shape5Size = useElementSize(shape4);
+
   return (
     <Section s={s}>
       <div ref={section}>
@@ -31,6 +28,7 @@ const Hero = ({ data }) => {
             </SiteTitle>
           )}
         </div>
+
         <Shape
           src={Shape1Src}
           alt="2e edition"
@@ -45,6 +43,7 @@ const Hero = ({ data }) => {
             delay: 2.3,
           }}
         ></Shape>
+
         <Shape
           src={Shape2Src}
           ref={shape2}
@@ -60,6 +59,7 @@ const Hero = ({ data }) => {
             delay: 1.9,
           }}
         ></Shape>
+
         <Shape
           src={Shape3Src}
           ref={shape3}
@@ -77,14 +77,14 @@ const Hero = ({ data }) => {
             delay: 1,
           }}
         ></Shape>
+
         <Shape
           src={Shape4Src}
-          ref={shape4}
           style={{ width: "41.9vw" }}
           alt="22 février 2024"
           initial={{ y: -500, x: "43.5vw" }}
           animate={{
-            y: sectionSize.height - 5 - shape4Size.height,
+            y: sectionSize.height - sectionSize.width * 0.218,
           }}
           transition={{
             duration: 1,
@@ -94,14 +94,14 @@ const Hero = ({ data }) => {
             delay: 1.4,
           }}
         ></Shape>
+
         <Shape
           src={Shape5Src}
-          ref={shape5}
           alt="Présenté par Lulu"
           style={{ width: "26.9vw" }}
           initial={{ y: -500, x: "73.1vw" }}
           animate={{
-            y: sectionSize.height - shape5Size.height * 1.28,
+            y: sectionSize.height - sectionSize.width * 0.275,
           }}
           transition={{
             duration: 1,
