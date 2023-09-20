@@ -10,6 +10,7 @@ import BecomePartner from "../components/index/become-partner/become-partner.com
 import CallToAction from "../components/index/call-to-action/call-to-action.components";
 import About from "../components/index/about/about.components";
 import Partners from "../components/index/partners/partners.components";
+import { ParallaxProvider } from "react-scroll-parallax";
 
 export default function Home({ data }) {
   const heroData = data.allContentfulHero.nodes[0];
@@ -24,15 +25,17 @@ export default function Home({ data }) {
 
   return (
     <Layout>
-      <Hero data={heroData} />
-      <Participate data={participateData} />
-      <Reasons data={reasonsData} />
-      <About data={aboutData} />
-      <Programming data={programmingData} />
-      <SignUp data={signUpData} />
-      <Partners data={partnersData} />
-      <BecomePartner data={becomePartnerData} />
-      <CallToAction data={callToActionData} />
+      <ParallaxProvider>
+        <Hero data={heroData} />
+        <Participate data={participateData} />
+        <Reasons data={reasonsData} />
+        <About data={aboutData} />
+        <Programming data={programmingData} />
+        <SignUp data={signUpData} />
+        <Partners data={partnersData} />
+        <BecomePartner data={becomePartnerData} />
+        <CallToAction data={callToActionData} />
+      </ParallaxProvider>
     </Layout>
   );
 }
