@@ -43,7 +43,7 @@ const SectionLayout = ({ children, s }) => {
       ? "0"
       : sectionHeight > windowHeight
       ? windowHeight - sectionHeight
-      : windowHeight - sectionHeight + 82,
+      : windowHeight - sectionHeight,
     position: shouldStick ? "sticky" : "relative",
     ...s,
   };

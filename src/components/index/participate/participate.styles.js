@@ -18,7 +18,10 @@ export const Title = styled(motion.p)`
 export const Circle = styled.div`
   background-color: #ec1a8d;
   border-radius: 50%;
-  position: absolute;
   height: 68px;
   width: 68px;
+`;
+
+export const BgShape = styled.div`
+  position: absolute;
 `;

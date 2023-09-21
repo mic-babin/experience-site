@@ -1,19 +1,15 @@
 import React from "react";
-import { Circle, Section, Title } from "./participate.styles";
+import { Circle, Section, Title, BgShape } from "./participate.styles";
 import { renderRichText } from "gatsby-source-contentful/rich-text";
 import FeaturedPlayer from "./featured-player/featured-player.component";
+import { circles } from "./circles";
+import { Parallax } from "react-scroll-parallax";
 
 const Participate = ({ data }) => {
   const { Images, description, video } = data;
   const s = { background: "#000000", color: "white" };
 
   // Generate an array of random positions for the circles
-  const circles = Array.from({ length: 11 }).map((_, index) => ({
-    key: index,
-    top: `${Math.random() * 60}%`,
-    left: `${Math.random() * 100}%`,
-    depth: Math.random(),
-  }));
 
   return (
     <Section s={s}>
@@ -21,18 +17,19 @@ const Participate = ({ data }) => {
         {description && <Title>{renderRichText(description)}</Title>}
       </div>
 
-      <div>
-        {circles.map((circle) => (
-          <Circle
-            key={circle.key}
-            style={{
-              top: circle.top,
-              left: circle.left,
-              zIndex: circle.depth > 0.5 ? 1 : -1,
-            }}
-          ></Circle>
-        ))}
-      </div>
+      {circles.map((circle) => (
+        <BgShape
+          style={{
+            top: circle.top,
+            left: circle.left,
+            zIndex: circle.depth > 0.5 ? 1 : -1,
+          }}
+        >
+          <Parallax translateY={[circle.speed, -circle.speed]}>
+            <Circle key={circle.key}></Circle>
+          </Parallax>
+        </BgShape>
+      ))}
 
       <FeaturedPlayer video={video} />
     </Section>
