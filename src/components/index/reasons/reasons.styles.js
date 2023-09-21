@@ -10,7 +10,7 @@ export const Reason = styled.div`
   line-height: 48px;
   font-family: "GroteskBold";
   text-align: end;
-  padding: calc((33.33vh - 171px) / 2);
+  padding: calc((33.33vh - 143px) / 2);
 
   &.third {
     max-width: 900px;
@@ -22,4 +22,11 @@ export const Wrapper = styled.div`
   display: flex;
   justify-content: end;
   width: 100%;
+  position: relative;
+`;
+
+export const Shape = styled.img`
+  position: absolute;
+  top: calc((33.33vh - 143px) / 2);
+  left: calc((33.33vh - 143px) / 2);
 `;
