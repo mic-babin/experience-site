@@ -7,33 +7,32 @@ import {
   Kicker,
   Empty,
   BgWrapper,
+  Circle,
 } from "./sign-up.styles";
 import { renderRichText } from "gatsby-source-contentful/rich-text";
 import TicketCard from "./ticket-card/ticket-card.component";
-import LoopingBg from "./looping-bg/looping-bg.component";
 import { useElementSize } from "../../../utils/element-size.hook";
-import Circle from "./circle/circle.component";
+import HorizontalScrollLine from "./horizontal-scroll-line/horizontal-scroll-line.component";
 
 const SignUp = ({ data }) => {
   const { title, kicker, tickets } = data;
   const s = { background: "#3F3AEF", color: "white" };
-  const circles = [0, 1, 2, 3, 2, 1, 0];
+
   const section = useRef();
   const sectionSize = useElementSize(section);
+  const lines = [];
+  for (let i = 0; i < 10; i++) {
+    lines.push(
+      <HorizontalScrollLine key={i} index={i} height={sectionSize.height} />
+    );
+  }
   return (
     <Section s={s}>
       <div ref={section}>
         <BgWrapper>
-          <LoopingBg speed="10" direction="right">
-            {circles.map((circle, index) => (
-              <Circle
-                key={index}
-                height={sectionSize.height}
-                width={sectionSize.width}
-                index={circle}
-              />
-            ))}
-          </LoopingBg>
+          <Circle style={{ height: sectionSize.height }}></Circle>
+          {lines}
+          <HorizontalScrollLine />
         </BgWrapper>
         <div className="container">
           {title && <SignUpTitle>{renderRichText(title)}</SignUpTitle>}

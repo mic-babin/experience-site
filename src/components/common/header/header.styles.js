@@ -32,7 +32,8 @@ export const Wrapper = styled.div`
 `;
 
 export const Logo = styled(motion.img)`
-  height: 52px;
+  height: 73px;
+  z-index: 1001;
 `;
 
 export const ButtonGroup = styled.div`

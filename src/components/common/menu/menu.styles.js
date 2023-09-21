@@ -58,29 +58,37 @@ export const MenuLinks = styled(motion.div)`
   z-index: 1000;
 `;
 export const LinkWrapper = styled(motion.div)`
-  color: #d5f453;
+  color: white;
   text-decoration: none;
   text-transform: uppercase;
-  font-size: 120px;
-  line-height: 124px;
+  font-size: 50px;
+  line-height: 48px;
   width: 100%;
-  text-align: center;
+  text-align: left;
   transition: all 0.2s ease-in-out;
+  padding: 15px 0;
+  padding-left: 150px;
+
+  span {
+    font-size: 14px;
+    display: inline-block;
+    font-family: "Grotesk55";
+    font-size: 50%;
+    transform: translateY(-25px);
+    padding-right: 20px;
+  }
 
   &:hover {
-    background-color: #fab6d1;
+    background-color: #ebe50d;
     color: #000000;
   }
 `;
 
 export const NavLink = styled.div`
-  color: #d5f453;
+  display: inline;
   text-decoration: none;
   text-transform: uppercase;
-  font-size: 120px;
-  line-height: 124px;
   width: 100%;
-  text-align: center;
   transition: all 0.2s ease-in-out;
-  font-family: "NimbusBold";
+  font-family: "GroteskBold";
 `;

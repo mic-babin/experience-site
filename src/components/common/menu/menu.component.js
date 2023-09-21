@@ -102,6 +102,7 @@ const Menu = () => {
                 {...NavLinkAnimation}
                 transition={{ duration: 1, delay: 1.3 + index / 10 }}
               >
+                <span>{"0" + (index + 1)}</span>
                 <NavLink onClick={() => closeMenu(to)} className="clickable">
                   {text}
                 </NavLink>

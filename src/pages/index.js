@@ -145,7 +145,6 @@ export const query = graphql`
           raw
         }
         tickets {
-          id
           title {
             raw
           }
@@ -157,15 +156,27 @@ export const query = graphql`
     }
     allContentfulPartners(filter: { node_locale: { eq: $language } }) {
       nodes {
-        goldPartners {
+        partenairePresentateur {
           id
           gatsbyImageData
         }
-        silverPartners {
+        destinationsVedettes {
           id
           gatsbyImageData
         }
-        bronzePartners {
+        cocktail {
+          id
+          gatsbyImageData
+        }
+        experienceUnique {
+          id
+          gatsbyImageData
+        }
+        partenairesCreateurs {
+          id
+          gatsbyImageData
+        }
+        partenairesDeSoutien {
           id
           gatsbyImageData
         }

@@ -3,6 +3,7 @@ import {
   Section,
   Title,
   Number,
+  LogosWrapper,
   LogoWrapper,
   Empty,
   Shape,
@@ -15,9 +16,17 @@ import Src1 from "../../../assets/img/partner-1.svg";
 import Src2 from "../../../assets/img/partner-2.svg";
 import Src3 from "../../../assets/img/partner-3.svg";
 import Src4 from "../../../assets/img/partner-4.svg";
+import Src5 from "../../../assets/img/partner-5.svg";
 
 const Partners = ({ data }) => {
-  const { goldPartners, silverPartners, bronzePartners } = data;
+  const {
+    partenairePresentateur,
+    destinationsVedettes,
+    experienceUnique,
+    cocktail,
+    partenairesCreateurs,
+    partenairesDeSoutien,
+  } = data;
   const s = { background: "white", color: "#000000" };
 
   return (
@@ -37,51 +46,149 @@ const Partners = ({ data }) => {
           <Shape src={Src3} alt="Forme géometrique"></Shape>
         </Parallax>
       </BgShape>
-
       <BgShape>
         <Parallax translateY={[-20, 20]}>
           <Shape src={Src4} alt="Forme géometrique"></Shape>
         </Parallax>
       </BgShape>
+      <BgShape>
+        <Parallax translateY={[-10, 10]}>
+          <Shape src={Src5} alt="Forme géometrique"></Shape>
+        </Parallax>
+      </BgShape>
       <div className="container">
-        <Title>
-          <Trans>goldPartners</Trans>
-          {goldPartners && <Number>{goldPartners.length}</Number>}
+        <Title className="first">
+          <span>Partenaire Présentateur</span>
+          {partenairePresentateur && (
+            <Number>{partenairePresentateur.length}</Number>
+          )}
         </Title>
 
-        <LogoWrapper>
-          {goldPartners &&
-            goldPartners.map((image) => (
-              <GatsbyImage key={image.id} image={getImage(image)} alt="TODO" />
-            ))}
-        </LogoWrapper>
+        <div className="d-flex justify-content-end">
+          <LogosWrapper className="one-per-row">
+            {partenairePresentateur &&
+              partenairePresentateur.map((image) => (
+                <LogoWrapper className="lulu">
+                  <GatsbyImage
+                    key={image.id}
+                    image={getImage(image)}
+                    alt="TODO"
+                  />
+                </LogoWrapper>
+              ))}
+          </LogosWrapper>
+        </div>
+      </div>
+      <div className="container">
+        <Title className="second">
+          <span>Destinations vedettes</span>
+          {destinationsVedettes && (
+            <Number>{destinationsVedettes.length}</Number>
+          )}
+        </Title>
+
+        <div className="d-flex justify-content-end">
+          <LogosWrapper className="three-per-row">
+            {destinationsVedettes &&
+              destinationsVedettes.map((image) => (
+                <LogoWrapper>
+                  <GatsbyImage
+                    key={image.id}
+                    image={getImage(image)}
+                    alt="TODO"
+                  />
+                </LogoWrapper>
+              ))}
+          </LogosWrapper>
+        </div>
+      </div>
+
+      <div className="container">
+        <Title>
+          Experience Unique
+          {experienceUnique && <Number>{experienceUnique.length}</Number>}
+        </Title>
+        <div className="d-flex justify-content-end">
+          <LogosWrapper>
+            {experienceUnique &&
+              experienceUnique.map((image) => (
+                <LogoWrapper>
+                  <GatsbyImage
+                    key={image.id}
+                    image={getImage(image)}
+                    alt="TODO"
+                  />
+                </LogoWrapper>
+              ))}
+          </LogosWrapper>
+        </div>
       </div>
       <div className="container">
         <Title>
-          <Trans>silverPartners</Trans>
-          {silverPartners && <Number>{silverPartners.length}</Number>}
+          Cocktail
+          {cocktail && <Number>{cocktail.length}</Number>}
         </Title>
 
-        <LogoWrapper>
-          {silverPartners &&
-            silverPartners.map((image) => (
-              <GatsbyImage key={image.id} image={getImage(image)} alt="TODO" />
-            ))}
-        </LogoWrapper>
+        <div className="d-flex justify-content-end">
+          <LogosWrapper className="one-per-row">
+            {cocktail &&
+              cocktail.map((image) => (
+                <LogoWrapper>
+                  <GatsbyImage
+                    key={image.id}
+                    image={getImage(image)}
+                    alt="TODO"
+                  />
+                </LogoWrapper>
+              ))}
+          </LogosWrapper>
+        </div>
       </div>
-
       <div className="container">
         <Title>
-          <Trans>bronzePartners</Trans>
-          {bronzePartners && <Number>{bronzePartners.length}</Number>}
+          Partenaires Createurs
+          {partenairesCreateurs && (
+            <Number>{partenairesCreateurs.length}</Number>
+          )}
+        </Title>
+        <div className="d-flex justify-content-end">
+          <LogosWrapper className="three-per-row">
+            {partenairesCreateurs &&
+              partenairesCreateurs.map((image) => (
+                <LogoWrapper>
+                  <GatsbyImage
+                    key={image.id}
+                    image={getImage(image)}
+                    alt="TODO"
+                  />
+                </LogoWrapper>
+              ))}
+          </LogosWrapper>
+        </div>
+      </div>
+      <div className="container">
+        <Title>
+          Partenaires <br />
+          De Soutien
+          {partenairesDeSoutien && (
+            <Number>{partenairesDeSoutien.length}</Number>
+          )}
         </Title>
 
-        <LogoWrapper>
-          {bronzePartners &&
-            bronzePartners.map((image) => (
-              <GatsbyImage key={image.id} image={getImage(image)} alt="TODO" />
-            ))}
-        </LogoWrapper>
+        <div className="d-flex justify-content-end">
+          <LogosWrapper className="three-per-row">
+            {partenairesDeSoutien &&
+              partenairesDeSoutien.map((image) => (
+                <LogoWrapper>
+                  <GatsbyImage
+                    key={image.id}
+                    image={getImage(image)}
+                    alt="TODO"
+                  />
+                </LogoWrapper>
+              ))}
+          </LogosWrapper>
+        </div>
       </div>
 
       <Empty>&nbsp;</Empty>

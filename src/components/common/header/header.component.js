@@ -10,7 +10,7 @@ import { motion } from "framer-motion";
 import { MenuContext } from "../../../context/menu.context";
 import Menu from "../menu/menu.component";
 import { useScrollBlock } from "../../../utils/block-scroll.hook";
-import LogoSrc from "../../../assets/img/logo-experience.png";
+import LogoSrc from "../../../assets/img/logo-experience.svg";
 
 const Header = () => {
   const { showMenu, setShowMenu } = useContext(MenuContext);
@@ -21,6 +21,7 @@ const Header = () => {
   };
   const contact = "M e n u";
   const registration = "I n s c r i p t i o n";
+  const closed = "F e r m e r";
   useEffect(() => {
     if (showMenu) {
       blockScroll();
@@ -43,20 +44,36 @@ const Header = () => {
               delay: 1,
             }}
           >
-            {contact.split(" ").map((word, index) => (
-              <motion.span
-                key={index}
-                initial={{ opacity: 0, filter: "blur(1)" }}
-                animate={{ opacity: 1, filter: "blur(0)" }}
-                transition={{
-                  duration: 1,
-                  delay: index / 10 + 1.5,
-                  ease: [0.11, 0, 0.5, 0],
-                }}
-              >
-                {word}
-              </motion.span>
-            ))}
+            {!showMenu &&
+              contact.split(" ").map((word, index) => (
+                <motion.span
+                  key={index}
+                  initial={{ opacity: 0, filter: "blur(1)" }}
+                  animate={{ opacity: 1, filter: "blur(0)" }}
+                  transition={{
+                    duration: 1,
+                    delay: index / 10 + 1,
+                    ease: [0.11, 0, 0.5, 0],
+                  }}
+                >
+                  {word}
+                </motion.span>
+              ))}
+            {showMenu &&
+              closed.split(" ").map((word, index) => (
+                <motion.span
+                  key={index}
+                  initial={{ opacity: 0, filter: "blur(1)" }}
+                  animate={{ opacity: 1, filter: "blur(0)" }}
+                  transition={{
+                    duration: 1,
+                    delay: index / 10 + 1,
+                    ease: [0.11, 0, 0.5, 0],
+                  }}
+                >
+                  {word}
+                </motion.span>
+              ))}
           </MenuToggler>
           <Registration
             initial={{ opacity: 0 }}
@@ -82,8 +99,8 @@ const Header = () => {
             ))}
           </Registration>
         </ButtonGroup>
+        <Menu />
       </Wrapper>
-      <Menu />
     </>
   );
 };

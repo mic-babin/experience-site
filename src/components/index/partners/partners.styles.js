@@ -15,9 +15,15 @@ export const Title = styled.h2`
   font-size: 100px;
   line-height: 95px;
   font-family: "GroteskBold";
-  max-width: 732px;
+  max-width: 1023px;
   display: inline-block;
-  padding-top: 150px;
+  padding-top: 100px;
+  &.first {
+    padding-top: 150px;
+  }
+  &.second {
+    padding-top: 0;
+  }
 `;
 
 export const Number = styled.div`
@@ -29,15 +35,31 @@ export const Number = styled.div`
   content: "+";
 `;
 
-export const LogoWrapper = styled.div`
+export const LogosWrapper = styled.div`
   display: grid;
   padding-left: 150px;
   padding-top: 50px;
-  grid-template-columns: repeat(auto-fill, minmax(200px, auto));
-  grid-gap: 15px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 30px;
 
-  &:nth-of-type(3) {
-    margin-bottom: 200px;
+  &.three-per-row {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &.one-per-row {
+    grid-template-columns: repeat(1, 1fr);
+  }
+`;
+
+export const LogoWrapper = styled.div`
+  background-color: black;
+  height: 204px;
+  width: 204px;
+
+  &.lulu {
+    background-color: transparent;
+    width: 726px;
+    height: auto;
   }
 `;
 
@@ -49,21 +71,25 @@ export const BgShape = styled.div`
 
   z-index: -1;
   &:nth-of-type(1) {
-    top: 200px;
+    top: 820px;
     right: -30px;
   }
   &:nth-of-type(2) {
-    top: 1000px;
+    top: 1300px;
     left: -120px;
   }
   &:nth-of-type(3) {
-    top: 1800px;
+    top: 3300px;
     right: 150px;
   }
 
   &:nth-of-type(4) {
-    top: 2300px;
+    top: 2380px;
     left: 150px;
+  }
+  &:nth-of-type(5) {
+    top: 4100px;
+    left: 250px;
   }
 `;
 export const Shape = styled.img``;
