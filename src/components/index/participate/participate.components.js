@@ -1,16 +1,21 @@
 import React from "react";
-import { Circle, Section, Title, BgShape } from "./participate.styles";
+import {
+  Circle,
+  Section,
+  Title,
+  BgShape,
+  CircleImage,
+} from "./participate.styles";
 import { renderRichText } from "gatsby-source-contentful/rich-text";
 import FeaturedPlayer from "./featured-player/featured-player.component";
-import { circles } from "./circles";
+import { circles, imageCircles } from "./circles";
 import { Parallax } from "react-scroll-parallax";
+import { getImage } from "gatsby-plugin-image";
+import { Empty } from "../programming/programming.styles";
 
 const Participate = ({ data }) => {
-  const { Images, description, video } = data;
+  const { Images, description, video, videoCoverImage } = data;
   const s = { background: "#000000", color: "white" };
-
-  // Generate an array of random positions for the circles
-
   return (
     <Section s={s}>
       <div className="container">
@@ -19,6 +24,7 @@ const Participate = ({ data }) => {
 
       {circles.map((circle) => (
         <BgShape
+          key={circle.index}
           style={{
             top: circle.top,
             left: circle.left,
@@ -31,7 +37,36 @@ const Participate = ({ data }) => {
         </BgShape>
       ))}
 
-      <FeaturedPlayer video={video} />
+      {Images &&
+        imageCircles.map((circle) => {
+          const image = Images[circle.index - 12];
+          console.log(circle.index, image);
+          return (
+            <BgShape
+              key={circle.index}
+              style={{
+                top: circle.top,
+                left: circle.left,
+                zIndex: circle.depth > 0.5 ? 1 : -1,
+              }}
+            >
+              <Parallax translateY={[circle.speed, -circle.speed]}>
+                <CircleImage
+                  key={circle.key}
+                  image={getImage(image)}
+                  style={{
+                    height: circle.height,
+                    width: circle.width,
+                  }}
+                  alt="todo"
+                />
+              </Parallax>
+            </BgShape>
+          );
+        })}
+
+      <FeaturedPlayer video={video} image={videoCoverImage} />
+      <Empty> &nbsp;</Empty>
     </Section>
   );
 };

@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import { Section, SiteTitle, Shape } from "./hero.styles";
+import { Section, SiteTitle, Shape, Wrapper } from "./hero.styles";
 import Title from "../../common/title/title.component";
 import Shape1Src from "../../../assets/img/2edition.svg";
 import Shape2Src from "../../../assets/img/salon-experience.svg";
@@ -20,7 +20,7 @@ const Hero = ({ data }) => {
 
   return (
     <Section s={s}>
-      <div ref={section}>
+      <Wrapper ref={section}>
         <div className="container" style={{ height: "calc(100vh - 72px)" }}>
           {title && (
             <SiteTitle>
@@ -34,7 +34,7 @@ const Hero = ({ data }) => {
           alt="2e edition"
           style={{ width: "19.8vw" }}
           initial={{ y: -300, x: "-2.1vw" }}
-          animate={{ y: sectionSize.height - shape2Size.height / 1.098 }}
+          animate={{ y: sectionSize.height - shape2Size.height / 1.22 }}
           transition={{
             duration: 1,
             type: "spring",
@@ -50,7 +50,7 @@ const Hero = ({ data }) => {
           alt="Salon Experience"
           style={{ width: "51.2vw" }}
           initial={{ y: -850, x: 0 }}
-          animate={{ y: sectionSize.height - 5 - shape2Size.height }}
+          animate={{ y: sectionSize.height - shape2Size.height }}
           transition={{
             duration: 1,
             type: "spring",
@@ -111,7 +111,7 @@ const Hero = ({ data }) => {
             delay: 1.8,
           }}
         ></Shape>
-      </div>
+      </Wrapper>
     </Section>
   );
 };

@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import SectionLayout from "../../layout/section-layout.component";
+import { GatsbyImage } from "gatsby-plugin-image";
 
 export const Section = styled(SectionLayout)`
   position: relative;
@@ -24,4 +25,8 @@ export const Circle = styled.div`
 
 export const BgShape = styled.div`
   position: absolute;
+`;
+
+export const CircleImage = styled(GatsbyImage)`
+  border-radius: 50%;
 `;

@@ -83,6 +83,10 @@ export const query = graphql`
             url
           }
         }
+        videoCoverImage {
+          description
+          gatsbyImageData
+        }
       }
     }
     allContentfulReasons(filter: { node_locale: { eq: $language } }) {

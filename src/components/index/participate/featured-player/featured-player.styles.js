@@ -3,7 +3,7 @@ import { GatsbyImage } from "gatsby-plugin-image";
 import { motion } from "framer-motion";
 
 export const Wrapper = styled(motion.div)`
-  padding: 150px 0;
+  padding-top: 150px;
   transform-origin: top center;
 `;
 export const BgWrapper = styled.div`

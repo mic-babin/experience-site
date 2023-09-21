@@ -6,6 +6,12 @@ export const Section = styled(SectionLayout)`
   position: relative;
 `;
 
+export const Wrapper = styled.div`
+  min-height: calc(100vh);
+  min-height: calc(100svh);
+  height: 100%;
+`;
+
 export const SiteTitle = styled(motion.h1)`
   font-size: 100px;
   line-height: 118px;
