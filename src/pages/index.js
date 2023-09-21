@@ -22,9 +22,10 @@ export default function Home({ data }) {
   const partnersData = data.allContentfulPartners.nodes[0];
   const becomePartnerData = data.allContentfulBecomePartner.nodes[0];
   const callToActionData = data.allContentfulCta.nodes[0];
+  const menu = data.allContentfulMenu.nodes[0];
 
   return (
-    <Layout>
+    <Layout menu={menu}>
       <ParallaxProvider>
         <Hero data={heroData} />
         <Participate data={participateData} />
@@ -218,6 +219,19 @@ export const query = graphql`
         }
         button {
           raw
+        }
+      }
+    }
+    allContentfulMenu(filter: { node_locale: { eq: "fr" } }) {
+      nodes {
+        menuLinks {
+          id
+          title
+          link
+          image {
+            description
+            gatsbyImageData
+          }
         }
       }
     }

@@ -31,6 +31,7 @@ const Partners = ({ data }) => {
 
   return (
     <Section s={s}>
+      <div id="exposants"></div>
       <BgShape>
         <Parallax translateY={[-20, 20]}>
           <Shape src={Src1} alt="Forme géometrique"></Shape>

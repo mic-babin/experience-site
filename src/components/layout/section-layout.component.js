@@ -36,7 +36,13 @@ const SectionLayout = ({ children, s }) => {
         window.removeEventListener("resize", handleResize);
       }
     };
-  }, [isBrowser, handleResize]);
+
+    if (shouldStick) {
+      sectionStyles.position = "sticky";
+    } else {
+      sectionStyles.position = "relative";
+    }
+  }, [shouldStick, isBrowser, handleResize]);
 
   const sectionStyles = {
     top: s.maxHeight

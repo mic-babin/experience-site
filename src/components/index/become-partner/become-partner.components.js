@@ -40,7 +40,7 @@ const BecomePartner = ({ data }) => {
 
   return (
     <Section s={s}>
-      <div className="container" ref={section}>
+      <div className="container" ref={section} id="devenir-exposant">
         <BecomePartnerTitle>
           <Title title={title} width={204} y={35} textClass="become-partner" />
         </BecomePartnerTitle>

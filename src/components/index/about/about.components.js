@@ -30,7 +30,7 @@ const About = ({ data }) => {
 
   return (
     <Section s={s}>
-      <div className="container">
+      <div className="container" id="a-propos">
         <Header>
           {title && <Title>{renderRichText(title)}</Title>}
           <NumbersWrapper ref={inViewRef}>

@@ -12,7 +12,7 @@ import Menu from "../menu/menu.component";
 import { useScrollBlock } from "../../../utils/block-scroll.hook";
 import LogoSrc from "../../../assets/img/logo-experience.svg";
 
-const Header = () => {
+const Header = ({ menu }) => {
   const { showMenu, setShowMenu } = useContext(MenuContext);
   const [blockScroll, allowScroll] = useScrollBlock();
 
@@ -99,7 +99,7 @@ const Header = () => {
             ))}
           </Registration>
         </ButtonGroup>
-        <Menu />
+        <Menu menu={menu} />
       </Wrapper>
     </>
   );

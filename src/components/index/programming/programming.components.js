@@ -10,7 +10,7 @@ const Programming = ({ data }) => {
 
   return (
     <Section s={s}>
-      <div className="container">
+      <div className="container" id="programmation">
         <ProgrammingTitle>
           {tile && (
             <Title title={tile} width={204} y={35} textClass="programming" />
@@ -18,10 +18,12 @@ const Programming = ({ data }) => {
         </ProgrammingTitle>
         {kicker && <Kicker>{renderRichText(kicker)}</Kicker>}
       </div>
-      {conferences &&
-        conferences.map((conference) => (
-          <ConferenceCard key={conference.id} conference={conference} />
-        ))}
+      <div id="conferenciers">
+        {conferences &&
+          conferences.map((conference) => (
+            <ConferenceCard key={conference.id} conference={conference} />
+          ))}
+      </div>
       <Empty>&nbsp;</Empty>
     </Section>
   );

@@ -8,13 +8,13 @@ import "../../assets/styles/main.scss";
 import { MenuProvider } from "../../context/menu.context";
 import { ShouldStickProvider } from "../../context/shouldStick.context";
 
-const Layout = ({ children }) => {
+const Layout = ({ children, menu }) => {
   return (
     <>
       <ShouldStickProvider>
         <MenuProvider>
           <SectionProvider>
-            <Header />
+            <Header menu={menu} />
             {children}
           </SectionProvider>
         </MenuProvider>
