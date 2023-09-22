@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 import { motion } from "framer-motion";
-import { Link } from "gatsby-plugin-react-i18next";
+import { GatsbyImage } from "gatsby-plugin-image";
 
 export const NavBg = styled(motion.div)`
   position: fixed;
@@ -16,32 +16,8 @@ export const Col1 = styled(motion.div)`
   position: absolute;
   top: 0;
   left: 0;
-  width: 20%;
-  height: 100%;
   background: black;
-`;
-export const Col2 = styled(motion.div)`
-  position: absolute;
-  top: 0;
-  left: 20%;
-  min-height: 100vh;
-  height: 100vh;
-  object-fit: contain;
-  background-color: black;
-  object-position: center left;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-`;
-
-export const Col3 = styled(motion.div)`
-  position: absolute;
-  top: 0;
-  left: 80%;
-  width: 20%;
-  height: 100%;
-  background: black;
+  filter: brightness(0.3);
 `;
 
 export const MenuLinks = styled(motion.div)`
@@ -57,6 +33,7 @@ export const MenuLinks = styled(motion.div)`
   align-items: center;
   z-index: 1000;
 `;
+
 export const LinkWrapper = styled(motion.div)`
   color: white;
   text-decoration: none;
@@ -66,21 +43,30 @@ export const LinkWrapper = styled(motion.div)`
   width: 100%;
   text-align: left;
   transition: all 0.2s ease-in-out;
-  padding: 15px 0;
+  padding-top: 23px;
+  padding-bottom: 8px;
   padding-left: 150px;
+  position: relative;
 
   span {
     font-size: 14px;
     display: inline-block;
     font-family: "Grotesk55";
     font-size: 50%;
-    transform: translateY(-25px);
+    transform: translateY(-20px);
     padding-right: 20px;
+  }
+
+  .image-wrapper {
+    opacity: 0;
   }
 
   &:hover {
     background-color: #ebe50d;
     color: #000000;
+    .image-wrapper {
+      opacity: 1;
+    }
   }
 `;
 
@@ -92,3 +78,15 @@ export const NavLink = styled.div`
   transition: all 0.2s ease-in-out;
   font-family: "GroteskBold";
 `;
+
+export const ImageWrapper = styled(motion.div)`
+  position: absolute;
+  top: 0;
+  left: 60vw;
+  transform: rotate(-13deg) translateY(-40%);
+  height: 234px;
+  width: 350px;
+  z-index: 100;
+`;
+
+export const LinkImage = styled(GatsbyImage)``;

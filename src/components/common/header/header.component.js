@@ -33,7 +33,17 @@ const Header = ({ menu }) => {
   return (
     <>
       <Wrapper>
-        <Logo src={LogoSrc} alt="Salon Expérience" />
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{
+            duration: 0.5,
+            delay: 0.2,
+          }}
+        >
+          <Logo src={LogoSrc} alt="Salon Expérience" />
+        </motion.div>
+
         <ButtonGroup>
           <MenuToggler
             onClick={() => toggleMenu()}
@@ -41,7 +51,7 @@ const Header = ({ menu }) => {
             animate={{ opacity: 1 }}
             transition={{
               duration: 0.5,
-              delay: 1,
+              delay: 0.5,
             }}
           >
             {!showMenu &&
@@ -52,7 +62,7 @@ const Header = ({ menu }) => {
                   animate={{ opacity: 1, filter: "blur(0)" }}
                   transition={{
                     duration: 1,
-                    delay: index / 10 + 1,
+                    delay: index / 10 + 0.5,
                     ease: [0.11, 0, 0.5, 0],
                   }}
                 >
@@ -67,7 +77,7 @@ const Header = ({ menu }) => {
                   animate={{ opacity: 1, filter: "blur(0)" }}
                   transition={{
                     duration: 1,
-                    delay: index / 10 + 1,
+                    delay: index / 10 + 0.5,
                     ease: [0.11, 0, 0.5, 0],
                   }}
                 >
@@ -80,7 +90,7 @@ const Header = ({ menu }) => {
             animate={{ opacity: 1 }}
             transition={{
               duration: 0.5,
-              delay: 2,
+              delay: 1,
             }}
           >
             {registration.split(" ").map((word, index) => (
@@ -90,7 +100,7 @@ const Header = ({ menu }) => {
                 animate={{ opacity: 1, filter: "blur(0)" }}
                 transition={{
                   duration: 1,
-                  delay: index / 10 + 2.5,
+                  delay: index / 10 + 1,
                   ease: [0.11, 0, 0.5, 0],
                 }}
               >

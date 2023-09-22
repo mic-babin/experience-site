@@ -40,7 +40,7 @@ const Participate = ({ data }) => {
       {Images &&
         imageCircles.map((circle) => {
           const image = Images[circle.index - 12];
-          console.log(circle.index, image);
+
           return (
             <BgShape
               key={circle.index}

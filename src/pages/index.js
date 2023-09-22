@@ -62,7 +62,7 @@ export const query = graphql`
             ... on ContentfulAsset {
               contentful_id
               title
-              gatsbyImageData
+              gatsbyImageData(quality: 100)
               __typename
             }
           }
@@ -77,7 +77,7 @@ export const query = graphql`
         }
         Images {
           id
-          gatsbyImageData
+          gatsbyImageData(quality: 100)
         }
         video {
           file {
@@ -86,7 +86,7 @@ export const query = graphql`
         }
         videoCoverImage {
           description
-          gatsbyImageData
+          gatsbyImageData(quality: 100)
         }
       }
     }
@@ -113,7 +113,7 @@ export const query = graphql`
             ... on ContentfulAsset {
               contentful_id
               title
-              gatsbyImageData
+              gatsbyImageData(quality: 100)
               __typename
             }
           }
@@ -132,7 +132,7 @@ export const query = graphql`
           link
           logo {
             description
-            gatsbyImageData
+            gatsbyImageData(quality: 100)
           }
         }
       }
@@ -159,27 +159,27 @@ export const query = graphql`
       nodes {
         partenairePresentateur {
           id
-          gatsbyImageData
+          gatsbyImageData(quality: 100)
         }
         destinationsVedettes {
           id
-          gatsbyImageData
+          gatsbyImageData(quality: 100)
         }
         cocktail {
           id
-          gatsbyImageData
+          gatsbyImageData(quality: 100)
         }
         experienceUnique {
           id
-          gatsbyImageData
+          gatsbyImageData(quality: 100)
         }
         partenairesCreateurs {
           id
-          gatsbyImageData
+          gatsbyImageData(quality: 100)
         }
         partenairesDeSoutien {
           id
-          gatsbyImageData
+          gatsbyImageData(quality: 100)
         }
       }
     }
@@ -191,7 +191,7 @@ export const query = graphql`
             ... on ContentfulAsset {
               contentful_id
               title
-              gatsbyImageData
+              gatsbyImageData(quality: 100)
               __typename
             }
           }
@@ -201,7 +201,7 @@ export const query = graphql`
         }
         contactName
         contactPhoto {
-          gatsbyImageData
+          gatsbyImageData(quality: 100)
         }
         contactMessage {
           raw
@@ -230,8 +230,12 @@ export const query = graphql`
           link
           image {
             description
-            gatsbyImageData
+            gatsbyImageData(quality: 100)
           }
+        }
+        backgroundImage {
+          description
+          gatsbyImageData(quality: 100, layout: FULL_WIDTH)
         }
       }
     }

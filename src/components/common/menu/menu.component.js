@@ -4,20 +4,20 @@ import { MenuContext } from "../../../context/menu.context";
 import {
   NavBg,
   Col1,
-  Col2,
-  Col3,
   MenuLinks,
   NavLink,
   LinkWrapper,
+  ImageWrapper,
+  LinkImage,
 } from "./menu.styles";
 import { NavLinkAnimation } from "./menu.animation.component";
 import { ShouldStickContext } from "../../../context/shouldStick.context";
-import ReactPlayer from "react-player";
 import { navigate } from "gatsby";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 // TODO Could potentially check with array position, use navigate when possible and scroll the rest of time
 const Menu = ({ menu }) => {
-  const { menuLinks } = menu;
+  const { menuLinks, backgroundImage } = menu;
   const { setShouldStick } = useContext(ShouldStickContext);
   const { showMenu, setShowMenu } = useContext(MenuContext);
   const [width, setWidth] = useState("0vw");
@@ -59,41 +59,17 @@ const Menu = ({ menu }) => {
         <AnimatePresence>
           {showMenu && (
             <Col1
-              initial={{ x: "20vw", width: "0%", opacity: 0 }}
-              animate={{ x: "0vw", width: "20%", opacity: 1 }}
-              exit={{ x: "20vw", width: "0%", opacity: 0 }}
-              transition={{ duration: 1, type: "spring", stiffness: 100 }}
-            ></Col1>
-          )}
-        </AnimatePresence>
-        <AnimatePresence>
-          {showMenu && (
-            <Col2
-              initial={{ x: "60vw", width: "0%", opacity: 0 }}
-              animate={{ x: "0vw", width: "60%", opacity: 1 }}
-              exit={{ x: "60vw", width: "0%", opacity: 0 }}
+              initial={{ x: "100vw", width: "0%", opacity: 0 }}
+              animate={{ x: "0vw", width: "100vw", opacity: 1 }}
+              exit={{ x: "100vw", width: "0%", opacity: 0 }}
               transition={{ duration: 1, type: "spring", stiffness: 100 }}
             >
-              {/* <ReactPlayer
-                priority
-                autoPlay
-                loop
-                muted
-                playing={true}
-                height="100%"
-                width="100%"
-              /> */}
-            </Col2>
-          )}
-        </AnimatePresence>
-        <AnimatePresence>
-          {showMenu && (
-            <Col3
-              initial={{ x: "20vw", width: "0%", opacity: 0 }}
-              animate={{ x: "0vw", width: "20%", opacity: 1 }}
-              exit={{ x: "20vw", width: "0%", opacity: 0 }}
-              transition={{ duration: 1, type: "spring", stiffness: 100 }}
-            ></Col3>
+              <GatsbyImage
+                image={getImage(backgroundImage)}
+                alt={backgroundImage.description}
+                style={{ height: "100vh", width: "100vw" }}
+              />
+            </Col1>
           )}
         </AnimatePresence>
       </NavBg>
@@ -111,6 +87,9 @@ const Menu = ({ menu }) => {
                 <NavLink onClick={() => closeMenu(link)} className="clickable">
                   {title}
                 </NavLink>
+                <ImageWrapper className="image-wrapper">
+                  <LinkImage image={getImage(image)} alt={image.description} />
+                </ImageWrapper>
               </LinkWrapper>
             ))}
           </AnimatePresence>
