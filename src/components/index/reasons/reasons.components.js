@@ -3,6 +3,7 @@ import { Reason, Wrapper, Shape, Section } from "./reasons.styles";
 import Shape1Src from "../../../assets/img/reason-1.svg";
 import Shape2Src from "../../../assets/img/reason-2.svg";
 import Shape3Src from "../../../assets/img/reason-3.svg";
+import "./float.css";
 
 const Reasons = ({ data }) => {
   const { reasons } = data;
@@ -23,19 +24,19 @@ const Reasons = ({ data }) => {
     <>
       <Section s={s}>
         <Wrapper>
-          <Shape src={Shape1Src} alt="shape" />
+          <Shape src={Shape1Src} alt="shape" className="float first" />
           <Reason>{reasons[0]}</Reason>
         </Wrapper>
       </Section>
       <Section s={s2}>
         <Wrapper>
-          <Shape src={Shape2Src} alt="shape" />
+          <Shape src={Shape2Src} alt="shape" className="float second" />
           <Reason>{reasons[1]}</Reason>
         </Wrapper>
       </Section>
       <Section s={s3}>
         <Wrapper>
-          <Shape src={Shape3Src} alt="shape" />
+          <Shape src={Shape3Src} alt="shape" className="float third" />
           <Reason className="third">{reasons[2]}</Reason>
         </Wrapper>
       </Section>

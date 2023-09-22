@@ -55,7 +55,7 @@ const Title = ({ title, width, y, textClass }) => {
         let arr = title.raw.split("value");
         let value = children[children.length - 1].replace(/\n/g, "");
         let index = findIndex(value, arr);
-        console.log(index, value);
+
         return <p>{<TypewriterAnimation text={value} index={index} />}</p>;
       },
     },

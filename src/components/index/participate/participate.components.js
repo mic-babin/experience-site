@@ -1,69 +1,32 @@
 import React from "react";
-import {
-  Circle,
-  Section,
-  Title,
-  BgShape,
-  CircleImage,
-} from "./participate.styles";
-import { renderRichText } from "gatsby-source-contentful/rich-text";
+import { Section, Title } from "./participate.styles";
 import FeaturedPlayer from "./featured-player/featured-player.component";
-import { circles, imageCircles } from "./circles";
-import { Parallax } from "react-scroll-parallax";
-import { getImage } from "gatsby-plugin-image";
+import { circles, imageCircles } from "./circles.data,js";
+import { renderCircles, renderImageCircles } from "./circles.components";
+import { useInView } from "react-intersection-observer";
 import { Empty } from "../programming/programming.styles";
+import WaveTextAnimation from "../../common/wave-text-animation/wave-text-animation.component";
 
 const Participate = ({ data }) => {
   const { Images, description, video, videoCoverImage } = data;
   const s = { background: "#000000", color: "white" };
+  const [inViewRef, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.5,
+  });
+
   return (
     <Section s={s}>
-      <div className="container">
-        {description && <Title>{renderRichText(description)}</Title>}
+      <div className="container" ref={inViewRef}>
+        {description && (
+          <Title>
+            <WaveTextAnimation text={description} inView={inView} />
+          </Title>
+        )}
       </div>
 
-      {circles.map((circle) => (
-        <BgShape
-          key={circle.index}
-          style={{
-            top: circle.top,
-            left: circle.left,
-            zIndex: circle.depth > 0.5 ? 1 : -1,
-          }}
-        >
-          <Parallax translateY={[circle.speed, -circle.speed]}>
-            <Circle key={circle.key}></Circle>
-          </Parallax>
-        </BgShape>
-      ))}
-
-      {Images &&
-        imageCircles.map((circle) => {
-          const image = Images[circle.index - 12];
-
-          return (
-            <BgShape
-              key={circle.index}
-              style={{
-                top: circle.top,
-                left: circle.left,
-                zIndex: circle.depth > 0.5 ? 1 : -1,
-              }}
-            >
-              <Parallax translateY={[circle.speed, -circle.speed]}>
-                <CircleImage
-                  key={circle.key}
-                  image={getImage(image)}
-                  style={{
-                    height: circle.height,
-                    width: circle.width,
-                  }}
-                  alt="todo"
-                />
-              </Parallax>
-            </BgShape>
-          );
-        })}
+      {inView && renderCircles(circles)}
+      {inView && renderImageCircles(imageCircles, Images)}
 
       <FeaturedPlayer video={video} image={videoCoverImage} />
       <Empty> &nbsp;</Empty>

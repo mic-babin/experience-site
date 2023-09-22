@@ -23,7 +23,7 @@ export const Circle = styled.div`
   width: 68px;
 `;
 
-export const BgShape = styled.div`
+export const BgShape = styled(motion.div)`
   position: absolute;
 `;
 
