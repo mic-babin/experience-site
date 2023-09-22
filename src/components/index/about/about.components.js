@@ -28,11 +28,24 @@ const About = ({ data }) => {
     threshold: 1, // Trigger when 50% of the component is in view
   });
 
+  const [featuresWrapper, featuresWrapperInView] = useInView({
+    triggerOnce: true, // Trigger animation only once when it comes into view
+    threshold: 0.2, // Adjust the threshold as needed
+  });
+
   return (
     <Section s={s}>
       <div className="container" id="a-propos">
         <Header>
-          {title && <Title>{renderRichText(title)}</Title>}
+          {title && (
+            <Title
+              initial={{ x: -100, opacity: 0 }} // Initial position outside the viewport (left)
+              whileInView={{ x: 0, opacity: 1 }} // Final position at 0 (default position)
+              transition={{ duration: 0.5, delay: 0.5 }} // Animation duration
+            >
+              {renderRichText(title)}
+            </Title>
+          )}
           <NumbersWrapper ref={inViewRef}>
             <NumberWraper>
               {participants && (
@@ -60,11 +73,18 @@ const About = ({ data }) => {
             </NumberWraper>
           </NumbersWrapper>
         </Header>
-        <FeatureWrapper>
+        <FeatureWrapper ref={featuresWrapper}>
           <Features>
             {features &&
               features.map((feature, index) => (
-                <FeatureWrapper key={index}>
+                <FeatureWrapper
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={featuresWrapperInView ? { opacity: 1, y: 0 } : {}}
+                  transition={{
+                    delay: featuresWrapperInView ? index * 0.2 + 1 : 0,
+                  }}
+                >
                   <Index>0{index + 1}</Index>
                   <Feature className={index == 3 && "no-border"}>
                     {" "}
@@ -75,7 +95,7 @@ const About = ({ data }) => {
           </Features>
         </FeatureWrapper>
       </div>
-      <Smiley src={SmileySrc} alt="smiley" />
+      {inView && <Smiley src={SmileySrc} alt="smiley" />}
       <Empty>&nbsp;</Empty>
     </Section>
   );

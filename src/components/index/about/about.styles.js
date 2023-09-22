@@ -47,7 +47,7 @@ export const Features = styled.div`
   max-width: 730px;
 `;
 
-export const FeatureWrapper = styled.div`
+export const FeatureWrapper = styled(motion.div)`
   display: flex;
   justify-content: end;
 `;
