@@ -2,16 +2,25 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import Typewriter from "typewriter-effect";
 
-const TypewriterAnimation = ({ text, index, pause }) => {
+const TypewriterAnimation = ({
+  text,
+  index,
+  pause,
+  animationLoop,
+  wordSpeed,
+  inView,
+}) => {
   const [start, setStart] = useState(false);
   useEffect(() => {
-    setTimeout(() => {
-      setStart(true);
-    }, index * 700);
-    return () => {
-      clearTimeout();
-    };
-  }, [start]);
+    if (inView) {
+      setTimeout(() => {
+        setStart(true);
+      }, index * wordSpeed || 700);
+      return () => {
+        clearTimeout();
+      };
+    }
+  }, [start, inView]);
 
   return (
     <span>
@@ -19,7 +28,7 @@ const TypewriterAnimation = ({ text, index, pause }) => {
         options={{
           strings: text,
           autoStart: start,
-          loop: true,
+          loop: animationLoop && true,
           cursor: "",
           pauseFor: pause || 3500,
           delay: 80,

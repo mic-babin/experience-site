@@ -11,7 +11,7 @@ export const ProgrammingTitle = styled.h2`
   padding-top: 150px;
 `;
 
-export const Kicker = styled.div`
+export const Kicker = styled(motion.div)`
   font-family: "Grotesk55";
   font-size: 24px;
   line-height: 28px;

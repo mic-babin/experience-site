@@ -39,27 +39,27 @@ export const LogosWrapper = styled.div`
   display: grid;
   padding-left: 150px;
   padding-top: 50px;
-  grid-template-columns: repeat(4, 1fr);
   grid-gap: 30px;
-
-  &.three-per-row {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  &.one-per-row {
-    grid-template-columns: repeat(1, 1fr);
-  }
 `;
 
-export const LogoWrapper = styled.div`
+export const LogoWrapper = styled(motion.div)`
   background-color: black;
   height: 204px;
   width: 204px;
-
+  transition: all 0.2s ease-in;
   &.lulu {
     background-color: transparent;
     width: 726px;
     height: auto;
+
+    &:hover {
+      background-color: transparent;
+    }
+  }
+
+  &:hover {
+    background-color: #ec1a8d;
+    transform: scale(1.05);
   }
 `;
 

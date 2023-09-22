@@ -5,7 +5,16 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { LineWrapper, Text } from "./title.styles";
 import TypewriterAnimation from "../typewriter-animation/typerwritter-animation.component";
 
-const Title = ({ title, width, y, textClass }) => {
+const Title = ({
+  title,
+  width,
+  y,
+  textClass,
+  animationLoop,
+  lineDelay,
+  wordSpeed,
+  inView,
+}) => {
   const [showLine, setShowLine] = useState(false);
   const findIndex = (value, arr) => {
     for (let i = 0; i < arr.length; i++) {
@@ -17,14 +26,16 @@ const Title = ({ title, width, y, textClass }) => {
   };
 
   useEffect(() => {
-    setTimeout(() => {
-      setShowLine(true);
-    }, 1200);
+    if (inView) {
+      setTimeout(() => {
+        setShowLine(true);
+      }, lineDelay || 1200);
+    }
 
     return () => {
       clearTimeout();
     };
-  }, []);
+  }, [inView]);
 
   const options = {
     renderNode: {
@@ -56,7 +67,19 @@ const Title = ({ title, width, y, textClass }) => {
         let value = children[children.length - 1].replace(/\n/g, "");
         let index = findIndex(value, arr);
 
-        return <p>{<TypewriterAnimation text={value} index={index} />}</p>;
+        return (
+          <p>
+            {
+              <TypewriterAnimation
+                text={value}
+                index={index}
+                animationLoop={animationLoop}
+                wordSpeed={wordSpeed}
+                inView={inView}
+              />
+            }
+          </p>
+        );
       },
     },
   };

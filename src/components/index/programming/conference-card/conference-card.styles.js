@@ -1,7 +1,8 @@
 import { GatsbyImage } from "gatsby-plugin-image";
 import { styled } from "styled-components";
+import { motion } from "framer-motion";
 
-export const CardWrapper = styled.div`
+export const CardWrapper = styled(motion.div)`
   margin: 30px;
   padding: 30px;
   background-color: white;

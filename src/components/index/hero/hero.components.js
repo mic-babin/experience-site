@@ -32,7 +32,14 @@ const Hero = ({ data }) => {
         >
           {title && (
             <SiteTitle>
-              <Title title={title} width={172} y={35} textClass="main-title" />
+              <Title
+                title={title}
+                width={172}
+                y={35}
+                textClass="main-title"
+                inView={inView}
+                animationLoop={true}
+              />
             </SiteTitle>
           )}
         </div>

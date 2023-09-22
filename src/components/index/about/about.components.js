@@ -24,13 +24,13 @@ const About = ({ data }) => {
   const s = { background: "#000000", color: "#e8e8e6" };
 
   const [inViewRef, inView] = useInView({
-    triggerOnce: true, // Trigger the observer only once
-    threshold: 1, // Trigger when 50% of the component is in view
+    triggerOnce: true,
+    threshold: 1,
   });
 
   const [featuresWrapper, featuresWrapperInView] = useInView({
-    triggerOnce: true, // Trigger animation only once when it comes into view
-    threshold: 0.2, // Adjust the threshold as needed
+    triggerOnce: true,
+    threshold: 0.2,
   });
 
   return (
@@ -39,9 +39,9 @@ const About = ({ data }) => {
         <Header>
           {title && (
             <Title
-              initial={{ x: -100, opacity: 0 }} // Initial position outside the viewport (left)
-              whileInView={{ x: 0, opacity: 1 }} // Final position at 0 (default position)
-              transition={{ duration: 0.5, delay: 0.5 }} // Animation duration
+              initial={{ x: -100, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.5 }}
             >
               {renderRichText(title)}
             </Title>

@@ -12,8 +12,9 @@ import {
 import { Trans } from "react-i18next";
 import { useFormatDate } from "../../../../utils/format-date";
 import { getImage } from "gatsby-plugin-image";
+import { spring } from "framer-motion";
 
-const ConferenceCard = ({ conference }) => {
+const ConferenceCard = ({ conference, index }) => {
   const {
     title,
     subtitle,
@@ -27,7 +28,14 @@ const ConferenceCard = ({ conference }) => {
 
   const time = useFormatDate(date).time;
   return (
-    <CardWrapper>
+    <CardWrapper
+      initial={{ x: -300, opacity: 0 }}
+      whileInView={{ x: 0, opacity: 1 }}
+      transition={{
+        duration: 0.3,
+        delay: index / 10,
+      }}
+    >
       <Grid>
         <Col>
           {subtitle && <Subtitle>{subtitle}</Subtitle>}
