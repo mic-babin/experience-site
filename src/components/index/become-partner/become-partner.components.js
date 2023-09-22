@@ -38,11 +38,24 @@ const BecomePartner = ({ data }) => {
     triggerOnce: true,
   });
 
+  const [inViewRef, inView] = useInView({
+    triggerOnce: true,
+  });
+
   return (
     <Section s={s}>
       <div className="container" ref={section} id="devenir-exposant">
-        <BecomePartnerTitle>
-          <Title title={title} width={204} y={35} textClass="become-partner" />
+        <BecomePartnerTitle ref={inViewRef}>
+          <Title
+            title={title}
+            width={204}
+            y={35}
+            textClass="become-partner"
+            animationLoop={false}
+            wordSpeed={1100}
+            lineDelay={2400}
+            inView={inView}
+          />
         </BecomePartnerTitle>
 
         {kicker && <Kicker>{renderRichText(kicker)}</Kicker>}
