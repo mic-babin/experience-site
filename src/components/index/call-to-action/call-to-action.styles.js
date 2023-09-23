@@ -14,6 +14,7 @@ export const Col = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    -webkit-justify-content: space-between;
   }
 `;
 
@@ -42,7 +43,9 @@ export const Button = styled(motion.button)`
   border: none;
   display: flex;
   align-items: center;
+  -webkit-align-items: center;
   justify-content: center;
+  -webkit-justify-content: center;
   width: 100%;
 
   padding: 40px;

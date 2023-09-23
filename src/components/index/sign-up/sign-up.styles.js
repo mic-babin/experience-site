@@ -24,6 +24,7 @@ export const Col = styled.div`
     display: flex;
     flex-direction: column;
     align-items: end;
+    -webkit-align-items: end;
   }
 `;
 

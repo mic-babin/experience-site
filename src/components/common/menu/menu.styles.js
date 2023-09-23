@@ -30,7 +30,9 @@ export const MenuLinks = styled(motion.div)`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  -webkit-justify-content: center;
   align-items: center;
+  -webkit-align-items: center;
   z-index: 1000;
 `;
 

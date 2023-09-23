@@ -9,6 +9,7 @@ export const Section = styled(SectionLayout)`
 export const Header = styled.div`
   display: flex;
   justify-content: space-between;
+  -webkit-justify-content: space-between;
   padding: 150px 0;
 `;
 
@@ -22,13 +23,16 @@ export const Title = styled(motion.div)`
 export const NumbersWrapper = styled.div`
   display: flex;
   justify-content: space-between;
+  -webkit-justify-content: space-between;
   flex-direction: column;
   align-items: end;
+  -webkit-align-items: end;
 `;
 
 export const NumberWraper = styled.div`
   display: flex;
   align-items: end;
+  -webkit-align-items: end;
   flex-direction: column;
 `;
 
@@ -41,6 +45,7 @@ export const NumberTitle = styled.div`
 export const FeaturesWrapper = styled.div`
   display: flex;
   align-items: end;
+  -webkit-align-items: end;
 `;
 
 export const Features = styled.div`
@@ -50,6 +55,7 @@ export const Features = styled.div`
 export const FeatureWrapper = styled(motion.div)`
   display: flex;
   justify-content: end;
+  -webkit-justify-content: end;
 `;
 
 export const Index = styled.div`

@@ -51,11 +51,13 @@ export const Col = styled.div`
     padding-left: 75px;
     display: flex;
     justify-content: space-between;
+    -webkit-justify-content: space-between;
     flex-direction: column;
   }
   &:nth-of-type(3) {
     display: flex;
     justify-content: end;
+    -webkit-justify-content: end;
   }
 `;
 

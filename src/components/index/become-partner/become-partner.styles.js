@@ -26,6 +26,7 @@ export const Kicker = styled(motion.div)`
 export const ContactWrapper = styled.div`
   display: flex;
   justify-content: end;
+  -webkit-justify-content: end;
 `;
 
 export const ContactContent = styled.div`

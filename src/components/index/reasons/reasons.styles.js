@@ -21,6 +21,7 @@ export const Reason = styled.div`
 export const Wrapper = styled.div`
   display: flex;
   justify-content: end;
+  -webkit-justify-content: end;
   width: 100%;
   position: relative;
 `;

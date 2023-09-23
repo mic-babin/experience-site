@@ -6,6 +6,7 @@ export const LineWrapper = styled.div`
   &.programming {
     width: calc(100% - 260px);
     justify-content: end;
+    -webkit-justify-content: end;
   }
 `;
 

@@ -22,7 +22,9 @@ export const Col = styled(motion.div)`
     object-position: center left;
     display: flex;
     justify-content: center;
+    -webkit-justify-content: center;
     align-items: center;
+    -webkit-align-items: center;
     overflow: hidden;
   }
   &:nth-of-type(3) {

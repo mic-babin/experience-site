@@ -26,7 +26,9 @@ export const Wrapper = styled.div`
   top: 0;
   display: flex;
   justify-content: space-between;
+  -webkit-justify-content: space-between;
   align-items: center;
+  -webkit-align-items: center;
   padding: 15px 30px;
   z-index: 10;
 `;
@@ -40,4 +42,5 @@ export const ButtonGroup = styled.div`
   display: flex;
   flex-direction: column;
   align-items: end;
+  -webkit-align-items: end;
 `;
