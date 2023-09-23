@@ -33,7 +33,9 @@ const FeaturedPlayer = ({ video, image }) => {
     restDelta: 0.001,
   });
 
-  useEffect(() => {}, [first]);
+  useEffect(() => {
+    if (first) setIsPlaying(true);
+  }, [first]);
 
   console.log("first", first, "isPlaying", isPlaying);
 
@@ -82,7 +84,7 @@ const FeaturedPlayer = ({ video, image }) => {
                       exit="hidden"
                       onClick={() => {
                         setFirst(true);
-                        setIsPlaying(true);
+                        // setIsPlaying(true);
                       }}
                       variants={popOutAnimation}
                     >
@@ -93,13 +95,13 @@ const FeaturedPlayer = ({ video, image }) => {
               }
               height="100%"
               width="100%"
-              config={{
-                fileConfig: {
-                  attributes: {
-                    autoPlay: true,
-                  },
-                },
-              }}
+              // config={{
+              //   fileConfig: {
+              //     attributes: {
+              //       autoPlay: true,
+              //     },
+              //   },
+              // }}
             />
           )}
         </BgWrapper>
