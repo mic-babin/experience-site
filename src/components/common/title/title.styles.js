@@ -12,7 +12,7 @@ export const LineWrapper = styled.div`
 export const Text = styled.div`
   &.main-title {
     width: 100%;
-    padding-bottom: 160px;
+    padding-bottom: 18vh;
 
     p:first-of-type {
       display: inline;
@@ -22,7 +22,7 @@ export const Text = styled.div`
     }
 
     p:nth-of-type(3) {
-      padding-top: 150px;
+      padding-top: 16vh;
       text-align: end;
     }
 
