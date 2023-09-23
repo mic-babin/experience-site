@@ -7,12 +7,13 @@ import {
   ImageWrapper,
 } from "./featured-player.styles";
 import ReactPlayer from "react-player";
-import { useScroll, useSpring } from "framer-motion";
+import { isBrowser, useScroll, useSpring } from "framer-motion";
 import { Trans } from "react-i18next";
 import { AnimatePresence } from "framer-motion";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 const FeaturedPlayer = ({ video, image }) => {
+  const isBrowser = typeof window !== "undefined";
   const section = useRef();
   const [isPlaying, setIsPlaying] = useState(false);
   const [first, setFirst] = useState(false);
@@ -48,49 +49,51 @@ const FeaturedPlayer = ({ video, image }) => {
               </StartButton>
             )}
           </AnimatePresence>
-          <ReactPlayer
-            priority
-            loop
-            autoplay
-            config={{
-              fileConfig: {
-                attributes: {
-                  autoPlay:
-                    /iPad|iPhone|iPod/.test(navigator.userAgent) &&
-                    !window.MSStream,
+          {isBrowser && (
+            <ReactPlayer
+              priority
+              loop
+              autoplay
+              config={{
+                fileConfig: {
+                  attributes: {
+                    autoPlay:
+                      /iPad|iPhone|iPod/.test(navigator.userAgent) &&
+                      !window.MSStream,
+                  },
                 },
-              },
-            }}
-            url={"https:" + video.file.url}
-            light={
-              <ImageWrapper>
-                <GatsbyImage
-                  image={getImage(image)}
-                  alt={image.description}
-                  objectFit="cover"
-                />
-              </ImageWrapper>
-            }
-            playing={isPlaying}
-            onStart={() => setFirst(true)}
-            playIcon={
-              <AnimatePresence>
-                {!isPlaying && (
-                  <StartButton
-                    onClick={togglePlay}
-                    initial="hidden"
-                    animate="visible"
-                    exit="hidden"
-                    variants={popOutAnimation}
-                  >
-                    <Trans>play</Trans>
-                  </StartButton>
-                )}
-              </AnimatePresence>
-            }
-            height="100%"
-            width="100%"
-          />
+              }}
+              url={"https:" + video.file.url}
+              light={
+                <ImageWrapper>
+                  <GatsbyImage
+                    image={getImage(image)}
+                    alt={image.description}
+                    objectFit="cover"
+                  />
+                </ImageWrapper>
+              }
+              playing={isPlaying}
+              onStart={() => setFirst(true)}
+              playIcon={
+                <AnimatePresence>
+                  {!isPlaying && (
+                    <StartButton
+                      onClick={togglePlay}
+                      initial="hidden"
+                      animate="visible"
+                      exit="hidden"
+                      variants={popOutAnimation}
+                    >
+                      <Trans>play</Trans>
+                    </StartButton>
+                  )}
+                </AnimatePresence>
+              }
+              height="100%"
+              width="100%"
+            />
+          )}
         </BgWrapper>
       )}
     </Wrapper>
