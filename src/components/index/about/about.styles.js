@@ -44,18 +44,16 @@ export const NumberTitle = styled.div`
 `;
 export const FeaturesWrapper = styled.div`
   display: flex;
-  align-items: end;
-  -webkit-align-items: end;
+  width: 100%;
 `;
 
 export const Features = styled.div`
   max-width: 730px;
+  margin-left: auto;
 `;
 
 export const FeatureWrapper = styled(motion.div)`
   display: flex;
-  justify-content: end;
-  -webkit-justify-content: end;
 `;
 
 export const Index = styled.div`

@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
   BgWrapper,
   Wrapper,
@@ -31,6 +31,10 @@ const FeaturedPlayer = ({ video, image }) => {
     damping: 30,
     restDelta: 0.001,
   });
+
+  useEffect(() => {
+    if (first) setIsPlaying(true);
+  }, [first]);
 
   return (
     <Wrapper ref={section} style={{ scale: scaleX }}>
