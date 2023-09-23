@@ -22,6 +22,7 @@ export const Wrapper = styled.div`
   display: flex;
   justify-content: end;
   -webkit-justify-content: end;
+  text-align: end;
   width: 100%;
   position: relative;
 `;
