@@ -11,7 +11,7 @@ import {
 const TicketCard = ({ ticket }) => {
   const { title, price, isFeatured, link } = ticket;
   return (
-    <CardWrapper className={`d-flex ${isFeatured ? "drop-shadow-gold" : ""}`}>
+    <CardWrapper className={isFeatured ? "drop-shadow-gold" : ""}>
       {isFeatured && (
         <Featured>
           <div>RECOMMANDÉ</div>

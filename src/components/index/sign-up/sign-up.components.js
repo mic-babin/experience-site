@@ -60,7 +60,7 @@ const SignUp = ({ data }) => {
                 </Kicker>
               )}
             </Col>
-            <Col>
+            <Col className="d-flex flex-column align-items-end">
               {tickets &&
                 tickets.map((ticket) => (
                   <TicketCard key={ticket.id} ticket={ticket} />

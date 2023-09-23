@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import {
   BgWrapper,
   Wrapper,
@@ -7,7 +7,7 @@ import {
   ImageWrapper,
 } from "./featured-player.styles";
 import ReactPlayer from "react-player";
-import { isBrowser, useScroll, useSpring } from "framer-motion";
+import { useScroll, useSpring } from "framer-motion";
 import { Trans } from "react-i18next";
 import { AnimatePresence } from "framer-motion";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
@@ -31,10 +31,6 @@ const FeaturedPlayer = ({ video, image }) => {
     damping: 30,
     restDelta: 0.001,
   });
-
-  useEffect(() => {
-    if (first) setIsPlaying(true);
-  }, [first]);
 
   return (
     <Wrapper ref={section} style={{ scale: scaleX }}>
@@ -68,7 +64,10 @@ const FeaturedPlayer = ({ video, image }) => {
                 </ImageWrapper>
               }
               playing={isPlaying}
-              onStart={() => setFirst(true)}
+              onStart={() => {
+                setIsPlaying(true);
+                setFirst(true);
+              }}
               playIcon={
                 <AnimatePresence>
                   {!isPlaying && (

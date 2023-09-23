@@ -2,6 +2,8 @@ import styled from "styled-components";
 
 export const CardWrapper = styled.div`
   margin-bottom: 10px;
+  margin-left: auto;
+  display: flex;
 `;
 
 export const TicketWrapper = styled.div`

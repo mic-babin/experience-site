@@ -20,12 +20,7 @@ export const Grid = styled.div`
 `;
 
 export const Col = styled.div`
-  &:nth-of-type(2) {
-    display: flex;
-    flex-direction: column;
-    align-items: end;
-    -webkit-align-items: end;
-  }
+  width: 100%;
 `;
 
 export const Kicker = styled(motion.div)`
