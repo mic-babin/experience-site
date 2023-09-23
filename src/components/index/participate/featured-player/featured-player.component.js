@@ -34,10 +34,18 @@ const FeaturedPlayer = ({ video, image }) => {
   });
 
   useEffect(() => {
-    if (first)
+    if (first) {
       setTimeout(() => {
+        console.log("first play");
         setIsPlaying(true);
+        document.querySelector("video").play();
       }, 100);
+      setTimeout(() => {
+        console.log("second play");
+        setIsPlaying(true);
+        document.querySelector("video").play();
+      }, 500);
+    }
   }, [first]);
 
   console.log("first", first, "isPlaying", isPlaying);
@@ -98,13 +106,13 @@ const FeaturedPlayer = ({ video, image }) => {
               }
               height="100%"
               width="100%"
-              config={{
-                fileConfig: {
-                  attributes: {
-                    autoPlay: true,
-                  },
-                },
-              }}
+              // config={{
+              //   fileConfig: {
+              //     attributes: {
+              //       autoPlay: true,
+              //     },
+              //   },
+              // }}
             />
           )}
         </BgWrapper>
