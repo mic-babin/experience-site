@@ -53,16 +53,6 @@ const FeaturedPlayer = ({ video, image }) => {
             <ReactPlayer
               priority
               loop
-              autoplay
-              config={{
-                fileConfig: {
-                  attributes: {
-                    autoPlay:
-                      /iPad|iPhone|iPod/.test(navigator.userAgent) &&
-                      !window.MSStream,
-                  },
-                },
-              }}
               url={"https:" + video.file.url}
               light={
                 <ImageWrapper>

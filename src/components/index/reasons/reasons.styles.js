@@ -5,6 +5,7 @@ import SectionLayout from "../../layout/section-layout.component";
 export const Section = styled(SectionLayout)``;
 
 export const Reason = styled.div`
+  margin-left: auto;
   max-width: 768px;
   font-size: 50px;
   line-height: 48px;
@@ -19,10 +20,6 @@ export const Reason = styled.div`
 `;
 
 export const Wrapper = styled.div`
-  display: flex;
-  justify-content: end;
-  -webkit-justify-content: end;
-  text-align: end;
   width: 100%;
   position: relative;
 `;
