@@ -16,7 +16,6 @@ const getClasses = (title) => {
 };
 
 const LogoSection = ({ title, logos }) => {
-  console.log(logos);
   const [inViewRef, inView] = useInView({
     triggerOnce: true,
     threshold: 0.5,
@@ -25,7 +24,7 @@ const LogoSection = ({ title, logos }) => {
     <div className="container">
       <Title className={getClasses(title)}>
         <span>
-          <WaveTextAnimation text={title} inView={inView} />
+          <WaveTextAnimation text={title} inView={inView} delay={0} />
         </span>
         {logos && <Number>{logos.length}</Number>}
       </Title>

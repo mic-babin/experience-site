@@ -34,7 +34,7 @@ export const Kicker = styled.div`
   }
 `;
 
-export const Button = styled.button`
+export const Button = styled(motion.button)`
   font-family: "GroteskBold";
   font-size: 100px;
   line-height: 95px;
@@ -44,23 +44,15 @@ export const Button = styled.button`
   align-items: center;
   justify-content: center;
   width: 100%;
-  p {
-    margin: 0;
-    width: 100%;
-  }
-  a {
-    width: 100%;
-    display: block;
-    padding: 40px;
-    color: white;
-    text-decoration: none;
-    transition: 0.2s ease-in-out;
-  }
+
+  padding: 40px;
+  color: white;
+  text-decoration: none;
+  transition: 0.2s ease-in-out;
 
   &:hover {
     background-color: white;
-    a {
-      color: #ec1a8d;
-    }
+
+    color: #ec1a8d;
   }
 `;

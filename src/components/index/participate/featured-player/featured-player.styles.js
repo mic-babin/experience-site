@@ -3,7 +3,7 @@ import { GatsbyImage } from "gatsby-plugin-image";
 import { motion } from "framer-motion";
 
 export const Wrapper = styled(motion.div)`
-  padding-top: 150px;
+  padding: 150px 0;
   transform-origin: top center;
 `;
 export const BgWrapper = styled.div`
@@ -31,3 +31,7 @@ export const popOutAnimation = {
   hidden: { scale: 0, opacity: 0 },
   visible: { scale: 1, opacity: 1 },
 };
+
+export const ImageWrapper = styled.div`
+  width: 100vw;
+`;

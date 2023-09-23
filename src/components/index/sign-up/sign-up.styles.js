@@ -6,11 +6,12 @@ export const Section = styled(SectionLayout)`
   position: relative;
 `;
 
-export const SignUpTitle = styled.h2`
+export const SignUpTitle = styled(motion.h2)`
   font-size: 100px;
   line-height: 95px;
   font-family: "GroteskBold";
   padding-top: 150px;
+  max-width: 590px;
 `;
 
 export const Grid = styled.div`
@@ -26,7 +27,7 @@ export const Col = styled.div`
   }
 `;
 
-export const Kicker = styled.div`
+export const Kicker = styled(motion.div)`
   padding-top: 80px;
   margin-left: 120px;
   max-width: 438px;

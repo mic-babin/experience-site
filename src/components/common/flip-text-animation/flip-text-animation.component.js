@@ -3,12 +3,11 @@ import { motion } from "framer-motion";
 import { renderRichText } from "gatsby-source-contentful/rich-text";
 import { BLOCKS } from "@contentful/rich-text-types";
 
-const WaveTextAnimation = ({ text, inView, delay }) => {
+const FlipTextAnimation = ({ text, inView, delay }) => {
   const options = {
     renderNode: {
       [BLOCKS.PARAGRAPH]: (node, children) => {
         let text = children[children.length - 1].replace(/\n/g, " ");
-        console.log(text, children, delay);
         return renderTextAnimation(text, inView, delay);
       },
     },
@@ -20,7 +19,7 @@ const WaveTextAnimation = ({ text, inView, delay }) => {
   return <>{renderRichText(text, options)}</>;
 };
 
-export default WaveTextAnimation;
+export default FlipTextAnimation;
 
 const renderTextAnimation = (text, inView, delay) => {
   let count = 0;
@@ -34,11 +33,11 @@ const renderTextAnimation = (text, inView, delay) => {
             return (
               <motion.span
                 key={motionKey}
-                initial={{ y: 0 }}
-                animate={inView ? { y: [0, 1, -12, -15, 1, 0] } : { y: 0 }}
+                initial={{ rotateY: 0 }}
+                animate={inView ? { rotateY: [0, 360] } : { rotateY: 0 }}
                 transition={{
                   duration: 0.3,
-                  delay: count / 17 + delay || 0,
+                  delay: count / 17 + delay,
                 }}
                 style={{ display: "inline-block" }}
               >

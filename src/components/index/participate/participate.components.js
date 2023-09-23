@@ -1,7 +1,7 @@
 import React from "react";
 import { Section, Title } from "./participate.styles";
 import FeaturedPlayer from "./featured-player/featured-player.component";
-import { circles, imageCircles } from "./circles.data,js";
+import { circles, imageCircles } from "./circles.data.js";
 import { renderCircles, renderImageCircles } from "./circles.components";
 import { useInView } from "react-intersection-observer";
 import { Empty } from "../programming/programming.styles";
@@ -20,7 +20,7 @@ const Participate = ({ data }) => {
       <div className="container" ref={inViewRef}>
         {description && (
           <Title>
-            <WaveTextAnimation text={description} inView={inView} />
+            <WaveTextAnimation text={description} inView={inView} delay={0} />
           </Title>
         )}
       </div>
@@ -29,7 +29,6 @@ const Participate = ({ data }) => {
       {inView && renderImageCircles(imageCircles, Images)}
 
       <FeaturedPlayer video={video} image={videoCoverImage} />
-      <Empty> &nbsp;</Empty>
     </Section>
   );
 };

@@ -14,7 +14,7 @@ export const BecomePartnerTitle = styled(motion.h2)`
   padding-top: 165px;
 `;
 
-export const Kicker = styled.div`
+export const Kicker = styled(motion.div)`
   font-family: "GroteskBold";
   font-size: 50px;
   line-height: 48px;
@@ -33,7 +33,7 @@ export const ContactContent = styled.div`
   position: relative;
 `;
 
-export const Name = styled.div`
+export const Name = styled(motion.div)`
   position: absolute;
   top: 380px;
   left: 0;
@@ -49,7 +49,7 @@ export const Photo = styled(GatsbyImage)`
   margin-bottom: 40px;
 `;
 
-export const Text = styled.div`
+export const Text = styled(motion.div)`
   font-family: "Grotesk55";
   font-size: 24px;
   line-height: 28px;
@@ -57,7 +57,8 @@ export const Text = styled.div`
   margin-bottom: 10px;
 `;
 
-export const Email = styled.a`
+export const Email = styled(motion.a)`
+  display: block;
   text-transform: uppercase;
   font-family: "GroteskBold";
   font-size: 24px;

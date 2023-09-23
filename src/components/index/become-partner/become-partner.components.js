@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 import {
   Section,
   Kicker,
@@ -9,17 +9,16 @@ import {
   BecomePartnerTitle,
   ContactWrapper,
   ContactContent,
-  Shape,
   Empty,
 } from "./become-partner.styles";
 import { getImage } from "gatsby-plugin-image";
 import { renderRichText } from "gatsby-source-contentful/rich-text";
 import { useElementSize } from "../../../utils/element-size.hook";
 import Title from "../../common/title/title.component";
-import Shape1Src from "../../../assets/img/become-partner-1.svg";
-import Shape2Src from "../../../assets/img/become-partner-2.svg";
-import Shape3Src from "../../../assets/img/become-partner-3.svg";
+import Shapes from "./shapes.components";
 import { useInView } from "react-intersection-observer";
+import FlipTextAnimation from "../../common/flip-text-animation/flip-text-animation.component";
+import { motion } from "framer-motion";
 
 const BecomePartner = ({ data }) => {
   const {
@@ -36,10 +35,17 @@ const BecomePartner = ({ data }) => {
 
   const [containerRef, containerInView] = useInView({
     triggerOnce: true,
+    threshold: 0.3,
   });
 
   const [inViewRef, inView] = useInView({
     triggerOnce: true,
+    threshold: 0.3,
+  });
+
+  const [kickerInViewRef, kickerInView] = useInView({
+    triggerOnce: true,
+    threshold: 0.3,
   });
 
   return (
@@ -58,78 +64,86 @@ const BecomePartner = ({ data }) => {
           />
         </BecomePartnerTitle>
 
-        {kicker && <Kicker>{renderRichText(kicker)}</Kicker>}
+        {kicker && (
+          <div ref={kickerInViewRef}>
+            <Kicker
+              initial={{ x: -200, opacity: 0 }}
+              animate={inView ? { x: 0, opacity: 1 } : { x: -200, opacity: 0 }}
+              transition={{
+                duration: 0.3,
+                delay: 2,
+              }}
+            >
+              <FlipTextAnimation text={kicker} inView={inView} delay={2} />
+            </Kicker>
+          </div>
+        )}
 
         <ContactWrapper ref={containerRef}>
           <ContactContent>
             {contactPhoto && (
-              <Photo image={getImage(contactPhoto)} alt="TODO" />
+              <motion.div
+                initial={{ x: 200, opacity: 0 }}
+                animate={
+                  containerInView
+                    ? { x: 0, opacity: 1 }
+                    : { x: 200, opacity: 0 }
+                }
+                transition={{
+                  duration: 0.3,
+                  delay: 0.5,
+                }}
+              >
+                <Photo image={getImage(contactPhoto)} alt="TODO" />
+              </motion.div>
             )}
-            {contactName && <Name>{contactName}</Name>}
-            {contactMessage && <Text>{renderRichText(contactMessage)}</Text>}
+            {contactName && (
+              <Name
+                initial={{ x: 200, opacity: 0 }}
+                animate={
+                  containerInView
+                    ? { x: 0, opacity: 1 }
+                    : { x: 200, opacity: 0 }
+                }
+                transition={{
+                  duration: 0.3,
+                  delay: 0.8,
+                }}
+              >
+                {contactName}
+              </Name>
+            )}
+            {contactMessage && (
+              <Text
+                initial={{ x: 200, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                transition={{
+                  duration: 0.3,
+                  delay: 0.7,
+                }}
+              >
+                {renderRichText(contactMessage)}
+              </Text>
+            )}
             {contactEmail && (
-              <Email href={`mailTo:${contactEmail}`}>{contactEmail}</Email>
+              <Email
+                initial={{ x: 200, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                transition={{
+                  duration: 0.3,
+                  delay: 0.8,
+                }}
+                href={`mailTo:${contactEmail}`}
+              >
+                {contactEmail}
+              </Email>
             )}
           </ContactContent>
         </ContactWrapper>
         <Empty>&nbsp;</Empty>
       </div>
 
-      {containerInView && (
-        <>
-          <Shape
-            src={Shape1Src}
-            alt="Forme"
-            style={{ width: "9.5w" }}
-            initial={{ y: -300, x: "-1.8vw" }}
-            animate={{
-              y: sectionSize.height - sectionSize.width * 0.173,
-              x: "-1.8vw",
-            }}
-            transition={{
-              duration: 1,
-              type: "spring",
-              damping: 7,
-              stiffness: 100,
-              delay: 1.3,
-            }}
-          ></Shape>
-          <Shape
-            src={Shape2Src}
-            alt="Forme"
-            style={{ width: "39.2vw" }}
-            initial={{ y: -850, x: "-1.8vw" }}
-            animate={{
-              y: sectionSize.height - sectionSize.width * 0.468,
-              x: "-1.8vw",
-            }}
-            transition={{
-              duration: 1,
-              type: "spring",
-              damping: 7,
-              stiffness: 100,
-              delay: 1.9,
-            }}
-          ></Shape>
-          <Shape
-            src={Shape3Src}
-            alt="Forme"
-            style={{ width: "20.1vw" }}
-            initial={{ y: -500, x: 0 }}
-            animate={{
-              y: sectionSize.height - sectionSize.width * 0.17,
-              x: 0,
-            }}
-            transition={{
-              duration: 1,
-              type: "spring",
-              damping: 7,
-              stiffness: 100,
-              delay: 1,
-            }}
-          ></Shape>
-        </>
-      )}
+      {/* {containerInView && <Shapes sectionSize={sectionSize} />} */}
     </Section>
   );
 };

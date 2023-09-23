@@ -4,12 +4,14 @@ import {
   Wrapper,
   StartButton,
   popOutAnimation,
+  ImageWrapper,
 } from "./featured-player.styles";
 import ReactPlayer from "react-player";
 import { useScroll, useSpring } from "framer-motion";
 import { Trans } from "react-i18next";
 import { AnimatePresence } from "framer-motion";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
+
 const FeaturedPlayer = ({ video, image }) => {
   const section = useRef();
   const [isPlaying, setIsPlaying] = useState(false);
@@ -52,7 +54,13 @@ const FeaturedPlayer = ({ video, image }) => {
             autoplay
             url={"https:" + video.file.url}
             light={
-              <GatsbyImage image={getImage(image)} alt={image.description} />
+              <ImageWrapper>
+                <GatsbyImage
+                  image={getImage(image)}
+                  alt={image.description}
+                  objectFit="cover"
+                />
+              </ImageWrapper>
             }
             playing={isPlaying}
             onStart={() => setFirst(true)}
