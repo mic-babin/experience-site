@@ -24,12 +24,11 @@ export const Kicker = styled(motion.div)`
 `;
 
 export const ContactWrapper = styled.div`
-  display: flex;
-  justify-content: end;
-  -webkit-justify-content: end;
+  width: 100%;
 `;
 
 export const ContactContent = styled.div`
+  margin-left: auto;
   max-width: 672px;
   position: relative;
 `;

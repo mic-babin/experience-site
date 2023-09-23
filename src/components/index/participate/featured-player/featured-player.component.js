@@ -32,6 +32,8 @@ const FeaturedPlayer = ({ video, image }) => {
     restDelta: 0.001,
   });
 
+  console.log("first", first, "isPlaying", isPlaying);
+
   return (
     <Wrapper ref={section} style={{ scale: scaleX }}>
       {video && (
@@ -84,6 +86,16 @@ const FeaturedPlayer = ({ video, image }) => {
               }
               height="100%"
               width="100%"
+              config={{
+                fileConfig: {
+                  attributes: {
+                    autoPlay: true,
+                    autoPlay:
+                      /iPad|iPhone|iPod/.test(navigator.userAgent) &&
+                      !window.MSStream,
+                  },
+                },
+              }}
             />
           )}
         </BgWrapper>
