@@ -70,9 +70,6 @@ const FeaturedPlayer = ({ video, image }) => {
                 </ImageWrapper>
               }
               playing={isPlaying}
-              onStart={() => {
-                setFirst(true);
-              }}
               onPause={() => {
                 setIsPlaying(false);
               }}
@@ -83,7 +80,10 @@ const FeaturedPlayer = ({ video, image }) => {
                       initial="hidden"
                       animate="visible"
                       exit="hidden"
-                      onClick={() => setIsPlaying(true)}
+                      onClick={() => {
+                        setFirst(true);
+                        setIsPlaying(true);
+                      }}
                       variants={popOutAnimation}
                     >
                       <Trans>play</Trans>
