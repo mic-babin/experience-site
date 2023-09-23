@@ -97,9 +97,6 @@ const FeaturedPlayer = ({ video, image }) => {
                 fileConfig: {
                   attributes: {
                     autoPlay: true,
-                    autoPlay:
-                      /iPad|iPhone|iPod/.test(navigator.userAgent) &&
-                      !window.MSStream,
                   },
                 },
               }}
