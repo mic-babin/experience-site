@@ -8,7 +8,6 @@ const WaveTextAnimation = ({ text, inView, delay }) => {
     renderNode: {
       [BLOCKS.PARAGRAPH]: (node, children) => {
         let text = children[children.length - 1].replace(/\n/g, " ");
-        console.log(text, children, delay);
         return renderTextAnimation(text, inView, delay);
       },
     },

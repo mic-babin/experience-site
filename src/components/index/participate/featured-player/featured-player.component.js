@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
   BgWrapper,
   Wrapper,
@@ -19,6 +19,7 @@ const FeaturedPlayer = ({ video, image }) => {
   const [first, setFirst] = useState(false);
 
   const togglePlay = () => {
+    console.log("toggle");
     setIsPlaying(!isPlaying);
   };
   const { scrollYProgress } = useScroll({
@@ -32,12 +33,14 @@ const FeaturedPlayer = ({ video, image }) => {
     restDelta: 0.001,
   });
 
+  useEffect(() => {}, [first]);
+
   console.log("first", first, "isPlaying", isPlaying);
 
   return (
     <Wrapper ref={section} style={{ scale: scaleX }}>
       {video && (
-        <BgWrapper onClick={togglePlay}>
+        <BgWrapper>
           <AnimatePresence>
             {!isPlaying && first && (
               <StartButton
@@ -55,20 +58,23 @@ const FeaturedPlayer = ({ video, image }) => {
             <ReactPlayer
               priority
               loop
+              controls={isPlaying}
               url={"https:" + video.file.url}
               light={
                 <ImageWrapper>
                   <GatsbyImage
                     image={getImage(image)}
-                    alt={image.description}
+                    alt={"Video Cover"}
                     objectFit="cover"
                   />
                 </ImageWrapper>
               }
               playing={isPlaying}
               onStart={() => {
-                setIsPlaying(true);
                 setFirst(true);
+              }}
+              onPause={() => {
+                setIsPlaying(false);
               }}
               playIcon={
                 <AnimatePresence>
@@ -77,6 +83,7 @@ const FeaturedPlayer = ({ video, image }) => {
                       initial="hidden"
                       animate="visible"
                       exit="hidden"
+                      onClick={() => setIsPlaying(true)}
                       variants={popOutAnimation}
                     >
                       <Trans>play</Trans>
