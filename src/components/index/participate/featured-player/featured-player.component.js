@@ -75,9 +75,9 @@ const FeaturedPlayer = ({ video, image }) => {
                 </ImageWrapper>
               }
               playing={isPlaying}
-              // onPause={() => {
-              //   setIsPlaying(false);
-              // }}
+              onPause={() => {
+                setIsPlaying(false);
+              }}
               playIcon={
                 <AnimatePresence>
                   {!isPlaying && (
@@ -98,13 +98,13 @@ const FeaturedPlayer = ({ video, image }) => {
               }
               height="100%"
               width="100%"
-              // config={{
-              //   fileConfig: {
-              //     attributes: {
-              //       autoPlay: true,
-              //     },
-              //   },
-              // }}
+              config={{
+                fileConfig: {
+                  attributes: {
+                    autoPlay: true,
+                  },
+                },
+              }}
             />
           )}
         </BgWrapper>
