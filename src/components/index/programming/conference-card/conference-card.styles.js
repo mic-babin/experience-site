@@ -20,6 +20,10 @@ export const Subtitle = styled.h4`
   font-size: 24px;
   line-height: 28px;
   padding-bottom: 15px;
+
+  &.left {
+    text-align: end;
+  }
 `;
 
 export const Title = styled.h3`
@@ -55,9 +59,7 @@ export const Col = styled.div`
     flex-direction: column;
   }
   &:nth-of-type(3) {
-    display: flex;
-    justify-content: end;
-    -webkit-justify-content: end;
+    width: 100%;
   }
 `;
 

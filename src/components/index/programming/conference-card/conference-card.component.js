@@ -55,7 +55,7 @@ const ConferenceCard = ({ conference, index }) => {
 
           <Logo image={getImage(logo)} alt={logo.description} />
         </Col>
-        <Col>{date && <Subtitle>{time}</Subtitle>}</Col>
+        <Col>{date && <Subtitle className="left">{time}</Subtitle>}</Col>
       </Grid>
     </CardWrapper>
   );

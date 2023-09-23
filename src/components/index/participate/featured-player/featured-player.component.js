@@ -73,7 +73,6 @@ const FeaturedPlayer = ({ video, image }) => {
                 <AnimatePresence>
                   {!isPlaying && (
                     <StartButton
-                      onClick={togglePlay}
                       initial="hidden"
                       animate="visible"
                       exit="hidden"
