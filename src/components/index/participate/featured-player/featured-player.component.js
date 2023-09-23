@@ -87,7 +87,7 @@ const FeaturedPlayer = ({ video, image }) => {
                       exit="hidden"
                       onClick={() => {
                         setFirst(true);
-                        // setIsPlaying(true);
+                        setIsPlaying(true);
                       }}
                       variants={popOutAnimation}
                     >
