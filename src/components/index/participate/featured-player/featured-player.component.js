@@ -34,7 +34,10 @@ const FeaturedPlayer = ({ video, image }) => {
   });
 
   useEffect(() => {
-    if (first) setIsPlaying(true);
+    if (first)
+      setTimeout(() => {
+        setIsPlaying(true);
+      }, 100);
   }, [first]);
 
   console.log("first", first, "isPlaying", isPlaying);
@@ -72,9 +75,9 @@ const FeaturedPlayer = ({ video, image }) => {
                 </ImageWrapper>
               }
               playing={isPlaying}
-              onPause={() => {
-                setIsPlaying(false);
-              }}
+              // onPause={() => {
+              //   setIsPlaying(false);
+              // }}
               playIcon={
                 <AnimatePresence>
                   {!isPlaying && (
