@@ -1,9 +1,12 @@
 import styled from "styled-components";
 
-export const CardWrapper = styled.div`
+export const CardWrapper = styled.a`
   margin-bottom: 10px;
   margin-left: auto;
   display: flex;
+  cursor: pointer;
+  color: white;
+  text-decoration: none;
 
   &.featured {
     background-color: white;

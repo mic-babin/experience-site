@@ -11,7 +11,11 @@ import {
 const TicketCard = ({ ticket }) => {
   const { title, price, isFeatured, link } = ticket;
   return (
-    <CardWrapper className={isFeatured ? "featured" : ""}>
+    <CardWrapper
+      className={isFeatured ? "featured" : ""}
+      href="https://perdu.com"
+      target="_blank"
+    >
       {isFeatured && (
         <Featured>
           <div>RECOMMANDÉ</div>

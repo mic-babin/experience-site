@@ -3,7 +3,7 @@ import { Parallax } from "react-scroll-parallax";
 import { getImage } from "gatsby-plugin-image";
 import { BgShape, Circle, CircleImage } from "./participate.styles";
 
-const getRandomDelay = () => Math.random() * 1 + 2.5;
+const getRandomDelay = () => Math.random() * 1 + 1.5;
 
 export const renderCircles = (circleArray) => {
   return circleArray.map((circle) => (
