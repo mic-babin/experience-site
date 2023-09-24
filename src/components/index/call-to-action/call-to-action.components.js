@@ -25,11 +25,11 @@ const CallToAction = ({ data }) => {
       <BgWrapper>
         <div className="container">
           <div className="row">
-            <Col className="col-md-5">
+            <Col className="col-lg-5">
               {title && <Title>{renderRichText(title)}</Title>}
               {kicker && <Kicker>{renderRichText(kicker)}</Kicker>}
             </Col>
-            <Col className="col-md-7" ref={inViewRef}>
+            <Col className="col-lg-7" ref={inViewRef}>
               {button && (
                 <Button
                   initial={{

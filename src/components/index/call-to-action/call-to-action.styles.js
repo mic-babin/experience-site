@@ -6,6 +6,17 @@ export const Section = styled(SectionLayout)``;
 
 export const BgWrapper = styled.div`
   padding: 150px 0;
+
+  @media only screen and (max-width: 1249px) {
+    padding: 120px 0;
+  }
+
+  @media only screen and (max-width: 991px) {
+    padding: 100px 0;
+  }
+  @media only screen and (max-width: 767px) {
+    padding: 75px 0;
+  }
 `;
 
 export const Col = styled.div`
@@ -27,6 +38,14 @@ export const Title = styled.h2`
   font-size: 50px;
   line-height: 48px;
   max-width: 266px;
+
+  @media only screen and (max-width: 767px) {
+    font-size: 36px;
+  }
+
+  @media only screen and (max-width: 575px) {
+    font-size: 24px;
+  }
 `;
 
 export const Kicker = styled.div`
@@ -36,6 +55,16 @@ export const Kicker = styled.div`
 
   p {
     margin: 0;
+  }
+
+  @media only screen and (max-width: 991px) {
+    max-width: 75%;
+  }
+  @media only screen and (max-width: 767px) {
+    font-size: 20px;
+  }
+  @media only screen and (max-width: 575px) {
+    font-size: 16px;
   }
 `;
 
@@ -54,5 +83,27 @@ export const Button = styled(motion.button)`
     background-color: white;
 
     color: #ec1a8d;
+  }
+
+  @media only screen and (max-width: 1599px) {
+    font-size: 97px;
+    line-height: 92px;
+  }
+
+  @media only screen and (max-width: 1249px) {
+    font-size: 76px;
+    line-height: 72px;
+  }
+
+  @media only screen and (max-width: 991px) {
+    margin-top: 30px;
+  }
+  @media only screen and (max-width: 767px) {
+    font-size: 60px;
+    line-height: 57px;
+  }
+  @media only screen and (max-width: 575px) {
+    font-size: 40px;
+    line-height: 38px;
   }
 `;
