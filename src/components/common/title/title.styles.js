@@ -36,6 +36,12 @@ export const Text = styled.div`
     p:nth-of-type(2) {
       display: inline;
     }
+
+    @media only screen and (max-width: 767px) {
+      p {
+        margin-bottom: 5px;
+      }
+    }
   }
 
   &.programming {

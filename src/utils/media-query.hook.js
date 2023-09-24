@@ -20,10 +20,10 @@ export function useMediaQuery(query) {
 }
 
 export const useIsXXXSmall = () => useMediaQuery("(max-width: 376px)");
-export const useIsXXSmall = () => useMediaQuery("(max-width: 392px)");
+export const useIsXXSmall = () => useMediaQuery("(max-width: 400px)");
 export const useIsXSmall = () => useMediaQuery("(max-width: 575px)");
 export const useIsSmall = () => useMediaQuery("(max-width: 767px)");
 export const useIsMedium = () => useMediaQuery("(max-width: 991px)");
-export const useIsLarge = () => useMediaQuery("(max-width: 1199px)");
+export const useIsLarge = () => useMediaQuery("(max-width: 1249px)");
 export const useIsXLarge = () => useMediaQuery("(max-width: 1399px)");
-export const useIsXXLarge = () => useMediaQuery("(min-width: 1400px)");
+export const useIsXXLarge = () => useMediaQuery("(min-width: 1600px)");

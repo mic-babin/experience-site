@@ -4,7 +4,12 @@ import { renderRichText } from "gatsby-source-contentful/rich-text";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { LineWrapper, Text } from "./title.styles";
 import TypewriterAnimation from "../typewriter-animation/typerwritter-animation.component";
-
+import {
+  useIsLarge,
+  useIsMedium,
+  useIsSmall,
+  useIsXSmall,
+} from "../../../utils/media-query.hook";
 const Title = ({
   title,
   width,
@@ -24,6 +29,10 @@ const Title = ({
     }
     return -1; // Return -1 if "apple" is not found in the array
   };
+  const isLarge = useIsLarge();
+  const isMedium = useIsMedium();
+  const isSmall = useIsSmall();
+  const isXSmall = useIsXSmall();
 
   useEffect(() => {
     if (inView) {
@@ -46,15 +55,34 @@ const Title = ({
           <>
             {showLine && gatsbyImageData && (
               <LineWrapper
-                style={{ transform: `translateY(-${y}px)` }}
+                style={{
+                  transform: `translateY(-${
+                    isXSmall
+                      ? "15px"
+                      : isSmall
+                      ? "23px"
+                      : isMedium
+                      ? "27px"
+                      : isLarge
+                      ? "32px"
+                      : "35px"
+                  })`,
+                }}
                 className={textClass}
               >
                 <GatsbyImage
                   image={getImage(gatsbyImageData)}
                   alt={description}
                   style={{
+                    marginRight: "10px",
                     display: "inline-block",
-                    width: width,
+                    width: isXSmall
+                      ? "70px"
+                      : isSmall
+                      ? "91px"
+                      : isMedium
+                      ? "150px"
+                      : width + "px",
                   }}
                 />
               </LineWrapper>

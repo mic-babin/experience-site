@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React from "react";
 import {
   Section,
   Kicker,
@@ -9,13 +9,12 @@ import {
   BecomePartnerTitle,
   ContactWrapper,
   ContactContent,
-  Empty,
+  Wrapper,
 } from "./become-partner.styles";
 import { getImage } from "gatsby-plugin-image";
 import { renderRichText } from "gatsby-source-contentful/rich-text";
-import { useElementSize } from "../../../utils/element-size.hook";
+
 import Title from "../../common/title/title.component";
-import Shapes from "./shapes.components";
 import { useInView } from "react-intersection-observer";
 import FlipTextAnimation from "../../common/flip-text-animation/flip-text-animation.component";
 import { motion } from "framer-motion";
@@ -30,8 +29,6 @@ const BecomePartner = ({ data }) => {
     contactPhoto,
   } = data;
   const s = { background: "#EBE50D", color: "#000000" };
-  const section = useRef();
-  const sectionSize = useElementSize(section);
 
   const [containerRef, containerInView] = useInView({
     triggerOnce: true,
@@ -50,7 +47,7 @@ const BecomePartner = ({ data }) => {
 
   return (
     <Section s={s}>
-      <div className="container" ref={section} id="devenir-exposant">
+      <Wrapper className="container" id="devenir-exposant">
         <BecomePartnerTitle ref={inViewRef}>
           <Title
             title={title}
@@ -140,10 +137,7 @@ const BecomePartner = ({ data }) => {
             )}
           </ContactContent>
         </ContactWrapper>
-        <Empty>&nbsp;</Empty>
-      </div>
-
-      {/* {containerInView && <Shapes sectionSize={sectionSize} />} */}
+      </Wrapper>
     </Section>
   );
 };

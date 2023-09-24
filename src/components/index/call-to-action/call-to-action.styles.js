@@ -17,6 +17,10 @@ export const BgWrapper = styled.div`
   @media only screen and (max-width: 767px) {
     padding: 75px 0;
   }
+
+  @media only screen and (max-width: 575px) {
+    padding: 75px 10vw;
+  }
 `;
 
 export const Col = styled.div`
@@ -41,10 +45,12 @@ export const Title = styled.h2`
 
   @media only screen and (max-width: 767px) {
     font-size: 36px;
+    line-height: 36px;
   }
 
   @media only screen and (max-width: 575px) {
     font-size: 24px;
+    line-height: 24px;
   }
 `;
 
@@ -62,9 +68,11 @@ export const Kicker = styled.div`
   }
   @media only screen and (max-width: 767px) {
     font-size: 20px;
+    line-height: 23px;
   }
   @media only screen and (max-width: 575px) {
     font-size: 16px;
+    line-height: 18px;
   }
 `;
 
@@ -103,7 +111,13 @@ export const Button = styled(motion.button)`
     line-height: 57px;
   }
   @media only screen and (max-width: 575px) {
-    font-size: 40px;
+    text-align: center;
+    font-size: 37px;
+    line-height: 38px;
+  }
+
+  @media only screen and (max-width: 400px) {
+    font-size: 30px;
     line-height: 38px;
   }
 `;
