@@ -45,11 +45,11 @@ export const BecomePartnerTitle = styled(motion.h2)`
   }
   @media only screen and (max-width: 575px) {
     font-size: 36px;
-    line-height: 38px;
+    line-height: 34px;
   }
   @media only screen and (max-width: 400px) {
     font-size: 30px;
-    line-height: 38px;
+    line-height: 29px;
   }
 `;
 
@@ -157,7 +157,7 @@ export const Email = styled(motion.a)`
   }
   @media only screen and (max-width: 400px) {
     font-size: 14px;
-    line-height: 18px;
+    line-height: 16px;
   }
 `;
 

@@ -112,12 +112,12 @@ export const Button = styled(motion.button)`
   }
   @media only screen and (max-width: 575px) {
     text-align: center;
-    font-size: 37px;
-    line-height: 38px;
+    font-size: 36px;
+    line-height: 34px;
   }
 
   @media only screen and (max-width: 400px) {
     font-size: 30px;
-    line-height: 38px;
+    line-height: 29px;
   }
 `;
