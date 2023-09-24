@@ -33,17 +33,14 @@ const CallToAction = ({ data }) => {
               {button && (
                 <Button
                   initial={{
-                    boxShadow: "0 0 15px 15px rgba(255, 255, 255, 0)",
+                    x: "-100",
                   }}
                   animate={
                     inView
                       ? {
-                          boxShadow: [
-                            "0 0 15px 15px rgba(255, 255, 255, 0.5)",
-                            "0 0 15px 15px rgba(255, 255, 255, 0)",
-                          ],
+                          x: ["0", "-100"],
                         }
-                      : { boxShadow: "0 0 15px 15px rgba(255, 255, 255, 0)" }
+                      : { x: "-100" }
                   }
                   transition={{ delay: 0.5, duration: 0.3 }}
                 >

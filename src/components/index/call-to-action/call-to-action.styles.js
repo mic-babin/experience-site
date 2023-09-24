@@ -16,6 +16,10 @@ export const Col = styled.div`
     justify-content: space-between;
     -webkit-justify-content: space-between;
   }
+
+  &:nth-of-type(2) {
+    overflow: hidden;
+  }
 `;
 
 export const Title = styled.h2`
@@ -41,16 +45,9 @@ export const Button = styled(motion.button)`
   line-height: 95px;
   background-color: black;
   border: none;
-  display: flex;
-  align-items: center;
-  -webkit-align-items: center;
-  justify-content: center;
-  -webkit-justify-content: center;
   width: 100%;
-
   padding: 40px;
   color: white;
-  text-decoration: none;
   transition: 0.2s ease-in-out;
 
   &:hover {

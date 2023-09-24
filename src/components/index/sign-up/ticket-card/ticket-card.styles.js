@@ -4,21 +4,45 @@ export const CardWrapper = styled.div`
   margin-bottom: 10px;
   margin-left: auto;
   display: flex;
+
+  &.featured {
+    background-color: white;
+  }
 `;
 
 export const TicketWrapper = styled.div`
   max-width: 415px;
   padding: 30px;
   transition: 0.2s all ease-in-out;
+  overflow: hidden;
+  position: relative;
+
+  .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #e3fe96;
+    overflow: hidden;
+    width: 0;
+    height: calc(100% - 0.1px);
+    transition: 0.5s width ease;
+    z-index: 0;
+    padding: 30px 0;
+  }
 
   &:hover {
     color: black;
     background-color: #e3fe96;
+
+    .overlay {
+      width: 100%;
+    }
   }
 
   &.featured {
     color: black;
-    background-color: white;
+    background-color: transparent;
   }
 `;
 
@@ -26,6 +50,11 @@ export const Price = styled.div`
   font-family: "GroteskBold";
   font-size: 100px;
   line-height: 95px;
+
+  &.overlay-text {
+    min-width: 341px;
+    padding-left: 30px;
+  }
 `;
 
 export const Title = styled.div`
@@ -33,8 +62,13 @@ export const Title = styled.div`
   text-transform: uppercase;
   font-size: 24px;
   line-height: 28px;
+
   p {
     margin-bottom: 0;
+  }
+  &.overlay-text {
+    min-width: 341px;
+    padding-left: 30px;
   }
 `;
 

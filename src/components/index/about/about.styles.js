@@ -79,7 +79,7 @@ export const Empty = styled.div`
   height: 150px;
 `;
 
-export const Smiley = styled.img`
+export const Smiley = styled(motion.img)`
   position: absolute;
   top: 350px;
   z-index: -1;

@@ -35,7 +35,7 @@ const BecomePartner = ({ data }) => {
 
   const [containerRef, containerInView] = useInView({
     triggerOnce: true,
-    threshold: 0.3,
+    threshold: 0.8,
   });
 
   const [inViewRef, inView] = useInView({
@@ -58,8 +58,8 @@ const BecomePartner = ({ data }) => {
             y={35}
             textClass="become-partner"
             animationLoop={false}
-            wordSpeed={1100}
-            lineDelay={2400}
+            wordSpeed={500}
+            lineDelay={1400}
             inView={inView}
           />
         </BecomePartnerTitle>

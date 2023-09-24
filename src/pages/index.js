@@ -233,9 +233,10 @@ export const query = graphql`
             gatsbyImageData(quality: 100)
           }
         }
-        backgroundImage {
-          description
-          gatsbyImageData(quality: 100, layout: FULL_WIDTH)
+        backgroundVideo {
+          file {
+            url
+          }
         }
       }
     }

@@ -95,7 +95,19 @@ const About = ({ data }) => {
           </Features>
         </FeatureWrapper>
       </div>
-      {inView && <Smiley src={SmileySrc} alt="smiley" />}
+      {inView && (
+        <Smiley
+          initial={{ rotate: 0 }}
+          animate={inView ? { rotate: [0, 13, -13, 0] } : { rotate: 0 }}
+          transition={{
+            duration: 0.5,
+            repeat: Infinity,
+            repeatDelay: 10,
+          }}
+          src={SmileySrc}
+          alt="smiley"
+        />
+      )}
       <Empty>&nbsp;</Empty>
     </Section>
   );

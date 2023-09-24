@@ -13,11 +13,12 @@ import {
 import { NavLinkAnimation } from "./menu.animation.component";
 import { ShouldStickContext } from "../../../context/shouldStick.context";
 import { navigate } from "gatsby";
-import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import { getImage } from "gatsby-plugin-image";
+import ReactPlayer from "react-player";
 
 // TODO Could potentially check with array position, use navigate when possible and scroll the rest of time
 const Menu = ({ menu }) => {
-  const { menuLinks, backgroundImage } = menu;
+  const { menuLinks, backgroundVideo } = menu;
   const { setShouldStick } = useContext(ShouldStickContext);
   const { showMenu, setShowMenu } = useContext(MenuContext);
   const [width, setWidth] = useState("0vw");
@@ -31,10 +32,6 @@ const Menu = ({ menu }) => {
     setTimeout(() => {
       const el = document.getElementById(to.split("#")[1]);
       navigate(to);
-      // el.scrollIntoView({
-      //   behavior: "smooth",
-      //   block: "end",
-      // });
       setShouldStick(true);
     }, 50);
   };
@@ -64,11 +61,16 @@ const Menu = ({ menu }) => {
               exit={{ x: "100vw", width: "0%", opacity: 0 }}
               transition={{ duration: 1, type: "spring", stiffness: 100 }}
             >
-              <GatsbyImage
-                image={getImage(backgroundImage)}
-                alt={backgroundImage.description}
-                style={{ height: "100vh", width: "100vw" }}
-              />
+              <div className="player-wrapper">
+                <ReactPlayer
+                  priority
+                  autoPlay
+                  loop
+                  muted
+                  url={"https:" + backgroundVideo.file.url}
+                  playing={true}
+                />
+              </div>
             </Col1>
           )}
         </AnimatePresence>
@@ -87,7 +89,12 @@ const Menu = ({ menu }) => {
                 <NavLink onClick={() => closeMenu(link)} className="clickable">
                   {title}
                 </NavLink>
-                <ImageWrapper className="image-wrapper">
+                <ImageWrapper
+                  className="image-wrapper"
+                  style={{
+                    transform: `rotate(${index * 5 - 13}deg) translateY(-40%)`,
+                  }}
+                >
                   <LinkImage image={getImage(image)} alt={image.description} />
                 </ImageWrapper>
               </LinkWrapper>

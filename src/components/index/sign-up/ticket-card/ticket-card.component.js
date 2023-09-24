@@ -11,13 +11,21 @@ import {
 const TicketCard = ({ ticket }) => {
   const { title, price, isFeatured, link } = ticket;
   return (
-    <CardWrapper className={isFeatured ? "drop-shadow-gold" : ""}>
+    <CardWrapper className={isFeatured ? "featured" : ""}>
       {isFeatured && (
         <Featured>
           <div>RECOMMANDÉ</div>
         </Featured>
       )}
       <TicketWrapper className={isFeatured ? "featured" : ""}>
+        {isFeatured && (
+          <div className="overlay">
+            {price && <Price className="overlay-text">{price}$</Price>}
+            {title && (
+              <Title className="overlay-text">{renderRichText(title)}</Title>
+            )}
+          </div>
+        )}
         {price && <Price>{price}$</Price>}
         {title && <Title>{renderRichText(title)}</Title>}
       </TicketWrapper>

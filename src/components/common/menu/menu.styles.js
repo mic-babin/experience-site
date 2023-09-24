@@ -18,6 +18,12 @@ export const Col1 = styled(motion.div)`
   left: 0;
   background: black;
   filter: brightness(0.3);
+
+  video {
+    height: 100vh !important;
+    width: 100vw !important;
+    object-fit: cover;
+  }
 `;
 
 export const MenuLinks = styled(motion.div)`
@@ -85,7 +91,7 @@ export const ImageWrapper = styled(motion.div)`
   position: absolute;
   top: 0;
   left: 60vw;
-  transform: rotate(-13deg) translateY(-40%);
+
   height: 234px;
   width: 350px;
   z-index: 100;

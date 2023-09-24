@@ -9,7 +9,7 @@ import Src5 from "../../../assets/img/partner-5.svg";
 
 const images = [Src1, Src2, Src3, Src4, Src5];
 
-const randomParallaxSpeed = () => Math.random() * 20 + 10;
+const randomParallaxSpeed = () => Math.random() * 40 + 40;
 
 export const generateParallaxShapes = () => {
   return images.map((src, index) => {
