@@ -58,6 +58,24 @@ export const Price = styled.div`
     min-width: 341px;
     padding-left: 30px;
   }
+
+  @media only screen and (max-width: 1599px) {
+    font-size: 97px;
+    line-height: 92px;
+  }
+
+  @media only screen and (max-width: 1249px) {
+    font-size: 90px;
+    line-height: 95px;
+  }
+  @media only screen and (max-width: 400px) {
+    font-size: 80px;
+    line-height: 95px;
+  }
+  @media only screen and (max-width: 375px) {
+    font-size: 75px;
+    line-height: 95px;
+  }
 `;
 
 export const Title = styled.div`
@@ -73,6 +91,15 @@ export const Title = styled.div`
     min-width: 341px;
     padding-left: 30px;
   }
+
+  @media only screen and (max-width: 767px) {
+    font-size: 20px;
+    line-height: 23px;
+  }
+  @media only screen and (max-width: 575px) {
+    font-size: 16px;
+    line-height: 18px;
+  }
 `;
 
 export const Featured = styled.div`
@@ -81,6 +108,7 @@ export const Featured = styled.div`
   background-color: #e3fe96;
   padding: 15px;
   color: black;
+  text-align: center;
 
   font-family: "GroteskBold";
   text-transform: uppercase;
@@ -88,5 +116,14 @@ export const Featured = styled.div`
   line-height: 28px;
   div {
     transform: rotate(180deg);
+  }
+
+  @media only screen and (max-width: 767px) {
+    font-size: 20px;
+    line-height: 23px;
+  }
+  @media only screen and (max-width: 575px) {
+    font-size: 16px;
+    line-height: 18px;
   }
 `;

@@ -1,11 +1,11 @@
 import React, { useRef } from "react";
 import {
   Section,
+  Wrapper,
   SignUpTitle,
   Grid,
   Col,
   Kicker,
-  Empty,
   BgWrapper,
   Circle,
 } from "./sign-up.styles";
@@ -36,7 +36,7 @@ const SignUp = ({ data }) => {
 
   return (
     <Section s={s}>
-      <div ref={section}>
+      <Wrapper ref={section}>
         <BgWrapper>
           <Circle style={{ height: sectionSize.height }}></Circle>
           {lines}
@@ -68,8 +68,7 @@ const SignUp = ({ data }) => {
             </Col>
           </Grid>
         </div>
-        <Empty>&nbsp;</Empty>
-      </div>
+      </Wrapper>
     </Section>
   );
 };

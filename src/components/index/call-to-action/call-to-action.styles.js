@@ -19,7 +19,7 @@ export const BgWrapper = styled.div`
   }
 
   @media only screen and (max-width: 575px) {
-    padding: 75px 10vw;
+    padding: 75px 5vw;
   }
 `;
 
@@ -51,6 +51,7 @@ export const Title = styled.h2`
   @media only screen and (max-width: 575px) {
     font-size: 24px;
     line-height: 24px;
+    max-width: 200px;
   }
 `;
 
