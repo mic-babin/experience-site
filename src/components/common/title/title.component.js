@@ -68,7 +68,9 @@ const Title = ({
                       : "35px"
                   })`,
                 }}
-                className={textClass}
+                className={`${textClass} ${
+                  textClass === "programming" ? "justify-content-end" : ""
+                }`}
               >
                 <GatsbyImage
                   image={getImage(gatsbyImageData)}
@@ -94,7 +96,7 @@ const Title = ({
         let arr = title.raw.split("value");
         let value = children[children.length - 1].replace(/\n/g, "");
         let index = findIndex(value, arr);
-
+        if (value == "PROGRAMMATION" && isMedium) value = "PROGRAMM-ATION";
         return (
           <p>
             {

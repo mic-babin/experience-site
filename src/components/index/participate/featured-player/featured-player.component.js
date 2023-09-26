@@ -19,7 +19,6 @@ const FeaturedPlayer = ({ video, image }) => {
   const [first, setFirst] = useState(false);
 
   const togglePlay = () => {
-    console.log("toggle");
     setIsPlaying(!isPlaying);
   };
   const { scrollYProgress } = useScroll({

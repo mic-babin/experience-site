@@ -37,7 +37,7 @@ const renderTextAnimation = (text, inView, delay) => {
                 animate={inView ? { rotateY: [0, 360] } : { rotateY: 0 }}
                 transition={{
                   duration: 0.3,
-                  delay: count / 17 + delay,
+                  delay: count / 30 + delay,
                 }}
                 style={{ display: "inline-block" }}
               >

@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 import Typewriter from "typewriter-effect";
+import { useIsMedium } from "../../../utils/media-query.hook";
 
 const TypewriterAnimation = ({
   text,
@@ -11,7 +12,13 @@ const TypewriterAnimation = ({
   inView,
 }) => {
   const [start, setStart] = useState(false);
+  const isMedium = useIsMedium();
+
   useEffect(() => {
+    let newText = text;
+    if (isMedium && text == "PROGRAMMATION") {
+      text = "PROGRAMM-ATION";
+    }
     if (inView) {
       setTimeout(() => {
         setStart(true);
@@ -31,7 +38,7 @@ const TypewriterAnimation = ({
           loop: animationLoop && true,
           cursor: "",
           pauseFor: pause || 3500,
-          delay: 80,
+          delay: 60,
         }}
       />
     </span>

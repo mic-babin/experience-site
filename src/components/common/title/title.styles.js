@@ -5,8 +5,6 @@ export const LineWrapper = styled.div`
 
   &.programming {
     width: calc(100% - 260px);
-    justify-content: end;
-    -webkit-justify-content: end;
   }
 `;
 
@@ -23,7 +21,6 @@ export const Text = styled.div`
     }
 
     p:nth-of-type(3) {
-      padding-top: 16vh;
       text-align: end;
     }
 
@@ -46,12 +43,35 @@ export const Text = styled.div`
 
   &.programming {
     width: 100%;
-    img {
-      text-align: end;
-    }
+
     p:nth-of-type(2) {
       display: inline-block;
       text-align: end;
+    }
+    @media only screen and (max-width: 991px) {
+      p:first-of-type {
+        max-width: 490px;
+        word-wrap: break-word;
+      }
+    }
+
+    @media only screen and (max-width: 767px) {
+      p:first-of-type {
+        max-width: 390px;
+        word-wrap: break-word;
+      }
+    }
+    @media only screen and (max-width: 575px) {
+      p:first-of-type {
+        max-width: 230px;
+        word-wrap: break-word;
+      }
+    }
+    @media only screen and (max-width: 400px) {
+      p:first-of-type {
+        max-width: 190px;
+        word-wrap: break-word;
+      }
     }
   }
 `;

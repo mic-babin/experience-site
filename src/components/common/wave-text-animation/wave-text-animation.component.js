@@ -37,7 +37,7 @@ const renderTextAnimation = (text, inView, delay) => {
                 animate={inView ? { y: [0, 1, -12, -15, 1, 0] } : { y: 0 }}
                 transition={{
                   duration: 0.3,
-                  delay: count / 17 + delay || 0,
+                  delay: count / 23 + delay || 0,
                 }}
                 style={{ display: "inline-block" }}
               >

@@ -50,7 +50,7 @@ export const LinkWrapper = styled(motion.div)`
   line-height: 48px;
   width: 100%;
   text-align: left;
-  transition: all 0.2s ease-in-out;
+  transition: all 0 ease-in-out;
   padding-top: 23px;
   padding-bottom: 8px;
   padding-left: 150px;
@@ -83,7 +83,6 @@ export const NavLink = styled.div`
   text-decoration: none;
   text-transform: uppercase;
   width: 100%;
-  transition: all 0.2s ease-in-out;
   font-family: "GroteskBold";
 `;
 

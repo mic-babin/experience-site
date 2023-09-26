@@ -9,14 +9,13 @@ import Src5 from "../../../assets/img/partner-5.svg";
 
 const images = [Src1, Src2, Src3, Src4, Src5];
 
-const randomParallaxSpeed = () => Math.random() * 40 + 40;
+const parallaxSpeed = [55, 35, 50, 40, 25];
 
 export const generateParallaxShapes = () => {
   return images.map((src, index) => {
-    const speed = randomParallaxSpeed();
     return (
       <BgShape key={index}>
-        <Parallax translateY={[-speed, speed]}>
+        <Parallax translateY={[-parallaxSpeed[index], parallaxSpeed[index]]}>
           <Shape src={src} alt="Forme géometrique"></Shape>
         </Parallax>
       </BgShape>

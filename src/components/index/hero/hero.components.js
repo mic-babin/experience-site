@@ -39,7 +39,8 @@ const Hero = ({ data }) => {
                 textClass="main-title"
                 inView={inView}
                 animationLoop={true}
-                wordSpeed={700}
+                wordSpeed={400}
+                lineDelay={1000}
               />
             </SiteTitle>
           )}

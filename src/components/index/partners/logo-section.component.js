@@ -18,7 +18,6 @@ const LogoSection = ({ title, logos }) => {
     triggerOnce: true,
     threshold: 0.5,
   });
-  console.log(isSmall);
 
   const getColumns = (logos) => {
     return logos.length < 2

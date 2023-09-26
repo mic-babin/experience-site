@@ -14,6 +14,10 @@ export const MenuToggler = styled(motion.a)`
   line-height: 28px;
   z-index: 1001;
   transition: all 0.2s ease-in;
+
+  &:hover {
+    color: white;
+  }
 `;
 
 export const Registration = styled(MenuToggler)`

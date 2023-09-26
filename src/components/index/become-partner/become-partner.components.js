@@ -71,7 +71,7 @@ const BecomePartner = ({ data }) => {
                 delay: 2,
               }}
             >
-              <FlipTextAnimation text={kicker} inView={inView} delay={2} />
+              <FlipTextAnimation text={kicker} inView={inView} delay={1.5} />
             </Kicker>
           </div>
         )}

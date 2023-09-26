@@ -76,7 +76,7 @@ export const getShapes = (sectionSize) => [
     style: { width: "26.9vw" },
     initial: { y: -500, x: "73.1vw" },
     animate: {
-      y: sectionSize.height - sectionSize.width * 0.275,
+      y: sectionSize.height - sectionSize.width * 0.277,
     },
     transition: {
       duration: 1,
