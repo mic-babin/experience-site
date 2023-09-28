@@ -71,9 +71,12 @@ export const Kicker = styled(motion.div)`
     font-size: 20px;
     line-height: 23px;
     padding-bottom: 75px;
+    margin-left: 90px;
+    padding-bottom: 60px;
   }
   @media only screen and (max-width: 575px) {
     font-size: 16px;
     line-height: 18px;
+    padding-bottom: 15px;
   }
 `;

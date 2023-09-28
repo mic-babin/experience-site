@@ -67,6 +67,15 @@ const Title = ({
                       ? "32px"
                       : "35px"
                   })`,
+                  width: `calc(100% - ${
+                    isXSmall
+                      ? "94px"
+                      : isSmall
+                      ? "155px"
+                      : isMedium
+                      ? "196px"
+                      : "260px"
+                  })`,
                 }}
                 className={`${textClass} ${
                   textClass === "programming" ? "justify-content-end" : ""
@@ -77,7 +86,7 @@ const Title = ({
                   alt={description}
                   style={{
                     marginRight: "10px",
-                    display: "inline-block",
+                    display: "inline-flex",
                     width: isXSmall
                       ? "70px"
                       : isSmall

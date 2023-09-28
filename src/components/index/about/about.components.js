@@ -10,7 +10,7 @@ import {
   Index,
   FeatureWrapper,
   Feature,
-  Empty,
+  Wrapper,
   Smiley,
 } from "./about.styles";
 import { renderRichText } from "gatsby-source-contentful/rich-text";
@@ -63,7 +63,7 @@ const About = ({ data }) => {
 
   return (
     <Section s={s}>
-      <div className="container" id="a-propos">
+      <Wrapper className="container" id="a-propos">
         <Header>
           {title && (
             <Title
@@ -122,7 +122,7 @@ const About = ({ data }) => {
               ))}
           </Features>
         </FeatureWrapper>
-      </div>
+      </Wrapper>
       {inView && (
         <Smiley
           style={{ transform: `rotate(${rotation}deg)` }}
@@ -130,7 +130,6 @@ const About = ({ data }) => {
           alt="smiley"
         />
       )}
-      <Empty>&nbsp;</Empty>
     </Section>
   );
 };

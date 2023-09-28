@@ -45,7 +45,8 @@ export const Text = styled.div`
     width: 100%;
 
     p:nth-of-type(2) {
-      display: inline-block;
+      display: inline-flex;
+      margin-left: auto;
       text-align: end;
     }
     @media only screen and (max-width: 991px) {
