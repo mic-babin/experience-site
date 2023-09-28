@@ -71,7 +71,12 @@ const FeaturedPlayer = ({ video, image }) => {
               controls={isPlaying}
               url={"https:" + video.file.url}
               light={
-                <ImageWrapper>
+                <ImageWrapper
+                  onClick={() => {
+                    setFirst(true);
+                    setIsPlaying(true);
+                  }}
+                >
                   <GatsbyImage
                     image={getImage(image)}
                     alt={"Video Cover"}

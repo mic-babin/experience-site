@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   Section,
   Kicker,
@@ -18,6 +18,7 @@ import Title from "../../common/title/title.component";
 import { useInView } from "react-intersection-observer";
 import FlipTextAnimation from "../../common/flip-text-animation/flip-text-animation.component";
 import { motion } from "framer-motion";
+import { useScroll } from "framer-motion";
 
 const BecomePartner = ({ data }) => {
   const {
@@ -29,7 +30,7 @@ const BecomePartner = ({ data }) => {
     contactPhoto,
   } = data;
   const s = { background: "#EBE50D", color: "#000000" };
-
+  const [rotation, setRotation] = useState(0);
   const [containerRef, containerInView] = useInView({
     triggerOnce: true,
     threshold: 0.8,
@@ -44,6 +45,32 @@ const BecomePartner = ({ data }) => {
     triggerOnce: true,
     threshold: 0.3,
   });
+
+  const { scrollYProgress } = useScroll({
+    offset: ["-1 end", "1 end"],
+  });
+
+  const rotateSmiley = (progress) => {
+    let newRotation;
+    const afterDecimal = progress.toString().split(".")[1]
+      ? Number(progress.toString().split(".")[1][0])
+      : 9;
+    const isEven = afterDecimal % 2 == 0;
+    if (isEven) {
+      newRotation = 13 - (progress - afterDecimal / 10) * 260 + 5;
+    } else {
+      newRotation = (progress - afterDecimal / 10) * 260 - 8;
+    }
+    setRotation(newRotation);
+  };
+
+  useEffect(() => {
+    scrollYProgress.onChange(rotateSmiley);
+
+    return () => {
+      scrollYProgress.onChange(null);
+    };
+  }, [scrollYProgress]);
 
   return (
     <Section s={s}>
@@ -91,7 +118,11 @@ const BecomePartner = ({ data }) => {
                   delay: 0.5,
                 }}
               >
-                <Photo image={getImage(contactPhoto)} alt="TODO" />
+                <Photo
+                  image={getImage(contactPhoto)}
+                  alt="TODO"
+                  style={{ transform: `rotate(${rotation}deg)` }}
+                />
               </motion.div>
             )}
             {contactName && (

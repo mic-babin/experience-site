@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useEffect, useState } from "react";
 import {
   Section,
   Header,
@@ -18,10 +18,12 @@ import { Trans } from "gatsby-plugin-react-i18next";
 import SmileySrc from "../../../assets/img/smiley.svg";
 import NumberCounter from "./number-counter/number-counter.component";
 import { useInView } from "react-intersection-observer";
+import { useScroll } from "framer-motion";
 
 const About = ({ data }) => {
   const { title, features, participants, exhibitors } = data;
   const s = { background: "#000000", color: "#e8e8e6" };
+  const [rotation, setRotation] = useState(0);
 
   const [inViewRef, inView] = useInView({
     triggerOnce: true,
@@ -32,6 +34,32 @@ const About = ({ data }) => {
     triggerOnce: true,
     threshold: 0.2,
   });
+
+  const { scrollYProgress } = useScroll({
+    offset: ["-1 end", "1 end"],
+  });
+
+  const rotateSmiley = (progress) => {
+    let newRotation;
+    const afterDecimal = progress.toString().split(".")[1]
+      ? Number(progress.toString().split(".")[1][0])
+      : 9;
+    const isEven = afterDecimal % 2 == 0;
+    if (isEven) {
+      newRotation = 13 - (progress - afterDecimal / 10) * 260 + 5;
+    } else {
+      newRotation = (progress - afterDecimal / 10) * 260 - 8;
+    }
+    setRotation(newRotation);
+  };
+
+  useEffect(() => {
+    scrollYProgress.onChange(rotateSmiley);
+
+    return () => {
+      scrollYProgress.onChange(null);
+    };
+  }, [scrollYProgress]);
 
   return (
     <Section s={s}>
@@ -97,13 +125,7 @@ const About = ({ data }) => {
       </div>
       {inView && (
         <Smiley
-          initial={{ rotate: 0 }}
-          animate={inView ? { rotate: [0, 13, -13, 0] } : { rotate: 0 }}
-          transition={{
-            duration: 0.5,
-            repeat: Infinity,
-            repeatDelay: 10,
-          }}
+          style={{ transform: `rotate(${rotation}deg)` }}
           src={SmileySrc}
           alt="smiley"
         />
