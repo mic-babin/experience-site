@@ -25,6 +25,7 @@ export const Text = styled.div`
     }
 
     p:nth-of-type(3) {
+      margin-top: 12.5vh;
       text-align: end;
     }
 

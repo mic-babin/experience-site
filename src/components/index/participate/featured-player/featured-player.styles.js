@@ -25,29 +25,29 @@ export const StartButton = styled(motion.button)`
   border: none;
   color: white;
   top: calc(50% - 47px);
-  left: calc(50% - 80px);
+  left: calc(50% - 205px);
   border-radius: 47px;
   height: 94px;
-  width: 160px;
+  width: 410px;
 
   @media only screen and (max-width: 767px) {
     font-size: 20px;
     line-height: 23px;
     top: calc(50% - 30px);
-    left: calc(50% - 60px);
+    left: calc(50% - 160px);
     border-radius: 30px;
     height: 60px;
-    width: 120px;
+    width: 320px;
   }
   @media only screen and (max-width: 575px) {
     font-size: 16px;
     line-height: 18px;
 
     top: calc(50% - 24px);
-    left: calc(50% - 48px);
+    left: calc(50% - 120px);
     border-radius: 24px;
     height: 48px;
-    width: 96px;
+    width: 240px;
   }
 `;
 

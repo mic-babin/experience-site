@@ -9,9 +9,9 @@ const Partners = ({ data }) => {
     partenairePresentateur,
     destinationsVedettes,
     experienceUnique,
-    cocktail,
+    // cocktail,
     partenairesCreateurs,
-    partenairesDeSoutien,
+    // partenairesDeSoutien,
   } = data;
 
   return (
@@ -28,15 +28,15 @@ const Partners = ({ data }) => {
           logos={destinationsVedettes}
         />
         <LogoSection title={"Experience Unique"} logos={experienceUnique} />
-        <LogoSection title={"Cocktail"} logos={cocktail} />
+        {/* <LogoSection title={"Cocktail"} logos={cocktail} /> */}
         <LogoSection
           title={"Partenaires Createurs"}
           logos={partenairesCreateurs}
         />
-        <LogoSection
+        {/* <LogoSection
           title={"Partenaires De Soutien"}
           logos={partenairesDeSoutien}
-        />
+        /> */}
       </Wrapper>
     </Section>
   );

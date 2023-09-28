@@ -1,8 +1,7 @@
 import Shape1Src from "../../../assets/img/2edition.svg";
-import Shape2Src from "../../../assets/img/salon-experience.svg";
+import Shape2Src from "../../../assets/img/ExperienceHeader.svg";
 import Shape3Src from "../../../assets/img/grand-quai.svg";
 import Shape4Src from "../../../assets/img/22-fevrier.svg";
-import Shape5Src from "../../../assets/img/presente-par.svg";
 import { v4 as uuidv4 } from "uuid";
 
 export const getShapes = (sectionSize) => [
@@ -10,9 +9,9 @@ export const getShapes = (sectionSize) => [
     key: uuidv4(),
     src: Shape1Src,
     alt: "2e edition",
-    style: { width: "19.8vw" },
+    style: { width: "16.8vw" },
     initial: { y: -300, x: "-2.1vw" },
-    animate: { y: sectionSize.height - sectionSize.width * 0.373 },
+    animate: { y: sectionSize.height - sectionSize.width * 0.39 },
     transition: {
       duration: 1,
       type: "spring",
@@ -27,7 +26,7 @@ export const getShapes = (sectionSize) => [
     alt: "Salon Experience",
     style: { width: "51.2vw" },
     initial: { y: -850, x: 0 },
-    animate: { y: sectionSize.height - sectionSize.width * 0.459 },
+    animate: { y: sectionSize.height - sectionSize.width * 0.368 },
     transition: {
       duration: 1,
       type: "spring",
@@ -41,9 +40,9 @@ export const getShapes = (sectionSize) => [
     src: Shape3Src,
     alt: "Grand Quai du Port de Montréal",
     style: { width: "18.3vw" },
-    initial: { y: -500, x: "26.5vw" },
+    initial: { y: -500, x: "18.5vw" },
     animate: {
-      y: sectionSize.height - sectionSize.width * 0.185,
+      y: sectionSize.height - sectionSize.width * 0.182,
     },
     transition: {
       duration: 1,
@@ -56,11 +55,11 @@ export const getShapes = (sectionSize) => [
   {
     key: uuidv4(),
     src: Shape4Src,
-    style: { width: "41.9vw" },
+    style: { width: "32.9vw" },
     alt: "22 février 2024",
-    initial: { y: -500, x: "43.5vw" },
+    initial: { y: -500, x: "36.2vw" },
     animate: {
-      y: sectionSize.height - sectionSize.width * 0.218,
+      y: sectionSize.height - sectionSize.width / 6.05,
     },
     transition: {
       duration: 1,
@@ -68,23 +67,6 @@ export const getShapes = (sectionSize) => [
       damping: 7,
       stiffness: 100,
       delay: 1.4,
-    },
-  },
-  {
-    key: uuidv4(),
-    src: Shape5Src,
-    alt: "Présenté par Lulu",
-    style: { width: "26.9vw" },
-    initial: { y: -500, x: "73.1vw" },
-    animate: {
-      y: sectionSize.height - sectionSize.width * 0.277,
-    },
-    transition: {
-      duration: 1,
-      type: "spring",
-      damping: 7,
-      stiffness: 100,
-      delay: 1.8,
     },
   },
 ];
@@ -96,7 +78,7 @@ export const getSmallShapes = (sectionSize) => [
     alt: "2e edition",
     style: { width: "39.31vw" },
     initial: { y: -300, x: "-4.9vw" },
-    animate: { y: sectionSize.height - sectionSize.width * 0.94 },
+    animate: { y: sectionSize.height - sectionSize.width / 1.26 },
     transition: {
       duration: 1,
       type: "spring",
@@ -111,7 +93,7 @@ export const getSmallShapes = (sectionSize) => [
     alt: "Salon Experience",
     style: { width: "100vw" },
     initial: { y: -850, x: 0 },
-    animate: { y: sectionSize.height - sectionSize.width * 1.105 },
+    animate: { y: sectionSize.height - sectionSize.width / 1.43 },
     transition: {
       duration: 1,
       type: "spring",
@@ -144,7 +126,7 @@ export const getSmallShapes = (sectionSize) => [
     alt: "22 février 2024",
     initial: { y: -500, x: "0vw" },
     animate: {
-      y: sectionSize.height - sectionSize.width * 1.345,
+      y: sectionSize.height - sectionSize.width / 1.0,
     },
     transition: {
       duration: 1,
@@ -152,23 +134,6 @@ export const getSmallShapes = (sectionSize) => [
       damping: 7,
       stiffness: 100,
       delay: 2.3,
-    },
-  },
-  {
-    key: uuidv4(),
-    src: Shape5Src,
-    alt: "Présenté par Lulu",
-    style: { width: "52.03vw" },
-    initial: { y: -500, x: "48vw" },
-    animate: {
-      y: sectionSize.height - sectionSize.width * 0.565,
-    },
-    transition: {
-      duration: 1,
-      type: "spring",
-      damping: 7,
-      stiffness: 100,
-      delay: 1.4,
     },
   },
 ];

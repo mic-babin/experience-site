@@ -46,6 +46,7 @@ export const Title = styled(motion.div)`
   font-family: "GroteskBold";
   font-size: 100px;
   line-height: 95px;
+  text-transform: uppercase;
   @media only screen and (max-width: 1599px) {
     font-size: 97px;
     line-height: 92px;
@@ -72,8 +73,6 @@ export const Title = styled(motion.div)`
 
 export const NumbersWrapper = styled.div`
   display: flex;
-  justify-content: space-between;
-  -webkit-justify-content: space-between;
   flex-direction: column;
   align-items: end;
   -webkit-align-items: end;

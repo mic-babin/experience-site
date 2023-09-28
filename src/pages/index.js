@@ -31,7 +31,7 @@ export default function Home({ data }) {
         <Participate data={participateData} />
         <Reasons data={reasonsData} />
         <About data={aboutData} />
-        <Programming data={programmingData} />
+        {/* <Programming data={programmingData} /> */}
         <SignUp data={signUpData} />
         <Partners data={partnersData} />
         <BecomePartner data={becomePartnerData} />
@@ -165,19 +165,12 @@ export const query = graphql`
           id
           gatsbyImageData(quality: 100)
         }
-        cocktail {
-          id
-          gatsbyImageData(quality: 100)
-        }
+
         experienceUnique {
           id
           gatsbyImageData(quality: 100)
         }
         partenairesCreateurs {
-          id
-          gatsbyImageData(quality: 100)
-        }
-        partenairesDeSoutien {
           id
           gatsbyImageData(quality: 100)
         }
