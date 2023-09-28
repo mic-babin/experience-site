@@ -3,9 +3,12 @@ import { GatsbyImage } from "gatsby-plugin-image";
 import { motion } from "framer-motion";
 
 export const Wrapper = styled(motion.div)`
-  padding-top: 150px;
   margin-bottom: -10px;
   transform-origin: top center;
+
+  @media only screen and (max-width: 767px) {
+    margin-bottom: 50px;
+  }
 `;
 export const BgWrapper = styled.div`
   position: relative;
@@ -13,8 +16,6 @@ export const BgWrapper = styled.div`
 
 export const StartButton = styled(motion.button)`
   position: absolute;
-  top: calc(50% - 47px);
-  left: calc(50% - 80px);
   background-color: #3f3aef;
   font-family: "GroteskBold";
   font-size: 24px;
@@ -23,9 +24,31 @@ export const StartButton = styled(motion.button)`
   text-transform: uppercase;
   border: none;
   color: white;
-  height: 94px;
+  top: calc(50% - 47px);
+  left: calc(50% - 80px);
   border-radius: 47px;
+  height: 94px;
   width: 160px;
+
+  @media only screen and (max-width: 767px) {
+    font-size: 20px;
+    line-height: 23px;
+    top: calc(50% - 30px);
+    left: calc(50% - 60px);
+    border-radius: 30px;
+    height: 60px;
+    width: 120px;
+  }
+  @media only screen and (max-width: 575px) {
+    font-size: 16px;
+    line-height: 18px;
+
+    top: calc(50% - 24px);
+    left: calc(50% - 48px);
+    border-radius: 24px;
+    height: 48px;
+    width: 96px;
+  }
 `;
 
 export const popOutAnimation = {
