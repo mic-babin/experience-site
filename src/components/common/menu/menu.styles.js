@@ -40,6 +40,11 @@ export const MenuLinks = styled(motion.div)`
   align-items: center;
   -webkit-align-items: center;
   z-index: 1000;
+
+  @media only screen and (max-width: 767px) {
+    justify-content: end;
+    padding-bottom: 50px;
+  }
 `;
 
 export const LinkWrapper = styled(motion.div)`
@@ -56,13 +61,36 @@ export const LinkWrapper = styled(motion.div)`
   padding-left: 150px;
   position: relative;
 
+  @media only screen and (max-width: 767px) {
+    font-size: 36px;
+    line-height: 36px;
+    padding-left: 60px;
+  }
+
+  @media only screen and (max-width: 575px) {
+    font-size: 24px;
+    line-height: 24px;
+    padding-left: 30px;
+    padding-top: 12px;
+    padding-bottom: 4px;
+  }
+
   span {
-    font-size: 14px;
     display: inline-block;
     font-family: "Grotesk55";
     font-size: 50%;
     transform: translateY(-20px);
     padding-right: 20px;
+
+    @media only screen and (max-width: 767px) {
+      transform: translateY(-15px);
+      padding-right: 15px;
+    }
+
+    @media only screen and (max-width: 575px) {
+      transform: translateY(-12px);
+      padding-right: 12px;
+    }
   }
 
   .image-wrapper {

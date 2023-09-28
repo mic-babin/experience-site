@@ -15,6 +15,7 @@ import { ShouldStickContext } from "../../../context/shouldStick.context";
 import { navigate } from "gatsby";
 import { getImage } from "gatsby-plugin-image";
 import ReactPlayer from "react-player";
+import { useIsLarge } from "../../../utils/media-query.hook";
 
 // TODO Could potentially check with array position, use navigate when possible and scroll the rest of time
 const Menu = ({ menu }) => {
@@ -26,6 +27,8 @@ const Menu = ({ menu }) => {
     setShowMenu(false);
     setTimeout(() => scroll(to), 50);
   };
+
+  const isLarge = useIsLarge();
 
   const scroll = (to) => {
     setShouldStick(false);
@@ -89,14 +92,21 @@ const Menu = ({ menu }) => {
                 <NavLink onClick={() => closeMenu(link)} className="clickable">
                   {title}
                 </NavLink>
-                <ImageWrapper
-                  className="image-wrapper"
-                  style={{
-                    transform: `rotate(${index * 5 - 13}deg) translateY(-40%)`,
-                  }}
-                >
-                  <LinkImage image={getImage(image)} alt={image.description} />
-                </ImageWrapper>
+                {!isLarge && (
+                  <ImageWrapper
+                    className="image-wrapper"
+                    style={{
+                      transform: `rotate(${
+                        index * 5 - 13
+                      }deg) translateY(-40%)`,
+                    }}
+                  >
+                    <LinkImage
+                      image={getImage(image)}
+                      alt={image.description}
+                    />
+                  </ImageWrapper>
+                )}
               </LinkWrapper>
             ))}
           </AnimatePresence>

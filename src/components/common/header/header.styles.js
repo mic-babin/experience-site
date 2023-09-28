@@ -35,6 +35,10 @@ export const Wrapper = styled.div`
   -webkit-align-items: center;
   padding: 15px 30px;
   z-index: 10;
+
+  @media only screen and (max-width: 767px) {
+    padding: 15px 20px;
+  }
 `;
 
 export const Logo = styled(motion.img)`
