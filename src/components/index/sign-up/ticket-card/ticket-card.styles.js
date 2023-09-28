@@ -30,14 +30,12 @@ export const TicketWrapper = styled.div`
     width: 0;
     height: calc(100% - 0.1px);
     transition: 0.5s width ease;
-    z-index: 0;
+    z-index: 10;
     padding: 30px 0;
+    color: black;
   }
 
   &:hover {
-    color: black;
-    background-color: #e3fe96;
-
     .overlay {
       width: 100%;
     }

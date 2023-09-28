@@ -22,14 +22,13 @@ const TicketCard = ({ ticket }) => {
         </Featured>
       )}
       <TicketWrapper className={isFeatured ? "featured" : ""}>
-        {isFeatured && (
-          <div className="overlay">
-            {price && <Price className="overlay-text">{price}$</Price>}
-            {title && (
-              <Title className="overlay-text">{renderRichText(title)}</Title>
-            )}
-          </div>
-        )}
+        <div className="overlay">
+          {price && <Price className="overlay-text">{price}$</Price>}
+          {title && (
+            <Title className="overlay-text">{renderRichText(title)}</Title>
+          )}
+        </div>
+
         {price && <Price>{price}$</Price>}
         {title && <Title>{renderRichText(title)}</Title>}
       </TicketWrapper>
