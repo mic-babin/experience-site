@@ -1,16 +1,21 @@
 import React, { useRef, useState } from "react";
 import { Section, SiteTitle, Shape, Wrapper } from "./hero.styles";
 import Title from "../../common/title/title.component";
-import { getShapes } from "./shapes.data";
+import { getShapes, getSmallShapes } from "./shapes.data";
 import { useElementSize } from "../../../utils/element-size.hook";
 import { useInView } from "react-intersection-observer";
+import { useIsMedium } from "../../../utils/media-query.hook";
 
 const Hero = ({ data }) => {
   const { title } = data;
   const s = { background: "#EBE50D", color: "#000000" };
+  const isMedium = useIsMedium();
   const section = useRef();
   const sectionSize = useElementSize(section);
-  const shapes = getShapes(sectionSize);
+  console.log(isMedium);
+  const shapes = isMedium
+    ? getSmallShapes(sectionSize)
+    : getShapes(sectionSize);
   const [showShapes, setShowShapes] = useState(false);
 
   const [inViewRef, inView] = useInView({

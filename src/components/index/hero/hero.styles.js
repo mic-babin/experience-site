@@ -17,6 +17,22 @@ export const SiteTitle = styled(motion.h1)`
   line-height: 118px;
   font-family: "GroteskBold";
   padding-top: 165px;
+
+  @media only screen and (max-width: 1249px) {
+    font-size: 76px;
+    line-height: 72px;
+  }
+
+  @media only screen and (max-width: 767px) {
+    font-size: 60px;
+    line-height: 57px;
+    padding-top: 155px;
+  }
+  @media only screen and (max-width: 575px) {
+    font-size: 36px;
+    line-height: 38px;
+    padding-top: 125px;
+  }
 `;
 
 export const Shape = styled(motion.img)`

@@ -67,15 +67,18 @@ const Title = ({
                       ? "32px"
                       : "35px"
                   })`,
-                  width: `calc(100% - ${
-                    isXSmall
-                      ? "94px"
-                      : isSmall
-                      ? "155px"
-                      : isMedium
-                      ? "196px"
-                      : "260px"
-                  })`,
+                  width:
+                    textClass == "programming"
+                      ? `calc(100% - ${
+                          isXSmall
+                            ? "94px"
+                            : isSmall
+                            ? "155px"
+                            : isMedium
+                            ? "196px"
+                            : "260px"
+                        })`
+                      : "auto",
                 }}
                 className={`${textClass} ${
                   textClass === "programming" ? "justify-content-end" : ""

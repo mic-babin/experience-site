@@ -17,7 +17,11 @@ export const Text = styled.div`
       display: inline;
     }
     p:nth-of-type(2) {
-      display: inline;
+      display: inline-block;
+
+      @media only screen and (max-width: 767px) {
+        margin-bottom: 10px;
+      }
     }
 
     p:nth-of-type(3) {
