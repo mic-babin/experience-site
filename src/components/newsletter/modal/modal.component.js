@@ -44,8 +44,9 @@ const ContactFormModal = ({ show, handleClose }) => {
                   type: "linear",
                 }}
                 viewport={{ once: true }}
-                // onSubmit={handleSubmit}
+                onSubmit={handleSubmit}
               >
+                <input type="hidden" name="form-name" value="newsletter" />
                 {contactForm &&
                   contactForm.map((field) => (
                     <NewsLetterInput
