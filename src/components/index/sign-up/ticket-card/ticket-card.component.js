@@ -16,7 +16,7 @@ const TicketCard = ({ ticket }) => {
   return (
     <CardWrapper
       className={isFeatured ? "featured" : ""}
-      href="https://perdu.com"
+      href={link}
       target="_blank"
     >
       <Featured style={{ visibility: isFeatured ? "visible" : "hidden" }}>
