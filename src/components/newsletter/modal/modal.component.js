@@ -26,7 +26,7 @@ const ContactFormModal = ({ show, handleClose }) => {
 
   const go = "G O";
   return (
-    <ModalCard show={show} onHide={handleClose} centered>
+    <ModalCard show={true} onHide={handleClose} centered>
       <ModalCard.Body>
         {!sent && (
           <>
