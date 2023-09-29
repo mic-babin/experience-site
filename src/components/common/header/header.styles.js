@@ -2,6 +2,7 @@ import { styled } from "styled-components";
 import { motion } from "framer-motion";
 
 export const MenuToggler = styled(motion.a)`
+  margin-left: auto;
   cursor: pointer;
   text-decoration: none;
   color: black;
@@ -50,6 +51,4 @@ export const Logo = styled(motion.img)`
 export const ButtonGroup = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: end;
-  -webkit-align-items: end;
 `;

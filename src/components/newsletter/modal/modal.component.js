@@ -92,9 +92,11 @@ const ContactFormModal = ({ show, handleClose }) => {
           </div>
         )}
         {sent && (
-          <ModalButton className="pe-3" onClick={handleClose}>
-            <Trans>closeEmail</Trans>
-          </ModalButton>
+          <div className="d-flex">
+            <ModalButton className="pe-3" onClick={handleClose}>
+              <Trans>closeEmail</Trans>
+            </ModalButton>
+          </div>
         )}
       </ModalCard.Body>
     </ModalCard>
