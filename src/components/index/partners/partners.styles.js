@@ -89,7 +89,7 @@ export const LogosWrapper = styled.div`
   }
 `;
 
-export const LogoWrapper = styled(motion.div)`
+export const LogoWrapper = styled(motion.a)`
   background-color: black;
   max-height: 204px;
   max-width: 204px;

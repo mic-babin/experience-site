@@ -45,8 +45,6 @@ const FeaturedPlayer = ({ video, image }) => {
     }
   }, [first]);
 
-  console.log("first", first, "isPlaying", isPlaying);
-
   return (
     <Wrapper ref={section} style={{ scale: scaleX }}>
       {video && (

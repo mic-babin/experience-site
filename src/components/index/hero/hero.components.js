@@ -12,7 +12,6 @@ const Hero = ({ data }) => {
   const isMedium = useIsMedium();
   const section = useRef();
   const sectionSize = useElementSize(section);
-  console.log(isMedium);
   const shapes = isMedium
     ? getSmallShapes(sectionSize)
     : getShapes(sectionSize);

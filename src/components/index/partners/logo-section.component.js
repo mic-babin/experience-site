@@ -20,15 +20,22 @@ const LogoSection = ({ title, logos }) => {
   });
 
   const getColumns = (logos) => {
-    return logos.length < 2
+    return logos.length < 2 || logos.length == undefined
       ? 1
-      : logos.length < 5 || isMedium
+      : isMedium || logos.length == 2
       ? 2
-      : logos.length < 7
-      ? 3
-      : isLarge
+      : logos.length == 3
       ? 3
       : 4;
+    // return logos.length < 2 || logos.length == undefined
+    // ? 1
+    // : logos.length < 5 || isMedium
+    // ? 2
+    // : logos.length < 7
+    // ? 3
+    // : isLarge
+    // ? 3
+    // : 4;
   };
 
   return (
@@ -55,18 +62,32 @@ const LogoSection = ({ title, logos }) => {
           }}
           className={title == "Partenaire Présentateur" ? "first" : ""}
         >
+          {title == "Partenaire Présentateur" && (
+            <LogoWrapper
+              href={logos.link}
+              target="_blank"
+              className="lulu"
+              initial={{ opacity: 0 }}
+              animate={inView ? { opacity: 1 } : {}}
+              transition={{ delay: 0 / 15 }}
+            >
+              <GatsbyImage image={getImage(logos.logo)} alt="TODO" />
+            </LogoWrapper>
+          )}
           {logos &&
-            logos.map((image, index) => (
+            title !== "Partenaire Présentateur" &&
+            logos.map((item, index) => (
               <LogoWrapper
                 key={index}
-                className={title == "Partenaire Présentateur" ? "lulu" : ""}
+                href={item.link}
+                target="_blank"
                 initial={{ opacity: 0 }}
                 animate={inView ? { opacity: 1 } : {}}
                 transition={{ delay: index / 15 }}
               >
                 <GatsbyImage
-                  key={image.id}
-                  image={getImage(image)}
+                  key={item.id}
+                  image={getImage(item.logo)}
                   alt="TODO"
                 />
               </LogoWrapper>

@@ -25,27 +25,19 @@ export default function Home({ data }) {
   const menu = data.allContentfulMenu.nodes[0];
 
   return (
-    <>
-      <form name="newsletter" netlify hidden>
-        <input type="text" name="name" />
-        <input type="email" name="email" />
-        <input type="hidden" name="form-name" value="contact" />
-      </form>
-
-      <Layout menu={menu}>
-        <ParallaxProvider>
-          <Hero data={heroData} />
-          <Participate data={participateData} />
-          <Reasons data={reasonsData} />
-          <About data={aboutData} />
-          {/* <Programming data={programmingData} /> */}
-          <SignUp data={signUpData} />
-          <Partners data={partnersData} />
-          <BecomePartner data={becomePartnerData} />
-          <CallToAction data={callToActionData} />
-        </ParallaxProvider>
-      </Layout>
-    </>
+    <Layout menu={menu}>
+      <ParallaxProvider>
+        <Hero data={heroData} />
+        <Participate data={participateData} />
+        <Reasons data={reasonsData} />
+        <About data={aboutData} />
+        {/* <Programming data={programmingData} /> */}
+        <SignUp data={signUpData} />
+        <Partners data={partnersData} />
+        <BecomePartner data={becomePartnerData} />
+        <CallToAction data={callToActionData} />
+      </ParallaxProvider>
+    </Layout>
   );
 }
 
@@ -167,20 +159,31 @@ export const query = graphql`
       nodes {
         partenairePresentateur {
           id
-          gatsbyImageData(quality: 100)
+          link
+          logo {
+            gatsbyImageData(quality: 100)
+          }
         }
         destinationsVedettes {
           id
-          gatsbyImageData(quality: 100)
+          link
+          logo {
+            gatsbyImageData(quality: 100)
+          }
         }
-
         experienceUnique {
           id
-          gatsbyImageData(quality: 100)
+          link
+          logo {
+            gatsbyImageData(quality: 100)
+          }
         }
         partenairesCreateurs {
           id
-          gatsbyImageData(quality: 100)
+          link
+          logo {
+            gatsbyImageData(quality: 100)
+          }
         }
       }
     }
