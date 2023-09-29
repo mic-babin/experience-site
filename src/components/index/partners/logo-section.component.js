@@ -44,7 +44,7 @@ const LogoSection = ({ title, logos }) => {
         <span>
           <WaveTextAnimation text={title} inView={inView} delay={0} />
         </span>
-        {logos && <Number>{logos.length}</Number>}
+        {logos && <Number>{logos.length || 1}</Number>}
       </Title>
 
       <div className="d-flex justify-content-end">
@@ -52,17 +52,15 @@ const LogoSection = ({ title, logos }) => {
           ref={inViewRef}
           style={{
             maxWidth:
-              logos.length == 1 &&
-              title != "Partenaire Présentateur" &&
-              "calc(50% - 6px)",
+              logos.length == 1 && title != "Présentateur" && "calc(50% - 6px)",
             gridTemplateColumns:
               isSmall && logos.length > 2
                 ? "1fr 1fr"
                 : `repeat(${getColumns(logos)}, 1fr)`,
           }}
-          className={title == "Partenaire Présentateur" ? "first" : ""}
+          className={title == "Présentateur" ? "first" : ""}
         >
-          {title == "Partenaire Présentateur" && (
+          {title == "Présentateur" && (
             <LogoWrapper
               href={logos.link}
               target="_blank"
@@ -75,7 +73,7 @@ const LogoSection = ({ title, logos }) => {
             </LogoWrapper>
           )}
           {logos &&
-            title !== "Partenaire Présentateur" &&
+            title !== "Présentateur" &&
             logos.map((item, index) => (
               <LogoWrapper
                 key={index}

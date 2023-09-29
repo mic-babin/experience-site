@@ -19,10 +19,7 @@ const Partners = ({ data }) => {
       <div id="exposants"></div>
       <Wrapper>
         {generateParallaxShapes()}
-        <LogoSection
-          title={"Partenaire Présentateur"}
-          logos={partenairePresentateur}
-        />
+        <LogoSection title={"Présentateur"} logos={partenairePresentateur} />
         <LogoSection
           title={"Destinations vedettes"}
           logos={destinationsVedettes}

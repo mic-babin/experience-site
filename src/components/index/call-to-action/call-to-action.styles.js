@@ -77,7 +77,9 @@ export const Kicker = styled.div`
   }
 `;
 
-export const Button = styled(motion.button)`
+export const Button = styled(motion.a)`
+  display: block;
+  text-align: center;
   font-family: "GroteskBold";
   font-size: 100px;
   line-height: 95px;

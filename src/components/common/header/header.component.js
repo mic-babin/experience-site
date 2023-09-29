@@ -49,7 +49,7 @@ const Header = ({ menu }) => {
         </motion.div>
 
         <ButtonGroup>
-          <MenuToggler
+          {/* <MenuToggler
             onClick={() => toggleMenu()}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -88,30 +88,40 @@ const Header = ({ menu }) => {
                   {word}
                 </motion.span>
               ))}
-          </MenuToggler>
-          <Registration
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{
-              duration: 0.5,
-              delay: 1,
+          </MenuToggler> */}
+          <a
+            style={{
+              textDecoration: "none",
+              display: "block",
+              // marginTop: "6px",
             }}
+            target="_blank"
+            href="https://experience.lesaffaires.com/fr/registration/6511acd96961c66a33ccf8af?force_new_registration=true"
           >
-            {registration.split(" ").map((word, index) => (
-              <motion.span
-                key={index}
-                initial={{ opacity: 0, filter: "blur(1)" }}
-                animate={{ opacity: 1, filter: "blur(0)" }}
-                transition={{
-                  duration: 1,
-                  delay: index / 10 + 1,
-                  ease: [0.11, 0, 0.5, 0],
-                }}
-              >
-                {word}
-              </motion.span>
-            ))}
-          </Registration>
+            <Registration
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{
+                duration: 0.5,
+                delay: 1,
+              }}
+            >
+              {registration.split(" ").map((word, index) => (
+                <motion.span
+                  key={index}
+                  initial={{ opacity: 0, filter: "blur(1)" }}
+                  animate={{ opacity: 1, filter: "blur(0)" }}
+                  transition={{
+                    duration: 1,
+                    delay: index / 10 + 1,
+                    ease: [0.11, 0, 0.5, 0],
+                  }}
+                >
+                  {word}
+                </motion.span>
+              ))}
+            </Registration>
+          </a>
         </ButtonGroup>
         <Menu menu={menu} />
       </Wrapper>
