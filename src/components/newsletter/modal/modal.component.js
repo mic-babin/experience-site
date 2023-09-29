@@ -32,7 +32,7 @@ const ContactFormModal = ({ show, handleClose }) => {
           <>
             <div className="py-4 ">
               <Title className="text-center">Restez Informé!</Title>
-              <form
+              <Form
                 name="newsletter"
                 data-netlify="true"
                 data-netlify-honeypot="bot-field"
@@ -83,6 +83,10 @@ const ContactFormModal = ({ show, handleClose }) => {
                     </motion.span>
                   ))}
                 </FormButton>
+              </Form>
+              <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+                <input type="text" name="name" />
+                <input type="email" name="email" />
               </form>
             </div>
           </>
