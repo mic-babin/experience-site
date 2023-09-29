@@ -26,9 +26,10 @@ export default function Home({ data }) {
 
   return (
     <>
-      <form name="newsletter" netlify netlify-honeypot="bot-field" hidden>
+      <form name="newsletter" netlify hidden>
         <input type="text" name="name" />
         <input type="email" name="email" />
+        <input type="hidden" name="form-name" value="contact" />
       </form>
 
       <Layout menu={menu}>
