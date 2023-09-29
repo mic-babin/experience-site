@@ -35,7 +35,6 @@ const ContactFormModal = ({ show, handleClose }) => {
               <Form
                 name="newsletter"
                 data-netlify="true"
-                data-netlify-honeypot="bot-field"
                 method="POST"
                 whileInView={{ opacity: 1 }}
                 initial={{ opacity: 0 }}
@@ -84,10 +83,6 @@ const ContactFormModal = ({ show, handleClose }) => {
                   ))}
                 </FormButton>
               </Form>
-              <form name="contact" netlify netlify-honeypot="bot-field" hidden>
-                <input type="text" name="name" />
-                <input type="email" name="email" />
-              </form>
             </div>
           </>
         )}
