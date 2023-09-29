@@ -26,16 +26,13 @@ const ContactFormModal = ({ show, handleClose }) => {
 
   const go = "G O";
   return (
-    <ModalCard show={true} onHide={handleClose} centered>
+    <ModalCard show={show} onHide={handleClose} centered>
       <ModalCard.Body>
         {!sent && (
           <>
             <div className="py-4 ">
               <Title className="text-center">Restez Informé!</Title>
               <Form
-                name="newsletter"
-                data-netlify="true"
-                method="POST"
                 whileInView={{ opacity: 1 }}
                 initial={{ opacity: 0 }}
                 transition={{
@@ -44,9 +41,7 @@ const ContactFormModal = ({ show, handleClose }) => {
                   type: "linear",
                 }}
                 viewport={{ once: true }}
-                onSubmit={handleSubmit}
               >
-                <input type="hidden" name="form-name" value="newsletter" />
                 {contactForm &&
                   contactForm.map((field) => (
                     <NewsLetterInput
@@ -59,7 +54,7 @@ const ContactFormModal = ({ show, handleClose }) => {
                   ))}
 
                 <FormButton
-                  type="submit"
+                  onClick={handleSubmit}
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{
@@ -78,7 +73,7 @@ const ContactFormModal = ({ show, handleClose }) => {
                         ease: [0.11, 0, 0.5, 0],
                       }}
                     >
-                      {word}
+                      *{word}
                     </motion.span>
                   ))}
                 </FormButton>
