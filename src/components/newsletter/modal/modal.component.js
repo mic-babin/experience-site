@@ -34,7 +34,8 @@ const ContactFormModal = ({ show, handleClose }) => {
               <Title className="text-center">Restez Informé!</Title>
               <Form
                 name="newsletter"
-                netlify
+                data-netlify="true"
+                data-netlify-honeypot="bot-field"
                 method="POST"
                 whileInView={{ opacity: 1 }}
                 initial={{ opacity: 0 }}
