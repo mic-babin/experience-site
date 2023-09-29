@@ -16,6 +16,7 @@ export const Col1 = styled(motion.div)`
   position: absolute;
   top: 0;
   left: 0;
+  height: 100vh;
   background: black;
   filter: brightness(0.3);
 

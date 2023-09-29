@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-export const useForm = (validate, setShow) => {
+export const useForm = (validate, setSent) => {
   const defaultFields = {
     name: "",
     email: "",
@@ -32,7 +32,7 @@ export const useForm = (validate, setShow) => {
     try {
       await axios.post("/.netlify/functions/email", { fields });
       resetFields();
-      setShow(true);
+      setSent(true);
       setIsSubmitting(false);
     } catch (error) {
       alert("Une erreur est survenue");

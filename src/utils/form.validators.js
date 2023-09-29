@@ -1,5 +1,5 @@
 export const validate = (fields) => {
-  const { name, email, textarea } = fields;
+  const { name, email } = fields;
   let errors = {};
 
   if (!name.trim()) {
@@ -9,9 +9,6 @@ export const validate = (fields) => {
     errors.email = "fieldRequired";
   } else if (!/\S+@\S+\.\S+/.test(email)) {
     errors.email = "validEmail";
-  }
-  if (!textarea.trim()) {
-    errors.textarea = "fieldRequired";
   }
   return errors;
 };
