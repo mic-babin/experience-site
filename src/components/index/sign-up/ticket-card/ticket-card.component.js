@@ -7,21 +7,33 @@ import {
   Title,
   Featured,
 } from "./ticket-card.styles";
+import { useIsMedium, useIsXSmall } from "../../../../utils/media-query.hook";
 
 const TicketCard = ({ ticket }) => {
   const { title, price, isFeatured, link } = ticket;
+  const isMedium = useIsMedium();
+  const isXSmall = useIsXSmall();
   return (
     <CardWrapper
       className={isFeatured ? "featured" : ""}
       href="https://perdu.com"
       target="_blank"
     >
-      {isFeatured && (
-        <Featured>
-          <div>RECOMMANDÉ</div>
-        </Featured>
-      )}
-      <TicketWrapper className={isFeatured ? "featured" : ""}>
+      <Featured style={{ visibility: isFeatured ? "visible" : "hidden" }}>
+        <div>RECOMMANDÉ</div>
+      </Featured>
+
+      <TicketWrapper
+        className={isFeatured ? "featured" : ""}
+        style={{
+          width:
+            !isFeatured && isXSmall
+              ? "267px"
+              : !isFeatured && isMedium
+              ? "293px"
+              : !isFeatured && "337px",
+        }}
+      >
         <div className="overlay">
           {price && <Price className="overlay-text">{price}$</Price>}
           {title && (
