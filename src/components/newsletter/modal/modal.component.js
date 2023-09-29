@@ -24,7 +24,7 @@ const ContactFormModal = ({ show, handleClose }) => {
     { id: 1, type: "email", placeHolder: "Email", name: "email" },
   ];
 
-  const go = "G O";
+  const go = "M ' a b o n n e r";
   return (
     <ModalCard show={show} onHide={handleClose} centered>
       <ModalCard.Body>
@@ -73,7 +73,7 @@ const ContactFormModal = ({ show, handleClose }) => {
                         ease: [0.11, 0, 0.5, 0],
                       }}
                     >
-                      *{word}
+                      {word}
                     </motion.span>
                   ))}
                 </FormButton>
@@ -83,9 +83,9 @@ const ContactFormModal = ({ show, handleClose }) => {
         )}
         {sent && (
           <div className="py-4 ">
-            <h1 className="text-center">
+            <Title className="text-center">
               <Trans>title</Trans>
-            </h1>
+            </Title>
             <p className="px-3 text-center pt-4 mb-0">
               <Trans>messageEmail</Trans>
             </p>

@@ -15,7 +15,11 @@ import LogoSrc from "../../../assets/img/logo-experience.svg";
 const Header = ({ menu }) => {
   const { showMenu, setShowMenu } = useContext(MenuContext);
   const [blockScroll, allowScroll] = useScrollBlock();
+  const isBrowser = typeof window !== "undefined";
 
+  const scrollTop = () => {
+    isBrowser && window.scrollTo(0, 0);
+  };
   const toggleMenu = () => {
     setShowMenu(!showMenu);
   };
@@ -41,7 +45,7 @@ const Header = ({ menu }) => {
             delay: 0.2,
           }}
         >
-          <Logo src={LogoSrc} alt="Salon Expérience" />
+          <Logo src={LogoSrc} alt="Salon Expérience" onClick={scrollTop} />
         </motion.div>
 
         <ButtonGroup>

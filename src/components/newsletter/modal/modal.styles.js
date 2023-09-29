@@ -29,7 +29,9 @@ export const FormButton = styled(motion.button)`
   z-index: 1001;
   transition: all 0.2s ease-in;
   border: none;
+  margin-top: 10px;
   margin-left: auto;
+  margin-right: 30px;
 
   &:hover {
     color: white;
@@ -91,7 +93,6 @@ export const Title = styled.h2`
   @media only screen and (max-width: 575px) {
     font-size: 24px;
     line-height: 24px;
-    max-width: 200px;
   }
 `;
 

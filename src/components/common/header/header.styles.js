@@ -44,6 +44,7 @@ export const Wrapper = styled.div`
 export const Logo = styled(motion.img)`
   height: 73px;
   z-index: 1001;
+  cursor: pointer;
 `;
 
 export const ButtonGroup = styled.div`

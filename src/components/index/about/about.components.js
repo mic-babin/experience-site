@@ -114,7 +114,7 @@ const About = ({ data }) => {
                   }}
                 >
                   <Index>0{index + 1}</Index>
-                  <Feature className={index == 3 && "no-border"}>
+                  <Feature className={index == 4 && "no-border"}>
                     {" "}
                     {feature}
                   </Feature>
