@@ -7,7 +7,9 @@ export const NavBg = styled(motion.div)`
   top: 0;
   left: 0;
   width: 100vw;
+
   height: 100vh;
+  height: 100svh;
   overflow: hidden;
   z-index: 1000;
 `;
@@ -17,11 +19,13 @@ export const Col1 = styled(motion.div)`
   top: 0;
   left: 0;
   height: 100vh;
+  height: 100svh;
   background: black;
   filter: brightness(0.3);
 
   video {
     height: 100vh !important;
+    height: 100svh !important;
     width: 100vw !important;
     object-fit: cover;
   }
@@ -33,6 +37,7 @@ export const MenuLinks = styled(motion.div)`
   left: 0;
   width: 100vw;
   height: 100vh;
+  height: 100svh;
   overflow: hidden;
   display: flex;
   flex-direction: column;
