@@ -32,7 +32,7 @@ const ContactFormModal = ({ show, handleClose }) => {
           <>
             <div className="py-4 ">
               <Title className="text-center">Restez Informé!</Title>
-              <Form
+              <form
                 name="newsletter"
                 data-netlify="true"
                 data-netlify-honeypot="bot-field"
@@ -83,7 +83,7 @@ const ContactFormModal = ({ show, handleClose }) => {
                     </motion.span>
                   ))}
                 </FormButton>
-              </Form>
+              </form>
             </div>
           </>
         )}
