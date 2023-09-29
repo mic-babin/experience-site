@@ -25,19 +25,26 @@ export default function Home({ data }) {
   const menu = data.allContentfulMenu.nodes[0];
 
   return (
-    <Layout menu={menu}>
-      <ParallaxProvider>
-        <Hero data={heroData} />
-        <Participate data={participateData} />
-        <Reasons data={reasonsData} />
-        <About data={aboutData} />
-        {/* <Programming data={programmingData} /> */}
-        <SignUp data={signUpData} />
-        <Partners data={partnersData} />
-        <BecomePartner data={becomePartnerData} />
-        <CallToAction data={callToActionData} />
-      </ParallaxProvider>
-    </Layout>
+    <>
+      <form name="newsletter" netlify netlify-honeypot="bot-field" hidden>
+        <input type="text" name="name" />
+        <input type="email" name="email" />
+      </form>
+
+      <Layout menu={menu}>
+        <ParallaxProvider>
+          <Hero data={heroData} />
+          <Participate data={participateData} />
+          <Reasons data={reasonsData} />
+          <About data={aboutData} />
+          {/* <Programming data={programmingData} /> */}
+          <SignUp data={signUpData} />
+          <Partners data={partnersData} />
+          <BecomePartner data={becomePartnerData} />
+          <CallToAction data={callToActionData} />
+        </ParallaxProvider>
+      </Layout>
+    </>
   );
 }
 
