@@ -4,23 +4,24 @@ import Shape1Src from "../../../assets/img/reason-1.svg";
 import Shape2Src from "../../../assets/img/reason-2.svg";
 import Shape3Src from "../../../assets/img/reason-3.svg";
 import "./float.css";
-import { useIsLarge } from "../../../utils/media-query.hook";
+import { useIsLarge, useIsSmall } from "../../../utils/media-query.hook";
 
 const Reasons = ({ data }) => {
   const isLarge = useIsLarge();
+  const isSmall = useIsSmall();
   const { reasons } = data;
   const s = { background: "#35B999", color: "#000000", minHeight: "100vh" };
   const s2 = {
     background: "#EBE50D",
     color: "#000000",
     width: isLarge ? "100%" : "90%",
-    minHeight: "70.6vh",
+    minHeight: isSmall ? "calc(66.6vh + 34px)" : "70.6vh",
   };
   const s3 = {
     background: "#EC1A8D",
     color: "#000000",
     width: isLarge ? "100%" : "80%",
-    minHeight: "100px",
+    minHeight: isSmall ? "calc(33.3vh + 68px)" : "100px",
   };
   return (
     <>

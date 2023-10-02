@@ -7,8 +7,8 @@ export const Section = styled(SectionLayout)`
 `;
 
 export const Wrapper = styled.div`
-  min-height: calc(100vh);
-  min-height: calc(100svh);
+  min-height: calc(100vh - 103px);
+  min-height: calc(100svh - 103px);
   height: 100%;
 `;
 
@@ -26,12 +26,12 @@ export const SiteTitle = styled(motion.h1)`
   @media only screen and (max-width: 767px) {
     font-size: 60px;
     line-height: 57px;
-    padding-top: 155px;
+    padding-top: 52px;
   }
   @media only screen and (max-width: 575px) {
     font-size: 36px;
     line-height: 38px;
-    padding-top: 125px;
+    padding-top: 22px;
   }
 `;
 

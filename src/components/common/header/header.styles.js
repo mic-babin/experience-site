@@ -39,6 +39,7 @@ export const Wrapper = styled.div`
 
   @media only screen and (max-width: 767px) {
     padding: 15px 20px;
+    background-color: #ebe50d;
   }
 `;
 

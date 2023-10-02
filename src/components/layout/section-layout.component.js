@@ -7,6 +7,7 @@ import React, {
 } from "react";
 import { Section } from "./section-layout.styles";
 import { ShouldStickContext } from "../../context/shouldStick.context";
+import { useIsSmall } from "../../utils/media-query.hook";
 
 const SectionLayout = ({ children, s }) => {
   const section = useRef(null);
@@ -14,6 +15,7 @@ const SectionLayout = ({ children, s }) => {
   const [windowHeight, setWindowHeight] = useState(0);
   const { shouldStick } = useContext(ShouldStickContext);
   const isBrowser = typeof window !== "undefined";
+  const isSmall = useIsSmall();
 
   const handleResize = useCallback(() => {
     setWindowHeight(window.innerHeight);
@@ -31,17 +33,16 @@ const SectionLayout = ({ children, s }) => {
       window.addEventListener("resize", handleResize);
     }
 
+    // if (shouldStick) {
+    //   sectionStyles.position = "sticky";
+    // } else {
+    //   sectionStyles.position = "relative";
+    // }
     return () => {
       if (isBrowser) {
         window.removeEventListener("resize", handleResize);
       }
     };
-
-    if (shouldStick) {
-      sectionStyles.position = "sticky";
-    } else {
-      sectionStyles.position = "relative";
-    }
   }, [shouldStick, isBrowser, handleResize]);
 
   const sectionStyles = {
@@ -49,7 +50,10 @@ const SectionLayout = ({ children, s }) => {
       ? "0"
       : sectionHeight > windowHeight
       ? windowHeight - sectionHeight
+      : isSmall
+      ? windowHeight - sectionHeight + 103
       : windowHeight - sectionHeight,
+
     position: shouldStick ? "sticky" : "relative",
     ...s,
   };

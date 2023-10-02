@@ -142,4 +142,8 @@ export const BgShape = styled.div`
     left: 17.34%;
   }
 `;
-export const Shape = styled.img``;
+export const Shape = styled.img`
+  @media only screen and (max-width: 767px) {
+    transform: scale(0.4) translateY(-100%);
+  }
+`;
