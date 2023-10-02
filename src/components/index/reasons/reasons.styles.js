@@ -6,7 +6,7 @@ export const Section = styled(SectionLayout)``;
 
 export const Reason = styled.div`
   margin-left: auto;
-  max-width: 782px;
+  max-width: 760px;
   font-size: 50px;
   line-height: 48px;
   font-family: "GroteskBold";
@@ -14,7 +14,7 @@ export const Reason = styled.div`
   padding: calc((33.33vh - 143px) / 2);
 
   &.third {
-    max-width: 800px;
+    max-width: 850px;
     margin-bottom: 50px;
   }
 
