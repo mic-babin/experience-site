@@ -8,9 +8,11 @@ export const Section = styled(SectionLayout)`
 
 export const Wrapper = styled.div`
   min-height: calc(100vh);
+  min-height: calc(100svh);
 
   @media only screen and (max-width: 767px) {
     min-height: calc(100vh);
+    min-height: calc(100svh);
   }
 `;
 
