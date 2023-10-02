@@ -8,6 +8,7 @@ export const Wrapper = styled(motion.div)`
 
   @media only screen and (max-width: 767px) {
     margin-bottom: 50px;
+    height: 300px;
   }
 `;
 export const BgWrapper = styled.div`
