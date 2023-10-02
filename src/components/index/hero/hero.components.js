@@ -31,7 +31,7 @@ const Hero = ({ data }) => {
       <Wrapper ref={section}>
         <div
           className="container"
-          style={{ height: "calc(100vh - 92px)" }}
+          style={{ height: "calc(100vh - 72px)" }}
           ref={inViewRef}
         >
           {title && (

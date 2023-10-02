@@ -7,8 +7,8 @@ export const Section = styled(SectionLayout)`
 `;
 
 export const Wrapper = styled.div`
-  min-height: calc(100vh - 103px);
-  min-height: calc(100svh - 103px);
+  min-height: calc(100vh - 72px);
+  min-height: calc(100svh - 72px);
   height: 100%;
 `;
 
