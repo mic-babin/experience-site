@@ -7,9 +7,15 @@ export const Section = styled(SectionLayout)`
 `;
 
 export const Wrapper = styled.div`
-  min-height: calc(100vh - 72px);
-  min-height: calc(100svh - 72px);
+  min-height: calc(100vh);
+  min-height: calc(100svh);
   height: 100%;
+
+  @media only screen and (max-width: 767px) {
+    min-height: calc(100vh - 62px);
+    min-height: calc(100svh - 62px);
+    height: calc(100% - 62px);
+  }
 `;
 
 export const SiteTitle = styled(motion.h1)`

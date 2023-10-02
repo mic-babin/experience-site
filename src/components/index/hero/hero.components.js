@@ -29,11 +29,7 @@ const Hero = ({ data }) => {
   return (
     <Section s={s}>
       <Wrapper ref={section}>
-        <div
-          className="container"
-          style={{ height: "calc(100vh - 72px)" }}
-          ref={inViewRef}
-        >
+        <div className="container" ref={inViewRef}>
           {title && (
             <SiteTitle>
               <Title
