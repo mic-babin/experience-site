@@ -18,9 +18,12 @@ export const Text = styled.div`
     }
     p:nth-of-type(2) {
       display: inline-block;
-
+      margin-left: 10px;
       @media only screen and (max-width: 767px) {
         margin-bottom: 10px;
+      }
+      @media only screen and (max-width: 575px) {
+        margin-left: 1.2vw;
       }
     }
 

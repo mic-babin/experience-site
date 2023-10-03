@@ -71,7 +71,7 @@ const Title = ({
                     textClass == "programming"
                       ? `calc(100% - ${
                           isXSmall
-                            ? "94px"
+                            ? "calc(23vw)"
                             : isSmall
                             ? "155px"
                             : isMedium
@@ -88,10 +88,11 @@ const Title = ({
                   image={getImage(gatsbyImageData)}
                   alt={description}
                   style={{
-                    marginRight: "10px",
+                    marginRight: isXSmall ? "1.2vw" : "10px",
+                    marginLeft: isXSmall ? "1.2vw" : "10px",
                     display: "inline-flex",
                     width: isXSmall
-                      ? "70px"
+                      ? "calc(17.1vw - 2px)"
                       : isSmall
                       ? "91px"
                       : isMedium
