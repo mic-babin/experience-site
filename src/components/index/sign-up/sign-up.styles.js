@@ -103,6 +103,7 @@ export const BgWrapper = styled.div`
 
 export const Circle = styled.div`
   height: 100vh;
+  height: 100dvh;
   width: 100vw;
   background-color: black;
   border-radius: 50%;

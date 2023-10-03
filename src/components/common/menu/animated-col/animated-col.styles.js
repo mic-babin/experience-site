@@ -17,6 +17,7 @@ export const Col = styled(motion.div)`
     left: 20%;
     min-height: 100vh;
     height: 100vh;
+    height: 100dvh;
     object-fit: contain;
     background-color: black;
     object-position: center left;
