@@ -92,7 +92,7 @@ const Title = ({
                     marginLeft: isXSmall ? "1.2vw" : "10px",
                     display: "inline-flex",
                     width: isXSmall
-                      ? "calc(17.1vw - 2px)"
+                      ? "calc(16.9vw)"
                       : isSmall
                       ? "91px"
                       : isMedium
