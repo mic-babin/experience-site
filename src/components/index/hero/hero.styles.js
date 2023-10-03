@@ -12,7 +12,6 @@ export const Wrapper = styled.div`
   @media only screen and (max-width: 767px) {
     height: calc(100%);
 
-    padding-bottom: 90vh;
     overflow: hidden;
   }
 `;
