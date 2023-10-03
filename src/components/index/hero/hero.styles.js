@@ -10,8 +10,8 @@ export const Wrapper = styled.div`
   min-height: calc(100vh);
 
   @media only screen and (max-width: 767px) {
-    height: calc(100vh);
-    height: calc(100vh);
+    height: calc(100%);
+
     padding-bottom: 90vh;
     overflow: hidden;
   }
