@@ -8,7 +8,7 @@ import { useIsMedium } from "../../../utils/media-query.hook";
 
 const Hero = ({ data }) => {
   const { title } = data;
-  const s = { background: "#EBE50D", color: "#000000" };
+  const s = { background: "#EBE50D", color: "#000000", minHeight: "900px" };
   const isMedium = useIsMedium();
   const section = useRef();
   const sectionSize = useElementSize(section);
