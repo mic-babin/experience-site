@@ -29,16 +29,16 @@ const SectionLayout = ({ children, s }) => {
       handleResize();
     }, 11);
 
-    if (isBrowser) {
+    if (isBrowser && !isSmall) {
       window.addEventListener("resize", handleResize);
     }
 
     return () => {
-      if (isBrowser) {
+      if (isBrowser && !isSmall) {
         window.removeEventListener("resize", handleResize);
       }
     };
-  }, [shouldStick, isBrowser, handleResize]);
+  }, [isBrowser]);
 
   const sectionStyles = {
     top: isSmall
