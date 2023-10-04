@@ -27,10 +27,14 @@ export const SiteTitle = styled(motion.h1)`
     font-size: 76px;
     line-height: 72px;
   }
-
-  @media only screen and (max-width: 767px) {
+  @media only screen and (max-width: 991px) {
     font-size: 60px;
     line-height: 57px;
+  }
+
+  @media only screen and (max-width: 767px) {
+    font-size: 50px;
+    line-height: 48px;
     padding-top: 155px;
   }
   @media only screen and (max-width: 575px) {
