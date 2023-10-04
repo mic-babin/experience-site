@@ -33,11 +33,6 @@ const SectionLayout = ({ children, s }) => {
       window.addEventListener("resize", handleResize);
     }
 
-    // if (shouldStick) {
-    //   sectionStyles.position = "sticky";
-    // } else {
-    //   sectionStyles.position = "relative";
-    // }
     return () => {
       if (isBrowser) {
         window.removeEventListener("resize", handleResize);
@@ -46,12 +41,12 @@ const SectionLayout = ({ children, s }) => {
   }, [shouldStick, isBrowser, handleResize]);
 
   const sectionStyles = {
-    top: s.maxHeight
+    top: isSmall
+      ? windowHeight - sectionHeight + 103
+      : s.maxHeight
       ? "0"
       : sectionHeight > windowHeight
       ? windowHeight - sectionHeight
-      : isSmall
-      ? windowHeight - sectionHeight + 103
       : windowHeight - sectionHeight,
 
     // position: shouldStick ? "sticky" : "relative",
