@@ -5,15 +5,17 @@ import { getShapes, getSmallShapes } from "./shapes.data";
 import { useElementSize } from "../../../utils/element-size.hook";
 import { useInView } from "react-intersection-observer";
 import { useIsMedium } from "../../../utils/media-query.hook";
+import { useElementSizeNoResize } from "../../../utils/element-size-no-resize.hook";
 
 const Hero = ({ data }) => {
   const { title } = data;
-  const s = { background: "#EBE50D", color: "#000000", minHeight: "900px" };
+  const s = { background: "#EBE50D", color: "#000000" };
   const isMedium = useIsMedium();
   const section = useRef();
   const sectionSize = useElementSize(section);
+  const sectionSizeSmall = useElementSizeNoResize(section);
   const shapes = isMedium
-    ? getSmallShapes(sectionSize)
+    ? getSmallShapes(sectionSizeSmall)
     : getShapes(sectionSize);
   const [showShapes, setShowShapes] = useState(false);
 
