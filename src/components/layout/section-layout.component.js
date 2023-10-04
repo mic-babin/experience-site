@@ -42,7 +42,7 @@ const SectionLayout = ({ children, s }) => {
 
   const sectionStyles = {
     top: isSmall
-      ? windowHeight - sectionHeight + 103
+      ? windowHeight - sectionHeight
       : s.maxHeight
       ? "0"
       : sectionHeight > windowHeight
