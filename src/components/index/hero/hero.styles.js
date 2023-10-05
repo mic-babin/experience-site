@@ -13,6 +13,8 @@ export const Wrapper = styled.div`
     height: 100vh; /* old browsers */
     height: 100dvh; /* new browsers */
 
+    min-height: calc(100vh);
+    min-height: calc(100dvh);
     overflow: hidden;
   }
 `;
