@@ -9,7 +9,7 @@ import { useElementSizeNoResize } from "../../../utils/element-size-no-resize.ho
 
 const HeroSmall = ({ data }) => {
   const { title } = data;
-  const s = { background: "#EBE50D", color: "#000000" };
+  const s = { background: "#EBE50D", color: "#000000", fullScreen: true };
   const section = useRef();
 
   const sectionSizeSmall = useElementSizeNoResize(section);

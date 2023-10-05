@@ -38,16 +38,16 @@ const SectionLayout = ({ children, s }) => {
         window.removeEventListener("resize", handleResize);
       }
     };
-  }, [isBrowser]);
+  }, [isBrowser, isSmall]);
 
+  console.log(windowHeight);
   const sectionStyles = {
-    top: isSmall
-      ? windowHeight - sectionHeight + 103
-      : s.maxHeight
-      ? "0"
-      : sectionHeight > windowHeight
-      ? windowHeight - sectionHeight
-      : windowHeight - sectionHeight,
+    top:
+      isSmall && s.fullScreen
+        ? 103
+        : isSmall
+        ? windowHeight - sectionHeight + 103
+        : windowHeight - sectionHeight,
 
     // position: shouldStick ? "sticky" : "relative",
     position: "sticky",
