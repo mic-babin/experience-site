@@ -78,7 +78,7 @@ export const getSmallShapes = (sectionSize) => [
     alt: "2e edition",
     style: { width: "39.31vw" },
     initial: { y: -300, x: "-4.9vw" },
-    animate: { y: sectionSize.height - sectionSize.width / 1.02 },
+    animate: { y: sectionSize.height - sectionSize.width / 0.933 },
     transition: {
       duration: 1,
       type: "spring",
@@ -93,7 +93,7 @@ export const getSmallShapes = (sectionSize) => [
     alt: "Salon Experience",
     style: { width: "100vw" },
     initial: { y: -850, x: 0 },
-    animate: { y: sectionSize.height - sectionSize.width / 1.134 },
+    animate: { y: sectionSize.height - sectionSize.width / 1.027 },
     transition: {
       duration: 1,
       type: "spring",
@@ -109,7 +109,7 @@ export const getSmallShapes = (sectionSize) => [
     style: { width: "35.52vw" },
     initial: { y: -500, x: "60.4vw" },
     animate: {
-      y: sectionSize.height - sectionSize.width * 0.535,
+      y: sectionSize.height - sectionSize.width * 0.625,
     },
     transition: {
       duration: 1,
@@ -126,7 +126,7 @@ export const getSmallShapes = (sectionSize) => [
     alt: "22 février 2024",
     initial: { y: -500, x: "0vw" },
     animate: {
-      y: sectionSize.height - sectionSize.width / 0.842,
+      y: sectionSize.height - sectionSize.width / 0.785,
     },
     transition: {
       duration: 1,
