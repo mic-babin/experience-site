@@ -29,6 +29,12 @@ const SectionLayout = ({ children, s }) => {
       handleResize();
     }, 11);
 
+    if (!isSmall) {
+      setTimeout(() => {
+        handleResize();
+      }, 1000);
+    }
+
     if (isBrowser && !isSmall) {
       window.addEventListener("resize", handleResize);
     }
@@ -40,7 +46,6 @@ const SectionLayout = ({ children, s }) => {
     };
   }, [isBrowser, isSmall]);
 
-  console.log(windowHeight);
   const sectionStyles = {
     top:
       isSmall && s.fullScreen
