@@ -35,12 +35,12 @@ export const SiteTitle = styled(motion.h1)`
   @media only screen and (max-width: 767px) {
     font-size: 50px;
     line-height: 48px;
-    padding-top: 155px;
+    padding-top: 53px;
   }
   @media only screen and (max-width: 575px) {
     font-size: 10.61vw;
     line-height: 38px;
-    padding-top: 125px;
+    padding-top: 22px;
   }
 `;
 
