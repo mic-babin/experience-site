@@ -11,6 +11,8 @@ import CallToAction from "../components/index/call-to-action/call-to-action.comp
 import About from "../components/index/about/about.components";
 import Partners from "../components/index/partners/partners.components";
 import { ParallaxProvider } from "react-scroll-parallax";
+import HeroSmall from "../components/index/hero-small/hero-small.components";
+import { useIsSmall } from "../utils/media-query.hook";
 
 export default function Home({ data }) {
   const heroData = data.allContentfulHero.nodes[0];
@@ -23,11 +25,13 @@ export default function Home({ data }) {
   const becomePartnerData = data.allContentfulBecomePartner.nodes[0];
   const callToActionData = data.allContentfulCta.nodes[0];
   const menu = data.allContentfulMenu.nodes[0];
+  const isSmall = useIsSmall();
 
   return (
     <Layout menu={menu}>
       <ParallaxProvider>
-        <Hero data={heroData} />
+        {!isSmall && <Hero data={heroData} />}
+        {isSmall && <HeroSmall data={heroData} />}
         <Participate data={participateData} />
         <Reasons data={reasonsData} />
         <About data={aboutData} />
