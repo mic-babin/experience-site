@@ -20,13 +20,13 @@ const Reasons = ({ data }) => {
     background: "#EBE50D",
     color: "#000000",
     width: isLarge ? "100%" : "90%",
-    minHeight: isSmall ? "calc(66.6vh + 34px)" : "70.6vh",
+    minHeight: isSmall ? "calc(66.6vh + 53px)" : "70.6vh",
   };
   const s3 = {
     background: "#EC1A8D",
     color: "#000000",
     width: isLarge ? "100%" : "80%",
-    minHeight: isSmall ? "calc(33.3vh + 68px)" : "100px",
+    minHeight: isSmall ? "calc(33.3vh + 106px)" : "100px",
   };
   return (
     <>
