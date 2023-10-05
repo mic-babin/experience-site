@@ -10,7 +10,12 @@ const Reasons = ({ data }) => {
   const isLarge = useIsLarge();
   const isSmall = useIsSmall();
   const { reasons } = data;
-  const s = { background: "#35B999", color: "#000000", minHeight: "100vh" };
+  const s = {
+    background: "#35B999",
+    color: "#000000",
+    minHeight: "100vh",
+    fullScreen: true,
+  };
   const s2 = {
     background: "#EBE50D",
     color: "#000000",
