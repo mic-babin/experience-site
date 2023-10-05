@@ -46,7 +46,7 @@ const SectionLayout = ({ children, s }) => {
       isSmall && s.fullScreen
         ? 103
         : isSmall
-        ? windowHeight - sectionHeight + 163
+        ? windowHeight - sectionHeight + 158
         : windowHeight - sectionHeight,
 
     // position: shouldStick ? "sticky" : "relative",
