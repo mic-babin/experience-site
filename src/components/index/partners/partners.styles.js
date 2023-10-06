@@ -130,7 +130,8 @@ export const Number = styled.div`
   display: inline-block;
   font-family: "Grotesk55";
   font-size: 50%;
-  transform: translateY(-35%);
+  transform: translateY(-5%);
+  overflow: hidden;
 
   @media only screen and (max-width: 575px) {
     padding-left: 10px;

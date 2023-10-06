@@ -29,7 +29,7 @@ const Participate = ({ data }) => {
               y={35}
               textClass="partners-title"
               inView={inView}
-              animationLoop={true}
+              animationLoop={false}
               wordSpeed={0}
               lineDelay={0}
             />

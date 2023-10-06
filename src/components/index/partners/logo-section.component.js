@@ -52,9 +52,9 @@ const LogoSection = ({ title, logos, index }) => {
             width={172}
             y={35}
             textClass="partners-title"
-            inView={inView}
+            inView={true}
             animationLoop={true}
-            wordSpeed={0}
+            wordSpeed={index * 100}
             lineDelay={0}
           />
         </span>
