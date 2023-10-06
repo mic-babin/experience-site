@@ -7,6 +7,9 @@ export const CardWrapper = styled.a`
   cursor: pointer;
   color: white;
   text-decoration: none;
+  @media only screen and (max-width: 767px) {
+    margin-left: 0;
+  }
 
   &.featured {
     background-color: white;
@@ -14,11 +17,20 @@ export const CardWrapper = styled.a`
 `;
 
 export const TicketWrapper = styled.div`
-  max-width: 415px;
+  width: 476px;
   padding: 30px;
   transition: 0.2s all ease-in-out;
   overflow: hidden;
   position: relative;
+  text-align: end;
+
+  @media only screen and (max-width: 767px) {
+    font-size: 90px;
+    width: 425px;
+  }
+  @media only screen and (max-width: 575px) {
+    width: calc(100vw - 132px);
+  }
 
   .overlay {
     position: absolute;
@@ -35,6 +47,27 @@ export const TicketWrapper = styled.div`
     color: black;
   }
 
+  .overlay-content {
+    width: 476px;
+    padding: 0 30px;
+
+    @media only screen and (max-width: 767px) {
+      width: 425px;
+    }
+
+    @media only screen and (max-width: 575px) {
+      width: calc(100vw - 150px);
+      padding: 0 12px;
+      padding-left: 30px;
+    }
+    @media only screen and (max-width: 380px) {
+      padding-left: 20px;
+    }
+    @media only screen and (max-width: 370px) {
+      padding-left: 15px;
+    }
+  }
+
   &:hover {
     .overlay {
       width: 100%;
@@ -48,15 +81,17 @@ export const TicketWrapper = styled.div`
 `;
 
 export const Price = styled.div`
+  display: flex;
+  justify-content: space-around;
   font-family: "GroteskBold";
   font-size: 100px;
   line-height: 95px;
-  text-decoration: line-through;
-  margin-left: 45px;
-  &.overlay-text {
-    min-width: 341px;
-    padding-left: 30px;
-  }
+  margin-top: 10px;
+  padding-right: 20px;
+  margin-bottom: 0;
+
+  min-width: 341px;
+  padding-left: 30px;
 
   @media only screen and (max-width: 1599px) {
     font-size: 97px;
@@ -66,20 +101,18 @@ export const Price = styled.div`
   @media only screen and (max-width: 1249px) {
     font-size: 90px;
     line-height: 95px;
-    margin-left: 52px;
   }
-  @media only screen and (max-width: 992px) {
-    margin-left: 25px;
+  @media only screen and (max-width: 767px) {
+    display: block;
+    padding: 0px;
+    min-width: 0px;
+    img {
+      display: none;
+    }
   }
-
-  @media only screen and (max-width: 575px) {
-    margin-left: 0px;
-  }
-
   @media only screen and (max-width: 400px) {
     font-size: 70px;
     line-height: 85px;
-    margin-left: 52px;
   }
   @media only screen and (max-width: 375px) {
     font-size: 65px;
@@ -89,34 +122,27 @@ export const Price = styled.div`
 
 export const Title = styled.div`
   font-family: "GroteskBold";
-  text-transform: uppercase;
+
   font-size: 24px;
   line-height: 28px;
-  margin-left: 45px;
 
   p {
     margin-bottom: 0;
   }
   &.overlay-text {
-    min-width: 341px;
     padding-left: 30px;
   }
 
-  @media only screen and (max-width: 1249px) {
-    margin-left: 70px;
-    font-size: 20px;
-    line-height: 23px;
-  }
-  @media only screen and (max-width: 992px) {
-    margin-left: 40px;
-  }
   @media only screen and (max-width: 767px) {
     font-size: 20px;
     line-height: 23px;
   }
   @media only screen and (max-width: 575px) {
-    margin-left: 52px;
     font-size: 16px;
+    line-height: 18px;
+  }
+  @media only screen and (max-width: 400px) {
+    font-size: 14px;
     line-height: 18px;
   }
 `;
@@ -137,6 +163,21 @@ export const Featured = styled.div`
     transform: rotate(180deg);
   }
 
+  .large {
+    font-size: 50px;
+    line-height: 42px;
+
+    @media only screen and (max-width: 767px) {
+      font-size: 36px;
+      line-height: 36px;
+    }
+
+    @media only screen and (max-width: 575px) {
+      font-size: 24px;
+      line-height: 24px;
+    }
+  }
+
   @media only screen and (max-width: 767px) {
     font-size: 20px;
     line-height: 23px;
@@ -145,4 +186,30 @@ export const Featured = styled.div`
     font-size: 16px;
     line-height: 18px;
   }
+`;
+
+export const SmallText = styled.div`
+  padding-left: 75px;
+  font-size: 15px;
+  padding-top: 10px;
+  line-height: 15px;
+
+  @media only screen and (max-width: 767px) {
+    padding-left: 25px;
+  }
+  @media only screen and (max-width: 575px) {
+    padding-left: 0px;
+    font-size: 13px;
+
+    line-height: 13px;
+  }
+  @media only screen and (max-width: 370px) {
+    &.overlay-sm {
+      padding-left: 15px;
+    }
+  }
+`;
+
+export const SmallTextBold = styled(SmallText)`
+  font-family: "GroteskBold";
 `;

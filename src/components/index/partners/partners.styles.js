@@ -24,13 +24,26 @@ export const Wrapper = styled.div`
   }
 `;
 
-export const Title = styled.h2`
+export const PartnerTitle = styled.h2`
   text-transform: uppercase;
   font-size: 100px;
   line-height: 95px;
   font-family: "GroteskBold";
   max-width: 1023px;
   display: inline-block;
+
+  &.title-1 {
+    min-height: 220px;
+    max-width: 620px;
+  }
+  &.title-2 {
+    min-height: 220px;
+    max-width: 600px;
+  }
+  &.title-3 {
+    min-height: 220px;
+    max-width: 690px;
+  }
 
   @media only screen and (max-width: 1599px) {
     font-size: 97px;
@@ -40,20 +53,75 @@ export const Title = styled.h2`
   @media only screen and (max-width: 1249px) {
     font-size: 76px;
     line-height: 72px;
+
+    &.title-1 {
+      min-height: 160px;
+      max-width: 500px;
+    }
+    &.title-2 {
+      min-height: 160px;
+      max-width: 500px;
+    }
+    &.title-3 {
+      min-height: 160px;
+      max-width: 550px;
+    }
   }
 
   @media only screen and (max-width: 767px) {
-    font-size: 60px;
+    font-size: 58px;
     line-height: 57px;
+
+    &.title-1 {
+      min-height: 125px;
+      max-width: 480px;
+    }
+    &.title-2 {
+      min-height: 125px;
+      max-width: 420px;
+    }
+    &.title-3 {
+      min-height: 125px;
+      max-width: 460px;
+    }
   }
   @media only screen and (max-width: 575px) {
     font-size: 32px;
     line-height: 34px;
     max-width: 350px;
+
+    &.title-1 {
+      min-height: 75px;
+      max-width: 250px;
+    }
+    &.title-2 {
+      min-height: 75px;
+      max-width: 220px;
+    }
+    &.title-3 {
+      min-height: 75px;
+      max-width: 230px;
+    }
   }
   @media only screen and (max-width: 400px) {
-    font-size: 28px;
+    font-size: 27px;
     line-height: 29px;
+
+    &.title-1 {
+      min-height: 70px;
+      height: 70px;
+      max-width: 210px;
+    }
+    &.title-2 {
+      min-height: 70px;
+      height: 70px;
+      max-width: 200px;
+    }
+    &.title-3 {
+      min-height: 70px;
+      height: 70px;
+      max-width: 210px;
+    }
   }
 `;
 

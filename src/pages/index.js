@@ -33,10 +33,11 @@ export default function Home({ data }) {
         {!isSmall && <Hero data={heroData} />}
         {isSmall && <HeroSmall data={heroData} />}
         <Participate data={participateData} />
+        <SignUp data={signUpData} />
         <Reasons data={reasonsData} />
         <About data={aboutData} />
         {/* <Programming data={programmingData} /> */}
-        <SignUp data={signUpData} />
+
         <Partners data={partnersData} />
         <BecomePartner data={becomePartnerData} />
         <CallToAction data={callToActionData} />

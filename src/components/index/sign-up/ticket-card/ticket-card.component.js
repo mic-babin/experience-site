@@ -15,7 +15,7 @@ const TicketCard = ({ ticket }) => {
   const isXSmall = useIsXSmall();
   return (
     <CardWrapper
-      className={isFeatured ? "featured" : ""}
+      className={isFeatured ? "d-none" : ""}
       href={link}
       target="_blank"
     >

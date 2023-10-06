@@ -1,8 +1,6 @@
 import React from "react";
 import { Section, Wrapper } from "./partners.styles";
-import ParallaxShapes, {
-  generateParallaxShapes,
-} from "./parallax-shapes.component";
+import ParallaxShapes from "./parallax-shapes.component";
 import LogoSection from "./logo-section.component";
 
 const Partners = ({ data }) => {
@@ -21,14 +19,24 @@ const Partners = ({ data }) => {
       <div id="exposants"></div>
       <Wrapper>
         <ParallaxShapes />
-        <LogoSection title={"Présentateur"} logos={partenairePresentateur} />
+        <LogoSection
+          title={"Présentateur"}
+          logos={partenairePresentateur}
+          index={0}
+        />
         <LogoSection
           title={"Destinations vedettes"}
           logos={destinationsVedettes}
+          index={1}
         />
-        <LogoSection title={"Experience Unique"} logos={experienceUnique} />
+        <LogoSection
+          title={"Experience Unique"}
+          logos={experienceUnique}
+          index={2}
+        />
         {/* <LogoSection title={"Cocktail"} logos={cocktail} /> */}
         <LogoSection
+          index={3}
           title={"Partenaires Createurs"}
           logos={partenairesCreateurs}
         />

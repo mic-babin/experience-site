@@ -8,17 +8,20 @@ import {
   Kicker,
   BgWrapper,
   Circle,
+  W,
+  Empty,
 } from "./sign-up.styles";
 import { renderRichText } from "gatsby-source-contentful/rich-text";
 import TicketCard from "./ticket-card/ticket-card.component";
 import { useElementSize } from "../../../utils/element-size.hook";
 import HorizontalScrollLine from "./horizontal-scroll-line/horizontal-scroll-line.component";
-import FlipTextAnimation from "../../common/flip-text-animation/flip-text-animation.component";
+import Title from "../../common/title/title.component";
 import { useInView } from "react-intersection-observer";
+import TicketCardLarge from "./ticket-card-large/ticket-card-large.component";
 
 const SignUp = ({ data }) => {
   const { title, kicker, tickets } = data;
-  const s = { background: "#3F3AEF", color: "white", minHeight: "100vh" };
+  const s = { background: "#3F3AEF", color: "white" };
 
   const section = useRef();
   const sectionSize = useElementSize(section);
@@ -37,37 +40,52 @@ const SignUp = ({ data }) => {
   return (
     <Section s={s}>
       <Wrapper ref={section}>
-        <BgWrapper>
-          <Circle style={{ height: sectionSize.height }}></Circle>
-          {lines}
-          <HorizontalScrollLine />
-        </BgWrapper>
-        <div className="container">
-          {title && (
-            <SignUpTitle ref={inViewRef}>
-              <FlipTextAnimation text={title} inView={inView} delay={0} />
-            </SignUpTitle>
-          )}
-          <Grid>
-            <Col>
-              {kicker && (
-                <Kicker
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  transition={{ delay: 0.5, duration: 0.3 }}
-                >
-                  {renderRichText(kicker)}
-                </Kicker>
-              )}
-            </Col>
-            <Col className="d-flex flex-column align-items-end">
-              {tickets &&
-                tickets.map((ticket) => (
-                  <TicketCard key={ticket.id} ticket={ticket} />
-                ))}
-            </Col>
-          </Grid>
-        </div>
+        <W>
+          <BgWrapper>
+            <Circle style={{ height: sectionSize.height }}></Circle>
+            {lines}
+            <HorizontalScrollLine />
+          </BgWrapper>
+          <div className="container">
+            {title && (
+              <SignUpTitle ref={inViewRef}>
+                <Title
+                  title={title}
+                  width={172}
+                  y={35}
+                  textClass="signup-title"
+                  inView={inView}
+                  animationLoop={true}
+                  wordSpeed={400}
+                  lineDelay={1000}
+                />
+              </SignUpTitle>
+            )}
+            <Grid>
+              <Col>
+                {kicker && (
+                  <Kicker
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ delay: 0.5, duration: 0.3 }}
+                  >
+                    {renderRichText(kicker)}
+                  </Kicker>
+                )}
+              </Col>
+              <Col className="d-flex flex-column align-items-end">
+                {tickets &&
+                  tickets.map((ticket) => (
+                    <>
+                      <TicketCard key={ticket.id} ticket={ticket} />
+                      <TicketCardLarge key={ticket.id} ticket={ticket} />
+                    </>
+                  ))}
+              </Col>
+            </Grid>
+          </div>
+        </W>
+        <Empty></Empty>
       </Wrapper>
     </Section>
   );

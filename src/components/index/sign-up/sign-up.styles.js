@@ -6,7 +6,9 @@ export const Section = styled(SectionLayout)`
   position: relative;
 `;
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.div``;
+
+export const W = styled.div`
   padding: 150px 0;
 
   @media only screen and (max-width: 1249px) {
@@ -28,8 +30,8 @@ export const SignUpTitle = styled(motion.h2)`
   font-size: 100px;
   line-height: 95px;
   font-family: "GroteskBold";
-  max-width: 590px;
-
+  max-width: 500px;
+  min-height: 221px;
   @media only screen and (max-width: 1599px) {
     font-size: 97px;
     line-height: 92px;
@@ -38,20 +40,27 @@ export const SignUpTitle = styled(motion.h2)`
   @media only screen and (max-width: 1249px) {
     font-size: 76px;
     line-height: 72px;
+    max-width: 450px;
+    min-height: 165px;
   }
 
   @media only screen and (max-width: 767px) {
     font-size: 60px;
     line-height: 57px;
+    max-width: 350px;
+    min-height: 130px;
   }
   @media only screen and (max-width: 575px) {
     font-size: 36px;
     line-height: 34px;
-    max-width: 250px;
+    max-width: 200px;
+    min-height: 80px;
   }
   @media only screen and (max-width: 400px) {
     font-size: 30px;
     line-height: 29px;
+    max-width: 150px;
+    min-height: 60px;
   }
 `;
 
@@ -107,4 +116,10 @@ export const Circle = styled.div`
   width: 100vw;
   background-color: black;
   border-radius: 50%;
+`;
+
+export const Empty = styled.div`
+  @media only screen and (max-width: 767px) {
+    height: 100px;
+  }
 `;

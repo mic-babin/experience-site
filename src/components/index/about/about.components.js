@@ -2,7 +2,7 @@ import React, { useRef, useEffect, useState } from "react";
 import {
   Section,
   Header,
-  Title,
+  SectionTitle,
   NumbersWrapper,
   NumberWraper,
   NumberTitle,
@@ -13,6 +13,7 @@ import {
   Wrapper,
   Smiley,
 } from "./about.styles";
+import Title from "../../common/title/title.component";
 import { renderRichText } from "gatsby-source-contentful/rich-text";
 import { Trans } from "gatsby-plugin-react-i18next";
 import SmileySrc from "../../../assets/img/smiley.svg";
@@ -66,13 +67,18 @@ const About = ({ data }) => {
       <Wrapper className="container" id="a-propos">
         <Header>
           {title && (
-            <Title
-              initial={{ x: -100, opacity: 0 }}
-              whileInView={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.5 }}
-            >
-              {renderRichText(title)}
-            </Title>
+            <SectionTitle>
+              <Title
+                title={title}
+                width={172}
+                y={35}
+                textClass="about-title"
+                inView={inView}
+                animationLoop={true}
+                wordSpeed={400}
+                lineDelay={1000}
+              />
+            </SectionTitle>
           )}
           <NumbersWrapper ref={inViewRef}>
             <NumberWraper>

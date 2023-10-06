@@ -1,15 +1,20 @@
 import React from "react";
-import { Title, Number, LogosWrapper, LogoWrapper } from "./partners.styles";
+import {
+  PartnerTitle,
+  Number,
+  LogosWrapper,
+  LogoWrapper,
+} from "./partners.styles";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
-import WaveTextAnimation from "../../common/wave-text-animation/wave-text-animation.component";
 import { useInView } from "react-intersection-observer";
 import {
   useIsLarge,
   useIsMedium,
   useIsSmall,
 } from "../../../utils/media-query.hook";
+import Title from "../../common/title/title.component";
 
-const LogoSection = ({ title, logos }) => {
+const LogoSection = ({ title, logos, index }) => {
   const isLarge = useIsLarge();
   const isMedium = useIsMedium();
   const isSmall = useIsSmall();
@@ -40,12 +45,22 @@ const LogoSection = ({ title, logos }) => {
 
   return (
     <div className="container">
-      <Title>
+      <PartnerTitle className={"title-" + index}>
         <span>
-          <WaveTextAnimation text={title} inView={inView} delay={0} />
+          <Title
+            title={title}
+            width={172}
+            y={35}
+            textClass="partners-title"
+            inView={inView}
+            animationLoop={true}
+            wordSpeed={0}
+            lineDelay={0}
+          />
         </span>
+
         {logos && <Number>{logos.length || 1}</Number>}
-      </Title>
+      </PartnerTitle>
 
       <div className="d-flex justify-content-end">
         <LogosWrapper

@@ -41,12 +41,13 @@ export const Header = styled.div`
   }
 `;
 
-export const Title = styled(motion.div)`
+export const SectionTitle = styled(motion.div)`
   max-width: 672px;
   font-family: "GroteskBold";
   font-size: 100px;
   line-height: 95px;
   text-transform: uppercase;
+  min-height: 400px;
   @media only screen and (max-width: 1599px) {
     font-size: 97px;
     line-height: 92px;
@@ -57,17 +58,20 @@ export const Title = styled(motion.div)`
     font-size: 76px;
     line-height: 72px;
     max-width: 600px;
+    min-height: 310px;
   }
 
   @media only screen and (max-width: 767px) {
     font-size: 60px;
     line-height: 57px;
     max-width: 400px;
+    min-height: 230px;
   }
   @media only screen and (max-width: 575px) {
     font-size: 40px;
     line-height: 38px;
     max-width: 300px;
+    min-height: 160px;
   }
 `;
 

@@ -126,6 +126,20 @@ const Title = ({
       },
     },
   };
+  if (typeof title === "string") {
+    return (
+      <span className="">
+        {
+          <TypewriterAnimation
+            text={title}
+            animationLoop={animationLoop}
+            wordSpeed={wordSpeed}
+            inView={inView}
+          />
+        }
+      </span>
+    );
+  }
   return <Text className={textClass}>{renderRichText(title, options)}</Text>;
 };
 

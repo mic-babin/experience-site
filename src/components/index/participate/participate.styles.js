@@ -25,28 +25,32 @@ export const Wrapper = styled.div`
   }
 `;
 
-export const Title = styled(motion.p)`
+export const SectionTitle = styled(motion.p)`
   font-family: "GroteskBold";
   font-size: 100px;
   line-height: 95px;
   max-width: 800px;
+  height: 981px;
   color: white;
 
   @media only screen and (max-width: 1249px) {
     font-size: 76px;
     line-height: 72px;
     max-width: 600px;
+    height: 500px;
   }
 
   @media only screen and (max-width: 767px) {
     font-size: 60px;
     line-height: 57px;
     max-width: 500px;
+    height: 361px;
   }
   @media only screen and (max-width: 575px) {
     font-size: 40px;
     line-height: 38px;
     max-width: 325px;
+    height: 266px;
   }
 `;
 
