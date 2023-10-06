@@ -105,21 +105,21 @@ export const PartnerTitle = styled.h2`
   }
   @media only screen and (max-width: 400px) {
     font-size: 27px;
-    line-height: 29px;
+    line-height: 27px;
 
     &.title-1 {
-      min-height: 70px;
-      height: 70px;
+      min-height: 68px;
+      height: 68px;
       max-width: 210px;
     }
     &.title-2 {
-      min-height: 70px;
-      height: 70px;
+      min-height: 68px;
+      height: 68px;
       max-width: 200px;
     }
     &.title-3 {
-      min-height: 70px;
-      height: 70px;
+      min-height: 68px;
+      height: 68px;
       max-width: 210px;
     }
   }
@@ -130,11 +130,15 @@ export const Number = styled.div`
   display: inline-block;
   font-family: "Grotesk55";
   font-size: 50%;
-  transform: translateY(-5%);
-  overflow: hidden;
+  transform: translateY(-35%);
 
   @media only screen and (max-width: 575px) {
     padding-left: 10px;
+  }
+
+  @media only screen and (max-width: 400px) {
+    overflow: hidden;
+    transform: translateY(10%);
   }
 `;
 

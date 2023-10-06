@@ -18,6 +18,7 @@ const LogoSection = ({ title, logos, index }) => {
   const isLarge = useIsLarge();
   const isMedium = useIsMedium();
   const isSmall = useIsSmall();
+  console.log(logos);
 
   const [inViewRef, inView] = useInView({
     triggerOnce: true,
