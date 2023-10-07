@@ -4,7 +4,8 @@ import Carousel from "react-multi-carousel";
 import { Col } from "../exhibitors.styles";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
-const LogoCarousel = ({ logos }) => {
+const LogoCarousel = (props) => {
+  const logos = props.logos;
   const [pairs, setPairs] = useState(null);
   const responsive = {
     desktop: {
@@ -46,6 +47,7 @@ const LogoCarousel = ({ logos }) => {
       keyBoardControl={true}
       customTransition="all .5"
       transitionDuration={1000}
+      deviceType={props.deviceType}
       containerClass="carousel-container"
       removeArrowOnDeviceType={["tablet", "mobile", "desktop"]}
       dotListClass="custom-dot-list-style"
