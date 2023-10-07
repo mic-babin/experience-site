@@ -18,6 +18,11 @@ const LogoCarousel = (props) => {
       items: 2,
       slidesToSlide: 2,
     },
+    mobile: {
+      breakpoint: { max: 464, min: 300 },
+      items: 2,
+      slidesToSlide: 2,
+    },
   };
 
   const splitArrayIntoPairs = (arr) => {
