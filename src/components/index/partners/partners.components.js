@@ -2,8 +2,9 @@ import React from "react";
 import { Section, Wrapper } from "./partners.styles";
 import ParallaxShapes from "./parallax-shapes.component";
 import LogoSection from "./logo-section.component";
+import Exhibitors from "../exhibitors/exhibitors.components";
 
-const Partners = ({ data }) => {
+const Partners = ({ data, exhibitorsData }) => {
   const s = { background: "white", color: "#000000" };
   const {
     partenairePresentateur,
@@ -16,6 +17,7 @@ const Partners = ({ data }) => {
 
   return (
     <Section s={s}>
+      <Exhibitors data={exhibitorsData} />
       <div id="exposants"></div>
       <Wrapper>
         <ParallaxShapes />

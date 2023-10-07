@@ -24,6 +24,7 @@ export default function Home({ data }) {
   const partnersData = data.allContentfulPartners.nodes[0];
   const becomePartnerData = data.allContentfulBecomePartner.nodes[0];
   const callToActionData = data.allContentfulCta.nodes[0];
+  const exhibitors = data.allContentfulExposants.nodes[0];
   const menu = data.allContentfulMenu.nodes[0];
   const isSmall = useIsSmall();
 
@@ -38,7 +39,7 @@ export default function Home({ data }) {
         <About data={aboutData} />
         {/* <Programming data={programmingData} /> */}
 
-        <Partners data={partnersData} />
+        <Partners data={partnersData} exhibitorsData={exhibitors} />
         <BecomePartner data={becomePartnerData} />
         <CallToAction data={callToActionData} />
       </ParallaxProvider>
@@ -245,6 +246,24 @@ export const query = graphql`
         backgroundVideo {
           file {
             url
+          }
+        }
+      }
+    }
+    allContentfulExposants(filter: { node_locale: { eq: "fr" } }) {
+      nodes {
+        title {
+          raw
+        }
+        kicker {
+          raw
+        }
+        logos {
+          id
+          link
+          logo {
+            gatsbyImageData(quality: 100, placeholder: BLURRED)
+            description
           }
         }
       }

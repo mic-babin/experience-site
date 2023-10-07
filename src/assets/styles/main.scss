@@ -16,7 +16,7 @@ $container-max-widths: (
 );
 
 @import "~bootstrap/scss/bootstrap";
-// @import "react-multi-carousel/lib/styles.css";
+@import "react-multi-carousel/lib/styles.css";
 
 @font-face {
   font-family: "Grotesk";
