@@ -10,25 +10,14 @@ const LogoCarousel = ({ logos }) => {
     desktop: {
       breakpoint: { max: 3000, min: 992 },
       items: 3,
-      slidesToSlide: 3, // optional, default to 1.
+      slidesToSlide: 3,
     },
     tablet: {
       breakpoint: { max: 991, min: 464 },
       items: 2,
-      slidesToSlide: 2, // optional, default to 1.
+      slidesToSlide: 2,
     },
-    // mobile: {
-    //   breakpoint: { max: 464, min: 0 },
-    //   items: 1,
-    //   slidesToSlide: 1, // optional, default to 1.
-    // },
   };
-
-  useEffect(() => {
-    let pairArr = splitArrayIntoPairs(logos);
-
-    setPairs(pairArr);
-  }, []);
 
   const splitArrayIntoPairs = (arr) => {
     const pairs2 = [];
@@ -39,7 +28,10 @@ const LogoCarousel = ({ logos }) => {
     return pairs2;
   };
 
-  console.log(pairs);
+  useEffect(() => {
+    let pairArr = splitArrayIntoPairs(logos);
+    setPairs(pairArr);
+  }, [logos]);
 
   return (
     <Carousel
@@ -47,13 +39,13 @@ const LogoCarousel = ({ logos }) => {
       draggable={false}
       showDots={false}
       responsive={responsive}
-      ssr={true} // means to render carousel on server-side.
+      ssr={true}
       infinite={true}
       autoPlay={true}
       autoPlaySpeed={2000}
       keyBoardControl={true}
       customTransition="all .5"
-      transitionDuration={2000}
+      transitionDuration={1000}
       containerClass="carousel-container"
       removeArrowOnDeviceType={["tablet", "mobile", "desktop"]}
       dotListClass="custom-dot-list-style"
@@ -63,15 +55,20 @@ const LogoCarousel = ({ logos }) => {
       {logos &&
         pairs &&
         pairs.map((pair, index) => (
-          <Col>
+          <Col key={index}>
             {pair &&
-              pair.map((item, index) => (
-                <a key={item.id} href={item.link} target="_blank">
+              pair.map((item) => (
+                <a
+                  key={item.id}
+                  href={item.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <div>
                     <GatsbyImage
                       image={getImage(item.logo)}
                       alt={item.description}
-                    ></GatsbyImage>
+                    />
                   </div>
                 </a>
               ))}
