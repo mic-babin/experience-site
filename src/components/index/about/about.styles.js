@@ -167,3 +167,9 @@ export const Smiley = styled(motion.img)`
     top: 100px;
   }
 `;
+
+export const Empty = styled.div`
+  @media only screen and (max-width: 767px) {
+    height: 150px;
+  }
+`;

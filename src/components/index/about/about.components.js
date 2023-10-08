@@ -12,6 +12,7 @@ import {
   Feature,
   Wrapper,
   Smiley,
+  Empty,
 } from "./about.styles";
 import Title from "../../common/title/title.component";
 import { renderRichText } from "gatsby-source-contentful/rich-text";
@@ -136,6 +137,7 @@ const About = ({ data }) => {
           alt="smiley"
         />
       )}
+      <Empty></Empty>
     </Section>
   );
 };
