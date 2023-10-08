@@ -106,6 +106,7 @@ export const PartnerTitle = styled.h2`
   @media only screen and (max-width: 400px) {
     font-size: 27px;
     line-height: 27px;
+    display: block;
 
     &.title-1 {
       min-height: 68px;
@@ -120,7 +121,7 @@ export const PartnerTitle = styled.h2`
     &.title-3 {
       min-height: 68px;
       height: 68px;
-      max-width: 210px;
+      max-width: 190px;
     }
   }
 `;

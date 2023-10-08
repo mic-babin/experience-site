@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Carousel from "react-multi-carousel";
 
-import { Col } from "../exhibitors.styles";
+import { LogoWrapper, Col } from "./logo-carousel.styles";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 const LogoCarousel = (props) => {
@@ -47,7 +47,6 @@ const LogoCarousel = (props) => {
       responsive={responsive}
       ssr={true}
       infinite={true}
-      autoPlay={true}
       autoPlaySpeed={2000}
       keyBoardControl={true}
       customTransition="all .5"
@@ -55,6 +54,7 @@ const LogoCarousel = (props) => {
       deviceType={props.deviceType}
       containerClass="carousel-container"
       removeArrowOnDeviceType={["tablet", "mobile", "desktop"]}
+      autoPlay={props.deviceType !== "mobile" ? true : false}
       dotListClass="custom-dot-list-style"
       itemClass="carousel-item-padding-40-px"
     >
@@ -71,12 +71,12 @@ const LogoCarousel = (props) => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <div>
+                  <LogoWrapper>
                     <GatsbyImage
                       image={getImage(item.logo)}
                       alt={item.description}
                     />
-                  </div>
+                  </LogoWrapper>
                 </a>
               ))}
           </Col>

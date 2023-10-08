@@ -165,3 +165,9 @@ export const Shape = styled(motion.img)`
   position: absolute;
   top: 0;
 `;
+
+export const Empty = styled.div`
+  @media only screen and (max-width: 767px) {
+    height: 150px;
+  }
+`;

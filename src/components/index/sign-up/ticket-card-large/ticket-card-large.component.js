@@ -9,13 +9,18 @@ import {
   SmallText,
   SmallTextBold,
 } from "./ticket-card-large.styles";
-import { useIsMedium, useIsXSmall } from "../../../../utils/media-query.hook";
+import {
+  useIsMedium,
+  useIsXSmall,
+  useIsSmall,
+} from "../../../../utils/media-query.hook";
 import TicketSrc from "../../../../assets/img/ticket.svg";
 
 const TicketCardLarge = ({ ticket }) => {
   const { title, price, isFeatured, link } = ticket;
   const isMedium = useIsMedium();
   const isXSmall = useIsXSmall();
+  const isSmall = useIsSmall();
   return (
     <CardWrapper
       className={!isFeatured ? "d-none" : "featured"}
@@ -51,6 +56,17 @@ const TicketCardLarge = ({ ticket }) => {
                 {price}$
               </Price>
             )}
+            {isSmall && (
+              <img
+                src={TicketSrc}
+                alt="2 pour 1"
+                style={{
+                  marginTop: "-30px",
+                  marginBottom: "0px",
+                  height: "75px",
+                }}
+              />
+            )}
             {title && (
               <Title className="overlay-text">{renderRichText(title)}</Title>
             )}
@@ -75,6 +91,17 @@ const TicketCardLarge = ({ ticket }) => {
               />
               {price}$
             </Price>
+          )}
+          {isSmall && (
+            <img
+              src={TicketSrc}
+              alt="2 pour 1"
+              style={{
+                marginTop: "-30px",
+                marginBottom: "0px",
+                height: "75px",
+              }}
+            />
           )}
           {title && <Title>{renderRichText(title)}</Title>}
           <SmallText>

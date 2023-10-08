@@ -11,6 +11,7 @@ import {
   useIsLarge,
   useIsMedium,
   useIsSmall,
+  useIsXXSmall,
 } from "../../../utils/media-query.hook";
 import Title from "../../common/title/title.component";
 
@@ -18,6 +19,7 @@ const LogoSection = ({ title, logos, index }) => {
   const isLarge = useIsLarge();
   const isMedium = useIsMedium();
   const isSmall = useIsSmall();
+  const isXXSmall = useIsXXSmall();
 
   const [inViewRef, inView] = useInView({
     triggerOnce: true,
@@ -59,7 +61,7 @@ const LogoSection = ({ title, logos, index }) => {
           />
         </span>
 
-        {logos && <Number>{logos.length || 1}</Number>}
+        {logos && !isXXSmall && <Number>{logos.length || 1}</Number>}
       </PartnerTitle>
 
       <div className="d-flex justify-content-end">

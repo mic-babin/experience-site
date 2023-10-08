@@ -10,6 +10,7 @@ import {
   ContactWrapper,
   ContactContent,
   Wrapper,
+  Empty,
 } from "./become-partner.styles";
 import { getImage } from "gatsby-plugin-image";
 import { renderRichText } from "gatsby-source-contentful/rich-text";
@@ -169,6 +170,7 @@ const BecomePartner = ({ data }) => {
           </ContactContent>
         </ContactWrapper>
       </Wrapper>
+      <Empty></Empty>
     </Section>
   );
 };
