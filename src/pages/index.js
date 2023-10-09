@@ -31,7 +31,6 @@ export default function Home({ data }) {
   const isMedium = useIsMedium();
   const isXSmall = useIsXSmall();
 
-  console.log(isXSmall, isMedium);
   return (
     <Layout menu={menu}>
       <SEO />
