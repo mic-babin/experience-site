@@ -119,6 +119,9 @@ export const Circle = styled.div`
 `;
 
 export const Empty = styled.div`
+  @media only screen and (max-width: 991px) {
+    height: 200px;
+  }
   @media only screen and (max-width: 767px) {
     height: 100px;
   }

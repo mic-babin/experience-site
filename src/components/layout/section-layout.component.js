@@ -7,7 +7,7 @@ import React, {
 } from "react";
 import { Section } from "./section-layout.styles";
 import { ShouldStickContext } from "../../context/shouldStick.context";
-import { useIsSmall } from "../../utils/media-query.hook";
+import { useIsMedium } from "../../utils/media-query.hook";
 
 const SectionLayout = ({ children, s }) => {
   const section = useRef(null);
@@ -15,7 +15,7 @@ const SectionLayout = ({ children, s }) => {
   const [windowHeight, setWindowHeight] = useState(0);
   const { shouldStick } = useContext(ShouldStickContext);
   const isBrowser = typeof window !== "undefined";
-  const isSmall = useIsSmall();
+  const isMedium = useIsMedium();
 
   const handleResize = useCallback(() => {
     setWindowHeight(window.innerHeight);
@@ -29,28 +29,28 @@ const SectionLayout = ({ children, s }) => {
       handleResize();
     }, 11);
 
-    if (!isSmall) {
+    if (!isMedium) {
       setTimeout(() => {
         handleResize();
       }, 1000);
     }
 
-    if (isBrowser && !isSmall) {
+    if (isBrowser && !isMedium) {
       window.addEventListener("resize", handleResize);
     }
 
     return () => {
-      if (isBrowser && !isSmall) {
+      if (isBrowser && !isMedium) {
         window.removeEventListener("resize", handleResize);
       }
     };
-  }, [isBrowser, isSmall]);
+  }, [isBrowser, isMedium]);
 
   const sectionStyles = {
     top:
-      isSmall && s.fullScreen
+      isMedium && s.fullScreen
         ? 103
-        : isSmall
+        : isMedium
         ? windowHeight - sectionHeight + 158
         : windowHeight - sectionHeight,
 

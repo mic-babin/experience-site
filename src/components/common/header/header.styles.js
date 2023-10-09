@@ -37,7 +37,7 @@ export const Wrapper = styled.div`
   padding: 15px 30px;
   z-index: 10;
 
-  @media only screen and (max-width: 767px) {
+  @media only screen and (max-width: 991px) {
     padding: 15px 20px;
     background-color: #ebe50d;
   }

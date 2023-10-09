@@ -80,4 +80,11 @@ export const CircleImage = styled(GatsbyImage)`
 
 export const Empty = styled.div`
   height: 50px;
+
+  @media only screen and (max-width: 991px) {
+    height: 200px;
+  }
+  @media only screen and (max-width: 767px) {
+    height: 50px;
+  }
 `;
