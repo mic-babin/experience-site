@@ -26,7 +26,7 @@ export const Text = styled.div`
         margin-bottom: 10px;
       }
       @media only screen and (max-width: 575px) {
-        margin-left: 1vw;
+        margin-left: 0.5vw;
       }
     }
 
