@@ -14,6 +14,7 @@ import { ParallaxProvider } from "react-scroll-parallax";
 import HeroSmall from "../components/index/hero-small/hero-small.components";
 import HeroXSmall from "../components/index/hero-x-small/hero-x-small.components";
 import { useIsMedium, useIsXSmall } from "../utils/media-query.hook";
+import { SEO } from "../components/seo";
 
 export default function Home({ data }) {
   const heroData = data.allContentfulHero.nodes[0];
@@ -32,6 +33,7 @@ export default function Home({ data }) {
 
   return (
     <Layout menu={menu}>
+      <SEO />
       <ParallaxProvider>
         {!isMedium && <Hero data={heroData} />}
         {isMedium && <HeroSmall data={heroData} />}
