@@ -13,7 +13,6 @@ import { useInView } from "react-intersection-observer";
 import LogoCarousel from "./logo-carousel/logo-carousel.component";
 
 const Exhibitors = ({ data }) => {
-  console.log(data);
   const { title, kicker, logos } = data;
   const s = { background: "#EC1A8D", color: "#000000", minHeight: "100px" };
   // const [show, setShow] = useState(false);
