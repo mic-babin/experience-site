@@ -32,6 +32,7 @@ const TypewriterAnimation = ({
   return (
     <span>
       <Typewriter
+        as="span"
         options={{
           strings: text,
           autoStart: start,

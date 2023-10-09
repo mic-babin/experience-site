@@ -66,7 +66,7 @@ const Menu = ({ menu }) => {
             >
               <div className="player-wrapper">
                 <ReactPlayer
-                  priority
+                  priority="true"
                   autoPlay
                   loop
                   muted
@@ -101,10 +101,7 @@ const Menu = ({ menu }) => {
                       }deg) translateY(-40%)`,
                     }}
                   >
-                    <LinkImage
-                      image={getImage(image)}
-                      alt={image.description}
-                    />
+                    {image && <LinkImage image={getImage(image)} alt="" />}
                   </ImageWrapper>
                 )}
               </LinkWrapper>

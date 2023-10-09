@@ -75,11 +75,11 @@ const SignUp = ({ data }) => {
               </Col>
               <Col className="d-flex flex-column align-items-end">
                 {tickets &&
-                  tickets.map((ticket) => (
-                    <>
-                      <TicketCard key={ticket.id} ticket={ticket} />
-                      <TicketCardLarge key={ticket.id} ticket={ticket} />
-                    </>
+                  tickets.map((ticket, index) => (
+                    <React.Fragment key={index}>
+                      <TicketCard ticket={ticket} />
+                      <TicketCardLarge ticket={ticket} />
+                    </React.Fragment>
                   ))}
               </Col>
             </Grid>

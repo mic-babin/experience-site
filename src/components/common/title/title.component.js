@@ -84,22 +84,24 @@ const Title = ({
                   textClass === "programming" ? "justify-content-end" : ""
                 }`}
               >
-                <GatsbyImage
-                  image={getImage(gatsbyImageData)}
-                  alt={description}
-                  style={{
-                    marginRight: isXSmall ? "1.2vw" : "10px",
-                    marginLeft: isXSmall ? "1.2vw" : "10px",
-                    display: "inline-flex",
-                    width: isXSmall
-                      ? "calc(16.9vw)"
-                      : isSmall
-                      ? "91px"
-                      : isMedium
-                      ? "150px"
-                      : width + "px",
-                  }}
-                />
+                {gatsbyImageData && (
+                  <GatsbyImage
+                    image={getImage(gatsbyImageData)}
+                    alt="Line"
+                    style={{
+                      marginRight: isXSmall ? "1.2vw" : "10px",
+                      marginLeft: isXSmall ? "1.2vw" : "10px",
+                      display: "inline-flex",
+                      width: isXSmall
+                        ? "calc(16.9vw)"
+                        : isSmall
+                        ? "91px"
+                        : isMedium
+                        ? "150px"
+                        : width + "px",
+                    }}
+                  />
+                )}
               </LineWrapper>
             )}
           </>
@@ -111,7 +113,7 @@ const Title = ({
         let index = findIndex(value, arr);
         if (value == "PROGRAMMATION" && isMedium) value = "PROGRAMM-ATION";
         return (
-          <p>
+          <span>
             {
               <TypewriterAnimation
                 text={value}
@@ -121,7 +123,7 @@ const Title = ({
                 inView={inView}
               />
             }
-          </p>
+          </span>
         );
       },
     },

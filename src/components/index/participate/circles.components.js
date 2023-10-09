@@ -55,23 +55,25 @@ export const renderImageCircles = (circleArray, Images, isMedium, isSmall) => {
             }}
           >
             <Parallax translateY={[circle.speed, -circle.speed]}>
-              <CircleImage
-                key={circle.key}
-                image={getImage(image)}
-                style={{
-                  height: isSmall
-                    ? circle.height * 0.5
-                    : isMedium
-                    ? circle.height * 0.75
-                    : circle.height,
-                  width: isSmall
-                    ? circle.width * 0.5
-                    : isMedium
-                    ? circle.width * 0.75
-                    : circle.width,
-                }}
-                alt="todo"
-              />
+              {image && (
+                <CircleImage
+                  key={circle.key}
+                  image={getImage(image)}
+                  style={{
+                    height: isSmall
+                      ? circle.height * 0.5
+                      : isMedium
+                      ? circle.height * 0.75
+                      : circle.height,
+                    width: isSmall
+                      ? circle.width * 0.5
+                      : isMedium
+                      ? circle.width * 0.75
+                      : circle.width,
+                  }}
+                  alt="Cercle"
+                />
+              )}
             </Parallax>
           </BgShape>
         );

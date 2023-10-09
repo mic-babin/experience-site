@@ -64,7 +64,7 @@ const FeaturedPlayer = ({ video, image }) => {
           </AnimatePresence>
           {isBrowser && (
             <ReactPlayer
-              priority
+              priority="true"
               loop
               controls={isPlaying}
               url={"https:" + video.file.url}
@@ -75,11 +75,13 @@ const FeaturedPlayer = ({ video, image }) => {
                     setIsPlaying(true);
                   }}
                 >
-                  <GatsbyImage
-                    image={getImage(image)}
-                    alt={"Video Cover"}
-                    objectFit="cover"
-                  />
+                  {image && (
+                    <GatsbyImage
+                      image={getImage(image)}
+                      alt="Video Cover"
+                      objectFit="cover"
+                    />
+                  )}
                 </ImageWrapper>
               }
               playing={isPlaying}

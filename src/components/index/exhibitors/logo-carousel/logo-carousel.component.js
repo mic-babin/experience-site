@@ -40,48 +40,51 @@ const LogoCarousel = (props) => {
   }, [logos]);
 
   return (
-    <Carousel
-      swipeable={false}
-      draggable={false}
-      showDots={false}
-      responsive={responsive}
-      ssr={true}
-      infinite={true}
-      autoPlaySpeed={2000}
-      keyBoardControl={true}
-      customTransition="all .5"
-      transitionDuration={1000}
-      deviceType={props.deviceType}
-      containerClass="carousel-container"
-      removeArrowOnDeviceType={["tablet", "mobile", "desktop"]}
-      autoPlay={props.deviceType !== "mobile" ? true : false}
-      dotListClass="custom-dot-list-style"
-      itemClass="carousel-item-padding-40-px"
-    >
-      {!logos && <div style={{ display: "none" }}>item 0</div>}
-      {logos &&
-        pairs &&
-        pairs.map((pair, index) => (
-          <Col key={index}>
-            {pair &&
-              pair.map((item) => (
-                <a
-                  key={item.id}
-                  href={item.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <LogoWrapper>
-                    <GatsbyImage
-                      image={getImage(item.logo)}
-                      alt={item.description}
-                    />
-                  </LogoWrapper>
-                </a>
-              ))}
-          </Col>
-        ))}
-    </Carousel>
+    <>
+      {logos && (
+        <Carousel
+          swipeable={false}
+          draggable={false}
+          showDots={false}
+          responsive={responsive}
+          ssr={true}
+          infinite={true}
+          autoPlaySpeed={2000}
+          keyBoardControl={true}
+          customTransition="all .5"
+          transitionDuration={1000}
+          deviceType={props.deviceType}
+          containerClass="carousel-container"
+          removeArrowOnDeviceType={["tablet", "mobile", "desktop"]}
+          autoPlay={props.deviceType !== "mobile" ? true : false}
+          dotListClass="custom-dot-list-style"
+          itemClass="carousel-item-padding-40-px"
+        >
+          {!logos && <div style={{ display: "none" }}>item 0</div>}
+          {logos &&
+            pairs &&
+            pairs.map((pair, index) => (
+              <Col key={index}>
+                {pair &&
+                  pair.map((item) => {
+                    <a
+                      key={item.id}
+                      href={item.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <LogoWrapper>
+                        {item.logo && (
+                          <GatsbyImage image={getImage(item.logo)} alt="Logo" />
+                        )}
+                      </LogoWrapper>
+                    </a>;
+                  })}
+              </Col>
+            ))}
+        </Carousel>
+      )}
+    </>
   );
 };
 

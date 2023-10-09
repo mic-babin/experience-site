@@ -119,11 +119,13 @@ const BecomePartner = ({ data }) => {
                   delay: 0.5,
                 }}
               >
-                <Photo
-                  image={getImage(contactPhoto)}
-                  alt="TODO"
-                  style={{ transform: `rotate(${rotation}deg)` }}
-                />
+                {contactPhoto && (
+                  <Photo
+                    image={getImage(contactPhoto)}
+                    alt="Alexis"
+                    style={{ transform: `rotate(${rotation}deg)` }}
+                  />
+                )}
               </motion.div>
             )}
             {contactName && (

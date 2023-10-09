@@ -86,7 +86,7 @@ const LogoSection = ({ title, logos, index }) => {
               animate={inView ? { opacity: 1 } : {}}
               transition={{ delay: 0 / 15 }}
             >
-              <GatsbyImage image={getImage(logos.logo)} alt="TODO" />
+              {logos && <GatsbyImage image={getImage(logos.logo)} alt="Logo" />}
             </LogoWrapper>
           )}
           {logos &&
@@ -100,11 +100,13 @@ const LogoSection = ({ title, logos, index }) => {
                 animate={inView ? { opacity: 1 } : {}}
                 transition={{ delay: index / 15 }}
               >
-                <GatsbyImage
-                  key={item.id}
-                  image={getImage(item.logo)}
-                  alt="TODO"
-                />
+                {item && (
+                  <GatsbyImage
+                    key={item.id}
+                    image={getImage(item.logo)}
+                    alt="Logo"
+                  />
+                )}
               </LogoWrapper>
             ))}
         </LogosWrapper>

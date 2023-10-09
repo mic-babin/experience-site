@@ -62,7 +62,7 @@ const ConferenceCard = ({ conference, index }) => {
             {speakerCompany && <Text>,&nbsp;{speakerCompany}</Text>}
           </TextWrapper>
 
-          <Logo image={getImage(logo)} alt={logo.description} />
+          {logo && <Logo image={getImage(logo)} alt="Logo" />}
         </Col>
         {!isMedium && (
           <Col>{date && <Subtitle className="left">{time}</Subtitle>}</Col>

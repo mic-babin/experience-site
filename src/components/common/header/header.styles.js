@@ -1,7 +1,7 @@
 import { styled } from "styled-components";
 import { motion } from "framer-motion";
 
-export const MenuToggler = styled(motion.a)`
+export const MenuToggler = styled(motion.div)`
   margin-left: auto;
   cursor: pointer;
   text-decoration: none;
