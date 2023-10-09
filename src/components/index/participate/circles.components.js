@@ -38,9 +38,9 @@ export const renderImageCircles = (circleArray, Images, isMedium, isSmall) => {
             key={circle.index}
             style={{
               top:
-                isSmall && circle.index == 0
+                isSmall && circle.index === 0
                   ? circle.top * 0.5
-                  : isSmall && circle.index == 1
+                  : isSmall && circle.index === 1
                   ? circle.top * 0.1
                   : circle.top,
               left: circle.left,

@@ -66,7 +66,7 @@ const LogoCarousel = (props) => {
             pairs.map((pair, index) => (
               <Col key={index}>
                 {pair &&
-                  pair.map((item) => {
+                  pair.map((item) => (
                     <a
                       key={item.id}
                       href={item.link}
@@ -78,8 +78,8 @@ const LogoCarousel = (props) => {
                           <GatsbyImage image={getImage(item.logo)} alt="Logo" />
                         )}
                       </LogoWrapper>
-                    </a>;
-                  })}
+                    </a>
+                  ))}
               </Col>
             ))}
         </Carousel>

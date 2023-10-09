@@ -27,14 +27,14 @@ const LogoSection = ({ title, logos, index }) => {
   });
 
   const getColumns = (logos) => {
-    return logos.length < 2 || logos.length == undefined
+    return logos.length < 2 || logos.length === undefined
       ? 1
-      : isMedium || logos.length == 2
+      : isMedium || logos.length === 2
       ? 2
       : logos.length == 3
       ? 3
       : 4;
-    // return logos.length < 2 || logos.length == undefined
+    // return logos.length < 2 || logos.length === undefined
     // ? 1
     // : logos.length < 5 || isMedium
     // ? 2
@@ -69,15 +69,17 @@ const LogoSection = ({ title, logos, index }) => {
           ref={inViewRef}
           style={{
             maxWidth:
-              logos.length == 1 && title != "Présentateur" && "calc(50% - 6px)",
+              logos.length === 1 &&
+              title != "Présentateur" &&
+              "calc(50% - 6px)",
             gridTemplateColumns:
               isSmall && logos.length > 2
                 ? "1fr 1fr"
                 : `repeat(${getColumns(logos)}, 1fr)`,
           }}
-          className={title == "Présentateur" ? "first" : ""}
+          className={title === "Présentateur" ? "first" : ""}
         >
-          {title == "Présentateur" && (
+          {title === "Présentateur" && (
             <LogoWrapper
               href={logos.link}
               target="_blank"

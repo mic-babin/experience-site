@@ -56,7 +56,7 @@ const BecomePartner = ({ data }) => {
     const afterDecimal = progress.toString().split(".")[1]
       ? Number(progress.toString().split(".")[1][0])
       : 9;
-    const isEven = afterDecimal % 2 == 0;
+    const isEven = afterDecimal % 2 === 0;
     if (isEven) {
       newRotation = 13 - (progress - afterDecimal / 10) * 260 + 5;
     } else {

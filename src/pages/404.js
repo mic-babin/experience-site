@@ -4,7 +4,6 @@ import { graphql } from "gatsby";
 import Hero from "../components/index/hero/hero.components";
 import Participate from "../components/index/participate/participate.components";
 import Reasons from "../components/index/reasons/reasons.components";
-import Programming from "../components/index/programming/programming.components";
 import SignUp from "../components/index/sign-up/sign-up.components";
 import BecomePartner from "../components/index/become-partner/become-partner.components";
 import CallToAction from "../components/index/call-to-action/call-to-action.components";
@@ -20,7 +19,6 @@ export default function Home({ data }) {
   const participateData = data.allContentfulParticipate.nodes[0];
   const reasonsData = data.allContentfulReasons.nodes[0];
   const aboutData = data.allContentfulAbout.nodes[0];
-  const programmingData = data.allContentfulProgramming.nodes[0];
   const signUpData = data.allContentfulSignUp.nodes[0];
   const partnersData = data.allContentfulPartners.nodes[0];
   const becomePartnerData = data.allContentfulBecomePartner.nodes[0];
@@ -40,7 +38,6 @@ export default function Home({ data }) {
         <SignUp data={signUpData} />
         <Reasons data={reasonsData} />
         <About data={aboutData} />
-        {/* <Programming data={programmingData} /> */}
 
         <Partners data={partnersData} exhibitorsData={exhibitors} />
         <BecomePartner data={becomePartnerData} />

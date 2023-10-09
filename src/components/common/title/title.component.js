@@ -67,18 +67,17 @@ const Title = ({
                       ? "32px"
                       : "35px"
                   })`,
-                  width:
-                    textClass == "programming"
-                      ? `calc(100% - ${
-                          isXSmall
-                            ? "calc(23vw)"
-                            : isSmall
-                            ? "155px"
-                            : isMedium
-                            ? "196px"
-                            : "260px"
-                        })`
-                      : "auto",
+                  width: (textClass = "programming"
+                    ? `calc(100% - ${
+                        isXSmall
+                          ? "calc(23vw)"
+                          : isSmall
+                          ? "155px"
+                          : isMedium
+                          ? "196px"
+                          : "260px"
+                      })`
+                    : "auto"),
                 }}
                 className={`${textClass} ${
                   textClass === "programming" ? "justify-content-end" : ""
@@ -111,7 +110,7 @@ const Title = ({
         let arr = title.raw.split("value");
         let value = children[children.length - 1].replace(/\n/g, "");
         let index = findIndex(value, arr);
-        if (value == "PROGRAMMATION" && isMedium) value = "PROGRAMM-ATION";
+        if (value === "PROGRAMMATION" && isMedium) value = "PROGRAMM-ATION";
         return (
           <span>
             {

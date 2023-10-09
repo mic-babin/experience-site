@@ -16,7 +16,7 @@ const TypewriterAnimation = ({
 
   useEffect(() => {
     let newText = text;
-    if (isMedium && text == "PROGRAMMATION") {
+    if (isMedium && text === "PROGRAMMATION") {
       text = "PROGRAMM-ATION";
     }
     if (inView) {
