@@ -67,40 +67,39 @@ const Title = ({
                       ? "32px"
                       : "35px"
                   })`,
-                  width: (textClass = "programming"
-                    ? `calc(100% - ${
-                        isXSmall
-                          ? "calc(23vw)"
-                          : isSmall
-                          ? "155px"
-                          : isMedium
-                          ? "196px"
-                          : "260px"
-                      })`
-                    : "auto"),
+                  width:
+                    textClass == "programming"
+                      ? `calc(100% - ${
+                          isXSmall
+                            ? "calc(23vw)"
+                            : isSmall
+                            ? "155px"
+                            : isMedium
+                            ? "196px"
+                            : "260px"
+                        })`
+                      : "auto",
                 }}
                 className={`${textClass} ${
                   textClass === "programming" ? "justify-content-end" : ""
                 }`}
               >
-                {gatsbyImageData && (
-                  <GatsbyImage
-                    image={getImage(gatsbyImageData)}
-                    alt="Line"
-                    style={{
-                      marginRight: isXSmall ? "1.2vw" : "10px",
-                      marginLeft: isXSmall ? "1.2vw" : "10px",
-                      display: "inline-flex",
-                      width: isXSmall
-                        ? "calc(16.9vw)"
-                        : isSmall
-                        ? "91px"
-                        : isMedium
-                        ? "150px"
-                        : width + "px",
-                    }}
-                  />
-                )}
+                <GatsbyImage
+                  image={getImage(gatsbyImageData)}
+                  alt=""
+                  style={{
+                    marginRight: isXSmall ? "1.2vw" : "10px",
+                    marginLeft: isXSmall ? "1.2vw" : "10px",
+                    display: "inline-flex",
+                    width: isXSmall
+                      ? "calc(16.9vw)"
+                      : isSmall
+                      ? "91px"
+                      : isMedium
+                      ? "150px"
+                      : width + "px",
+                  }}
+                />
               </LineWrapper>
             )}
           </>
@@ -110,7 +109,7 @@ const Title = ({
         let arr = title.raw.split("value");
         let value = children[children.length - 1].replace(/\n/g, "");
         let index = findIndex(value, arr);
-        if (value === "PROGRAMMATION" && isMedium) value = "PROGRAMM-ATION";
+        if (value == "PROGRAMMATION" && isMedium) value = "PROGRAMM-ATION";
         return (
           <span>
             {

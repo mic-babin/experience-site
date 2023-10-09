@@ -33,7 +33,6 @@ const Menu = ({ menu }) => {
   const scroll = (to) => {
     setShouldStick(false);
     setTimeout(() => {
-      const el = document.getElementById(to.split("#")[1]);
       navigate(to);
       setShouldStick(true);
     }, 50);
