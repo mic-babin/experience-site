@@ -31,13 +31,14 @@ export default function Home({ data }) {
   const isMedium = useIsMedium();
   const isXSmall = useIsXSmall();
 
+  console.log(isXSmall, isMedium);
   return (
     <Layout menu={menu}>
       <SEO />
       <ParallaxProvider>
         {!isMedium && <Hero data={heroData} />}
-        {isMedium && <HeroSmall data={heroData} />}
-        {isXSmall && !isMedium && <HeroXSmall data={heroData} />}
+        {isMedium && !isXSmall && <HeroSmall data={heroData} />}
+        {isXSmall && <HeroXSmall data={heroData} />}
         <Participate data={participateData} />
         <SignUp data={signUpData} />
         <Reasons data={reasonsData} />
