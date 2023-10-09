@@ -21,7 +21,7 @@ import TicketCardLarge from "./ticket-card-large/ticket-card-large.component";
 
 const SignUp = ({ data }) => {
   const { title, kicker, tickets } = data;
-  const s = { background: "#3F3AEF", color: "white" };
+  const s = { background: "#3F3AEF", color: "white", minHeight: "100vh" };
 
   const section = useRef();
   const sectionSize = useElementSize(section);

@@ -1,5 +1,5 @@
 import React from "react";
-import { Section, SectionTitle, Wrapper } from "./participate.styles";
+import { Section, SectionTitle, Wrapper, Empty } from "./participate.styles";
 import FeaturedPlayer from "./featured-player/featured-player.component";
 import { circles, imageCircles } from "./circles.data.js";
 import { renderCircles, renderImageCircles } from "./circles.components";
@@ -9,7 +9,7 @@ import { useIsMedium, useIsSmall } from "../../../utils/media-query.hook";
 
 const Participate = ({ data }) => {
   const { Images, description, video, videoCoverImage } = data;
-  const s = { background: "#000000", color: "white" };
+  const s = { background: "#000000", color: "white", minHeight: "100vh" };
   const [inViewRef, inView] = useInView({
     triggerOnce: true,
     threshold: 0.5,
@@ -41,6 +41,7 @@ const Participate = ({ data }) => {
       {inView && renderImageCircles(imageCircles, Images, isMedium, isSmall)}
 
       <FeaturedPlayer video={video} image={videoCoverImage} />
+      <Empty></Empty>
     </Section>
   );
 };

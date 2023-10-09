@@ -77,3 +77,7 @@ export const BgShape = styled(motion.div)`
 export const CircleImage = styled(GatsbyImage)`
   border-radius: 50%;
 `;
+
+export const Empty = styled.div`
+  height: 50px;
+`;
