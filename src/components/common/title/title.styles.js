@@ -31,6 +31,9 @@ export const Text = styled.div`
       margin-top: 12.5vh;
       text-align: end;
 
+      @media only screen and (max-width: 991px) {
+        margin-top: 0vh;
+      }
       @media only screen and (max-width: 767px) {
         margin-top: 0.6vh;
       }

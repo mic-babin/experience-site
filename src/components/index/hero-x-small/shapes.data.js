@@ -78,7 +78,7 @@ export const getSmallShapes = (sectionSize) => [
     alt: "2e edition",
     style: { width: "39.31vw" },
     initial: { y: -300, x: "-4.9vw" },
-    animate: { y: sectionSize.height - sectionSize.width / 1.37 - 55 },
+    animate: { y: sectionSize.height - sectionSize.width / 0.933 - 55 },
     transition: {
       duration: 1,
       type: "spring",
@@ -93,7 +93,7 @@ export const getSmallShapes = (sectionSize) => [
     alt: "Salon Experience",
     style: { width: "100vw" },
     initial: { y: -850, x: 0 },
-    animate: { y: sectionSize.height - sectionSize.width / 1.57 - 55 },
+    animate: { y: sectionSize.height - sectionSize.width / 1.027 - 55 },
     transition: {
       duration: 1,
       type: "spring",
@@ -109,7 +109,7 @@ export const getSmallShapes = (sectionSize) => [
     style: { width: "35.52vw" },
     initial: { y: -500, x: "60.4vw" },
     animate: {
-      y: sectionSize.height - sectionSize.width * 0.29 - 55,
+      y: sectionSize.height - sectionSize.width * 0.625 - 55,
     },
     transition: {
       duration: 1,
@@ -126,7 +126,74 @@ export const getSmallShapes = (sectionSize) => [
     alt: "22 février 2024",
     initial: { y: -500, x: "0vw" },
     animate: {
-      y: sectionSize.height - sectionSize.width / 1.065 - 55,
+      y: sectionSize.height - sectionSize.width / 0.785 - 55,
+    },
+    transition: {
+      duration: 1,
+      type: "spring",
+      damping: 15,
+      stiffness: 150,
+      delay: 2.3,
+    },
+  },
+];
+
+export const getXSmallShapes = (sectionSize) => [
+  {
+    key: uuidv4(),
+    src: Shape1Src,
+    alt: "2e edition",
+    style: { width: "39.31vw" },
+    initial: { y: -300, x: "-4.9vw" },
+    animate: { y: sectionSize.height - sectionSize.width / 0.933 - 55 },
+    transition: {
+      duration: 1,
+      type: "spring",
+      damping: 15,
+      stiffness: 150,
+      delay: 2.1,
+    },
+  },
+  {
+    key: uuidv4(),
+    src: Shape2Src,
+    alt: "Salon Experience",
+    style: { width: "100vw" },
+    initial: { y: -850, x: 0 },
+    animate: { y: sectionSize.height - sectionSize.width / 1.027 - 55 },
+    transition: {
+      duration: 1,
+      type: "spring",
+      damping: 15,
+      stiffness: 150,
+      delay: 1.9,
+    },
+  },
+  {
+    key: uuidv4(),
+    src: Shape3Src,
+    alt: "Grand Quai du Port de Montréal",
+    style: { width: "35.52vw" },
+    initial: { y: -500, x: "60.4vw" },
+    animate: {
+      y: sectionSize.height - sectionSize.width * 0.625 - 55,
+    },
+    transition: {
+      duration: 1,
+      type: "spring",
+      damping: 15,
+      stiffness: 150,
+      delay: 1,
+    },
+  },
+  {
+    key: uuidv4(),
+    src: Shape4Src,
+    style: { width: "71.04vw" },
+    alt: "22 février 2024",
+    initial: { y: -500, x: "0vw" },
+    animate: {
+      y: sectionSize.height - sectionSize.width / 0.785 - 55,
     },
     transition: {
       duration: 1,

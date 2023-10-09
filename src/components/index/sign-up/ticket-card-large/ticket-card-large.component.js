@@ -49,7 +49,11 @@ const TicketCardLarge = ({ ticket }) => {
             {price && (
               <Price className="overlay-text">
                 <img
-                  style={{ marginTop: "15px", transform: "translateX(-20px)" }}
+                  style={{
+                    marginTop: "15px",
+                    transform: "translateX(-20px)",
+                    height: "100px",
+                  }}
                   src={TicketSrc}
                   alt="2 pour 1"
                 />
@@ -87,7 +91,11 @@ const TicketCardLarge = ({ ticket }) => {
               <img
                 src={TicketSrc}
                 alt="2 pour 1"
-                style={{ marginTop: "15px", transform: "translateX(-20px)" }}
+                style={{
+                  marginTop: "15px",
+                  transform: "translateX(-20px)",
+                  height: "100px",
+                }}
               />
               {price}$
             </Price>
