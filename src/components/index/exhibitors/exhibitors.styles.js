@@ -6,7 +6,7 @@ export const Section = styled(SectionLayout)``;
 
 export const BgWrapper = styled.div`
   color: black;
-  background-color: #e3fe96;
+  background-color: #35b999;
   padding: 150px 0;
   padding-bottom: 0px;
 
