@@ -96,7 +96,7 @@ const Header = ({ menu }) => {
               // marginTop: "6px",
             }}
             target="_blank"
-            href="https://inscription-experience.lesaffaires.com/fr/registration/6511acd96961c66a33ccf8af?force_new_registration=true"
+            href="https://experience.lesaffaires.com/fr/registration/6511acd96961c66a33ccf8af?force_new_registration=false"
           >
             <Registration
               initial={{ opacity: 0 }}

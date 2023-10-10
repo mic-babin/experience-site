@@ -52,7 +52,7 @@ export const Text = styled.div`
       display: inline-block;
     }
     span:nth-of-type(2) {
-      display: inline;
+      display: block;
     }
 
     @media only screen and (max-width: 767px) {

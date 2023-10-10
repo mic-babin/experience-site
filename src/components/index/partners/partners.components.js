@@ -17,7 +17,6 @@ const Partners = ({ data, exhibitorsData }) => {
 
   return (
     <Section s={s}>
-      <Exhibitors data={exhibitorsData} />
       <div id="exposants"></div>
       <Wrapper>
         <ParallaxShapes />
@@ -47,6 +46,7 @@ const Partners = ({ data, exhibitorsData }) => {
           logos={partenairesDeSoutien}
         /> */}
       </Wrapper>
+      <Exhibitors data={exhibitorsData} />
     </Section>
   );
 };

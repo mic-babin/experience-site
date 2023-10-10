@@ -67,18 +67,11 @@ const LogoCarousel = (props) => {
               <Col key={index}>
                 {pair &&
                   pair.map((item) => (
-                    <a
-                      key={item.id}
-                      href={item.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <LogoWrapper>
-                        {item.logo && (
-                          <GatsbyImage image={getImage(item.logo)} alt="Logo" />
-                        )}
-                      </LogoWrapper>
-                    </a>
+                    <LogoWrapper>
+                      {item.logo && (
+                        <GatsbyImage image={getImage(item.logo)} alt="Logo" />
+                      )}
+                    </LogoWrapper>
                   ))}
               </Col>
             ))}

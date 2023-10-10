@@ -85,7 +85,7 @@ const TicketCardLarge = ({ ticket }) => {
           </div>
         </div>
         <div className="content">
-          <Title>2 billet pour seulement</Title>
+          <Title>2 billets pour seulement</Title>
           {price && (
             <Price>
               <img
