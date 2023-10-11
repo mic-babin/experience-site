@@ -15,7 +15,7 @@ import LogoCarousel from "./logo-carousel/logo-carousel.component";
 const Exhibitors = ({ data }) => {
   const { title, kicker, logos } = data;
   const s = {
-    background: "rgb(53, 185, 153)",
+    background: "#35B999",
     color: "#000000",
     minHeight: "100px",
   };

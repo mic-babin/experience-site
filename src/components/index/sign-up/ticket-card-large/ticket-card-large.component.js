@@ -45,7 +45,7 @@ const TicketCardLarge = ({ ticket }) => {
       >
         <div className="overlay">
           <div className="overlay-content">
-            <Title className="overlay-text">2 billet pour seulement</Title>
+            <Title className="overlay-text">2 billets pour seulement</Title>
             {price && (
               <Price className="overlay-text">
                 <img
