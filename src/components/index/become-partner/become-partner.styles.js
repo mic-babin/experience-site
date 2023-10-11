@@ -73,7 +73,7 @@ export const Kicker = styled(motion.div)`
     margin-left: 85px;
   }
   @media only screen and (max-width: 400px) {
-    margin-left: 80px;
+    margin-left: 75px;
   }
 `;
 
