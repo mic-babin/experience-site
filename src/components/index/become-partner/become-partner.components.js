@@ -82,7 +82,7 @@ const BecomePartner = ({ data }) => {
             width={204}
             y={35}
             textClass="become-partner"
-            animationLoop={false}
+            animationLoop={true}
             wordSpeed={500}
             lineDelay={1400}
             inView={inView}

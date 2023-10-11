@@ -44,13 +44,13 @@ export const BecomePartnerTitle = styled(motion.h2)`
     line-height: 57px;
   }
   @media only screen and (max-width: 575px) {
-    font-size: 36px;
-    line-height: 34px;
+    font-size: 40px;
+    line-height: 38px;
   }
-  @media only screen and (max-width: 400px) {
+  /* @media only screen and (max-width: 400px) {
     font-size: 30px;
     line-height: 29px;
-  }
+  } */
 `;
 
 export const Kicker = styled(motion.div)`
@@ -71,6 +71,9 @@ export const Kicker = styled(motion.div)`
     font-size: 24px;
     line-height: 24px;
     margin-left: 85px;
+  }
+  @media only screen and (max-width: 400px) {
+    margin-left: 80px;
   }
 `;
 

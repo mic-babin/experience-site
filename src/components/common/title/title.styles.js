@@ -53,15 +53,15 @@ export const Text = styled.div`
     }
     span:nth-of-type(2) {
       display: block;
-      @media only screen and (max-width: 767px) {
+      /* @media only screen and (max-width: 767px) {
         display: inline;
-      }
+      } */
     }
 
     @media only screen and (max-width: 767px) {
-      span {
-        margin-bottom: 5px;
-      }
+      /* span {
+        margin-bottom: 1px;
+      } */
     }
   }
 

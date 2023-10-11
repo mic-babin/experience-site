@@ -36,7 +36,7 @@ export const SiteTitle = styled(motion.h1)`
     padding-top: 53px;
   }
   @media only screen and (max-width: 575px) {
-    font-size: 10.61vw;
+    font-size: 10.59vw;
     line-height: 38px;
     padding-top: 22px;
   }
