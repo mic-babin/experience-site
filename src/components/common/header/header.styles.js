@@ -41,6 +41,11 @@ export const Wrapper = styled.div`
     padding: 15px 20px;
     background-color: #ebe50d;
   }
+
+  @media only screen and (max-width: 575px) {
+    padding: 15px 15px;
+    background-color: #ebe50d;
+  }
 `;
 
 export const Logo = styled(motion.img)`
