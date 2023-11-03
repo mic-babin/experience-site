@@ -54,6 +54,12 @@ body {
   font-size: 24px;
 }
 
+@media (max-width: 991px) {
+  .scroll-to {
+    transform: translateY(-115px);
+  }
+}
+
 // @keyframes gradient {
 //   0%,
 //   45% {

@@ -75,7 +75,8 @@ const BecomePartner = ({ data }) => {
 
   return (
     <Section s={s}>
-      <Wrapper className="container" id="devenir-exposant">
+      <div className="scroll-to" id="devenir-exposant"></div>
+      <Wrapper className="container">
         <BecomePartnerTitle ref={inViewRef}>
           <Title
             title={title}

@@ -17,7 +17,7 @@ const Partners = ({ data, exhibitorsData }) => {
 
   return (
     <Section s={s}>
-      <div id="exposants"></div>
+      <div id="exposants" className="scroll-to"></div>
       <Wrapper>
         <ParallaxShapes />
         <LogoSection

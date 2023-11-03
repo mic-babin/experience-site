@@ -65,7 +65,8 @@ const About = ({ data }) => {
 
   return (
     <Section s={s}>
-      <Wrapper className="container" id="a-propos">
+      <div className="scroll-to" id="a-propos"></div>
+      <Wrapper className="container">
         <Header>
           {title && (
             <SectionTitle>

@@ -67,17 +67,31 @@ export const LinkWrapper = styled(motion.div)`
   padding-left: 150px;
   position: relative;
 
-  @media only screen and (max-width: 767px) {
+  @media only screen and (max-width: 991px) {
     font-size: 36px;
     line-height: 36px;
     padding-left: 60px;
   }
 
+  @media only screen and (max-width: 767px) {
+    font-size: 30px;
+    line-height: 30px;
+    padding-left: 50px;
+  }
+
   @media only screen and (max-width: 575px) {
-    font-size: 24px;
-    line-height: 24px;
+    font-size: 22px;
+    line-height: 22px;
     padding-left: 30px;
     padding-top: 12px;
+    padding-bottom: 4px;
+  }
+
+  @media only screen and (max-width: 400px) {
+    font-size: 18px;
+    line-height: 18px;
+    padding-left: 30px;
+    padding-top: 8px;
     padding-bottom: 4px;
   }
 

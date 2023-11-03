@@ -49,7 +49,7 @@ const Header = ({ menu }) => {
         </motion.div>
 
         <ButtonGroup>
-          {/* <MenuToggler
+          <MenuToggler
             onClick={() => toggleMenu()}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -88,7 +88,7 @@ const Header = ({ menu }) => {
                   {word}
                 </motion.span>
               ))}
-          </MenuToggler> */}
+          </MenuToggler>
           <a
             style={{
               textDecoration: "none",
