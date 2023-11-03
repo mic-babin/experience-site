@@ -46,7 +46,7 @@ const Partners = ({ data, exhibitorsData }) => {
           logos={partenairesDeSoutien}
         /> */}
       </Wrapper>
-      <Exhibitors data={exhibitorsData} />
+      {/* <Exhibitors data={exhibitorsData} /> */}
     </Section>
   );
 };
