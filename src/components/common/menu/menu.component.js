@@ -33,7 +33,10 @@ const Menu = ({ menu }) => {
   const scroll = (to) => {
     setShouldStick(false);
     setTimeout(() => {
-      navigate(to);
+      if (to.includes("https")) window.open(to, "_blank");
+      else {
+        navigate(to);
+      }
       setShouldStick(true);
     }, 50);
   };
