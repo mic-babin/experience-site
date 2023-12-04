@@ -51,7 +51,6 @@ export const Price = styled.div`
   font-family: "GroteskBold";
   font-size: 100px;
   line-height: 95px;
-  text-decoration: line-through;
   margin-left: 45px;
   &.overlay-text {
     min-width: 341px;
