@@ -27,7 +27,7 @@ const TicketCardLarge = ({ ticket }) => {
       href={link}
       target="_blank"
     >
-      <Featured style={{ visibility: isFeatured ? "visible" : "hidden" }}>
+      {/* <Featured style={{ visibility: isFeatured ? "visible" : "hidden" }}>
         <div>OFFRE DE LANCEMENT</div>
         <div className="large">EXCLUSIVE</div>
       </Featured>
@@ -121,7 +121,7 @@ const TicketCardLarge = ({ ticket }) => {
           </SmallText>
           <SmallTextBold>*Valable jusqu’au 30 novembre 2023</SmallTextBold>
         </div>
-      </TicketWrapper>
+      </TicketWrapper> */}
     </CardWrapper>
   );
 };

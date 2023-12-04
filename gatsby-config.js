@@ -20,7 +20,7 @@ module.exports = {
     title: `Expérience`,
     description: `Réinventez vos événements`,
     image: `experience.png`,
-    siteUrl: `https://salonexperience.lesaffaires.com/`,
+    siteUrl: `https://salone-experience.com/`,
   },
   plugins: [
     `gatsby-plugin-styled-components`,
