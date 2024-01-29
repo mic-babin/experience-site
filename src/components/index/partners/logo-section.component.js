@@ -16,6 +16,7 @@ import {
 import Title from "../../common/title/title.component";
 
 const LogoSection = ({ title, logos, index }) => {
+  console.log(logos);
   const isLarge = useIsLarge();
   const isMedium = useIsMedium();
   const isSmall = useIsSmall();
@@ -27,13 +28,18 @@ const LogoSection = ({ title, logos, index }) => {
   });
 
   const getColumns = (logos) => {
-    return logos.length < 2 || logos.length === undefined
-      ? 1
-      : isMedium || logos.length === 2
-      ? 2
-      : logos.length == 3
-      ? 3
-      : 4;
+    if (logos) {
+      return logos.length < 2 || logos.length === undefined
+        ? 1
+        : isMedium || logos.length === 2
+        ? 2
+        : logos.length == 3
+        ? 3
+        : 4;
+    } else {
+      return 1;
+    }
+
     // return logos.length < 2 || logos.length === undefined
     // ? 1
     // : logos.length < 5 || isMedium
@@ -69,7 +75,7 @@ const LogoSection = ({ title, logos, index }) => {
           ref={inViewRef}
           style={{
             maxWidth:
-              logos.length === 1 &&
+              logos?.length === 1 &&
               title != "Présentateur" &&
               "calc(50% - 6px)",
             gridTemplateColumns:

@@ -191,6 +191,13 @@ export const query = graphql`
             gatsbyImageData(quality: 100)
           }
         }
+        partenairesDeSoutien {
+          id
+          link
+          logo {
+            gatsbyImageData(quality: 100)
+          }
+        }
       }
     }
     allContentfulBecomePartner(filter: { node_locale: { eq: "fr" } }) {
