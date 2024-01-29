@@ -12,7 +12,7 @@ const Partners = ({ data, exhibitorsData }) => {
     experienceUnique,
     // cocktail,
     partenairesCreateurs,
-    // partenairesDeSoutien,
+    partenairesDeSoutien,
   } = data;
 
   return (
@@ -41,10 +41,10 @@ const Partners = ({ data, exhibitorsData }) => {
           title={"Partenaires Createurs"}
           logos={partenairesCreateurs}
         />
-        {/* <LogoSection
+        <LogoSection
           title={"Partenaires De Soutien"}
           logos={partenairesDeSoutien}
-        /> */}
+        />
       </Wrapper>
       {/* <Exhibitors data={exhibitorsData} /> */}
     </Section>
